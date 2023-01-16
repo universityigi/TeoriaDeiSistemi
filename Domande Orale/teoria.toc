@@ -1,0 +1,36 @@
+\contentsline {section}{\numberline {1}Domande di Teoria}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Sistema a tempo discreto equivalente ad un dato sistema a tempo continuo}{2}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Rappresentazione per sistemi a tempo discreto}{3}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Definizione punto di equilibrio}{4}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Definizione formale di stabilità di un punto di equilibrio}{4}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}Definizione, condizioni e criteri di stabilità interna per sistemi lineari:}{5}{subsection.1.5}%
+\contentsline {subsection}{\numberline {1.6}Definizione smorzamento e pulsazione naturale}{5}{subsection.1.6}%
+\contentsline {subsection}{\numberline {1.7}Problema della realizzazione}{5}{subsection.1.7}%
+\contentsline {subsection}{\numberline {1.8}Relazione tra poli di W(s) e gli autovalori}{6}{subsection.1.8}%
+\contentsline {subsection}{\numberline {1.9}Scomposizione canonica rispetto alla raggiungibilità}{6}{subsection.1.9}%
+\contentsline {subsection}{\numberline {1.10}Definire eccitabilità di un modo naturale e dimostrarne la condizione. Come sono legate l'eccitabilità dei modi naturali con la raggiungibilità del sistema?}{6}{subsection.1.10}%
+\contentsline {subsection}{\numberline {1.11}Legame tra raggiungibilità del sistema e eccitabilità dei modi}{7}{subsection.1.11}%
+\contentsline {subsection}{\numberline {1.12}La risposta a regime permanente: definizione e condizioni di esistenza}{7}{subsection.1.12}%
+\contentsline {subsection}{\numberline {1.13}I modi naturali dei sistemi lineari a tempo continuo: definizione e parametri caratteristici}{7}{subsection.1.13}%
+\contentsline {subsection}{\numberline {1.14}Modi naturali per sistemi a tempo discreto}{8}{subsection.1.14}%
+\contentsline {subsection}{\numberline {1.15}Osservabilità nei sistemi lineari}{8}{subsection.1.15}%
+\contentsline {subsection}{\numberline {1.16}L'osservabilità dei sistemi lineari a tempo discreto: definizione e condizioni}{9}{subsection.1.16}%
+\contentsline {subsection}{\numberline {1.17}Per un sistema tempo discreto dimostrare che l'insieme degli stati inosservabili è :}{9}{subsection.1.17}%
+\contentsline {subsection}{\numberline {1.18}Definizione di raggiungibilità di uno stato; caratterizzare l'insieme degli stati raggiungibili per sistemi dinamici lineari stazionari; confrontare il caso tempo continuo e tempo discreto}{10}{subsection.1.18}%
+\contentsline {subsection}{\numberline {1.19}Un sistema dinamico può esser rappresentato tramite un modello implicito o esplicito. \\ (a) Illustrare i diversi vantaggi e svantaggi delle due rappresentazioni; \\ (b) Per sistemi a tempo discreto lineari e stazionari, indicare i passaggi matematici che permettono di passare da una rappresentazione all'altra e viceversa. }{10}{subsection.1.19}%
+\contentsline {subsection}{\numberline {1.20}Dimostrazione passaggio da forma esplicita a implicita}{11}{subsection.1.20}%
+\contentsline {subsection}{\numberline {1.21}\boldmath Dimostrazione che data un'evoluzione da $x(t_0)$ a $x(t)$, vale la stessa da $x(t_1)$ con $<t_0<t_1<t$}{11}{subsection.1.21}%
+\contentsline {subsection}{\numberline {1.22}Definizione di guadagno e interpretazione fisica}{12}{subsection.1.22}%
+\contentsline {subsection}{\numberline {1.23}Definizione di raggiungibilità ed inosservabilità; caratterizzazione e proprietà degli insiemi di tali stati}{12}{subsection.1.23}%
+\contentsline {subsection}{\numberline {1.24}Può un sistema lineare essere caratterizzato da modi naturali aventi la stessa legge di moto?}{13}{subsection.1.24}%
+\contentsline {subsection}{\numberline {1.25}È possibile che un sistema abbia funzione di trasferimento uguale a zero? Se si, sotto quali condizioni?}{13}{subsection.1.25}%
+\contentsline {subsection}{\numberline {1.26}Definizione di stabilità esterna e condizioni}{13}{subsection.1.26}%
+\contentsline {subsection}{\numberline {1.27}\boldmath Dato un sistema a tempo continuo $(A, B, C, D)$ con $D = 0$, $\Lambda $ l'insieme degli autovalori, $\Lambda _e$ e $\Lambda _o$ gli insiemi degli autovalori associati ai modi eccitabili e osservabili. Dimostrare che $\Lambda _e \DOTSB \bigcap@ \slimits@ \Lambda _o = \emptyset \DOTSB \Relbar \joinrel \Rightarrow W(t) = 0$}{13}{subsection.1.27}%
+\contentsline {subsection}{\numberline {1.28}Il ruolo dell'osservabilità nella ricostruzione del comportamento interno}{14}{subsection.1.28}%
+\contentsline {subsection}{\numberline {1.29}W(t), W(s) e W($j\omega $): cosa rappresentano e qual è il loro significato fisico.}{14}{subsection.1.29}%
+\contentsline {section}{\numberline {2}Dimostrazioni di risposte a regime permanente}{14}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Risposta a regime permanente ad ingressi sinusoidali per sistemi a tempo continuo}{14}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}\boldmath Dimostrare la formula della risposta a regime permanente all'ingresso $u(k) = sin(\theta k)$ per un sistema a tempo discreto.}{14}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}\boldmath Si dimostri che, se esiste, la risposta a regime permanente a $u(t) = \delta _{-1}(t)$(ingresso a gradino) è uguale al guadagno del sistema}{15}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Dimostrare che la funzione di trasferimento W(s) non dipende dalla scelta delle coordinate}{15}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Risposta a regime permanente per sistemi a tempo discreto}{15}{subsection.2.5}%
