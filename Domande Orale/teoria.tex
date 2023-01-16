@@ -306,16 +306,6 @@ Così modellato risulta evidente che tutti i modi eccitabili sono quelli legati 
 cioè quelli nel sottosistema interamente raggiungibile.
 
 
-\subsection{La risposta a regime permanente: definizione e condizioni di esistenza}
-La risposta a regime permanente è la funzione intorno alla quale tende la risposta di un sistema
-in presenza di un ingresso persistente e indipendentemente dallo stato iniziale.
-Si può scrivere come:
-\[\lim_ {t_0 \to -\infty} \int_{t_0}^{t} W(t-\tau)u(\tau) d\tau  \]
-
-Affinché esista deve essere assicurata la sommabilità della funzione integranda,
-vale a dire che è necessaria la \textbf{limitatezza delle evoluzioni interne (Stabilità asintotica)}
-e quindi tutti gli autovalori del sistema devono avere parte reale negativa.
-
 
 \subsection{I modi naturali dei sistemi lineari a tempo continuo: definizione e parametri caratteristici}
 
@@ -595,11 +585,7 @@ In corrispondenza di ogni autovalore reale è possibile calcolare tanti autovett
 $M_A$ dello stesso e in corrispondenza di autovalori complessi e coniugati
 è possibile calcolare tanti autospazi di dimensione 2 quanta è la $M_A$
 della coppia di autovalori.
-\subsection{È possibile che un sistema abbia funzione di trasferimento uguale a zero? Se si, sotto
-quali condizioni?}
-Si, è possibile perché essendo 
-\[ W(s)=\mathscr{L}[W(t)] \quad W(t)=Ce^{At}B=\sum_{i=1}^{n}e^{\lambda i}Cu_iv_iB \]
-affinché un modo non compaia nella $W(t)$ deve essere non eccitabile oppure non osservabile.
+
 
 \subsection{Definizione di stabilità esterna e condizioni}
 La stabilità esterna è anche detta stbilità ingresso-uscita
@@ -645,6 +631,18 @@ di assegnazione degli autovalori con retroazione dallo stato.
 -W($j\omega$) è la risposta armonica e descrive il comportamento in  frequenza di un sistema e allo stesso tempo consente di dare alla funzione di trasferimento un'interpretazione fisica. Il modulo e la fase della risposta armonica, per una data pulsazione, rendono conto del comportamento a regime permanente a quella pulsazione.
 
 \section{Dimostrazioni di risposte a regime permanente}
+
+
+\subsection{La risposta a regime permanente: definizione e condizioni di esistenza}
+La risposta a regime permanente è la funzione intorno alla quale tende la risposta di un sistema
+in presenza di un ingresso persistente e indipendentemente dallo stato iniziale.
+Si può scrivere come:
+\[\lim_ {t_0 \to -\infty} \int_{t_0}^{t} W(t-\tau)u(\tau) d\tau  \]
+
+Affinché esista deve essere assicurata la sommabilità della funzione integranda,
+vale a dire che è necessaria la \textbf{limitatezza delle evoluzioni interne (Stabilità asintotica)}
+e quindi tutti gli autovalori del sistema devono avere parte reale negativa.
+
 
 \subsection{Risposta a regime permanente ad ingressi sinusoidali per sistemi a tempo continuo}
 La risposta a regime permanente è quell'andamento
@@ -716,7 +714,11 @@ modi osservabili siano asintoticamente stabili (cioè che i corrispondenti autov
 il sistema sia esternamente stabile nello stato zero (modulo inferiore ad uno dei
 poli della funzione di trasferimento).
 
-
+\subsection{È possibile che un sistema abbia funzione di trasferimento uguale a zero? Se si, sotto
+quali condizioni?}
+Si, è possibile perché essendo 
+\[ W(s)=\mathscr{L}[W(t)] \quad W(t)=Ce^{At}B=\sum_{i=1}^{n}e^{\lambda i}Cu_iv_iB \]
+affinché un modo non compaia nella $W(t)$ deve essere non eccitabile oppure non osservabile.
 
 
 \end{document}
