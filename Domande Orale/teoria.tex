@@ -41,14 +41,15 @@
 
 
 \begin{document}
-
+\large
 \maketitle
 
-\large
+%\large
 \tableofcontents{}
 
 
 \section{Domande di Teoria}
+
 \subsection{Sistema a tempo discreto equivalente ad un dato sistema a tempo continuo}
 Dato il sistema $S_{tc}$ con ingresso $u(t)$ e uscita $y(t)$, il mio obiettivo è poterlo trattare come se fosse a tempo discreto, cioè in maniera tale
 che possa accettare un ingresso discreto $u_d(t)$ e che produca un'uscita $y_d(t)$.
@@ -91,6 +92,27 @@ Il sistema a tempo discreto equivalente, detto $T_c$ il tempo di campionamento �
     y(k)=C_d (k) + D_d(k)
 \end{cases}
 \]
+
+
+\subsection{Dato un sistema in forma esplicita, dimostra che il sistema è lineare}
+Una funzione di variabili reali $f$ è lineare se, dati due punti qualunque
+$x$ e $y$, e due costanti $a$ e $b$ anch'esse arbitrarie, si ha che $f(ax+by)=af(x)+bf(y)$.
+
+La rappresentazione esplicita di un sistema è 
+\[ x(t) = \Phi(t)x_0 +\int_{0}^{t} H(t-\tau) u(\tau) d \tau
+\]
+La funzione di stato negli appunti di non so chi è
+\[ \Psi \left(t_0-t,x(t),\left.u(t)\right|_{(t_0,t]}\right) \]
+La linearità è rispetto allo stato e all'ingresso 
+(non sto per scrivere una dimostrazione, è solo boh far vedere i passaggi)
+\
+\begin{align*}
+    \Psi \left(t_0-t,\alpha x_1(t)+\beta x_2(t),\alpha\left.u_1(t)\right|_{(t_0,t]}+\beta\left.u_2(t)\right|_{(t_0,t]}\right) &=\\
+    = \alpha\Psi \left(t_0-t,x_1(t),\left.u_1(t)\right|_{(t_0,t]}\right)+\beta\Psi \left(t_0-t,x_2(t),\left.u_2(t)\right|_{(t_0,t]}\right) &,\\
+    \Psi \left(t_0-t,x_1(t),\left.u_2(t)\right|_{(t_0,t]}\right) & = \underbrace{\Psi\left(t-t_0,x_1(t),0\right)}_{\text{evoluzione libera}}+
+    \underbrace{\Psi\left(t-t_0,0,\left.u_2(t)\right|_{(t_0,t]}\right)}_{\text{evoluzione forzata}}
+\end{align*}
+
 
 \subsection{Rappresentazione per sistemi a tempo discreto}
 Il sistema nel tempo ha la rappresentazione:
@@ -139,64 +161,6 @@ Con queste definizioni posso scrivere:
 \end{cases}\\
 \]
 
-\subsection{Definizione punto di equilibrio}
-Consideriamo il sistema deifnito dall'equazione di stato: $ \overset{\cdot}{x} = f(x(t),u(t)) $, un punto di 
-equilibrio $x_e$ del sistema è definito dal fatto che $f(x_e,u_e) = 0$ per qualche $u_e$.
-
-Ci limitiamo allo studio del caso in cui $u_e = 0$.
-
-Quindi un sistema ammette punti di equilibrio se esistono soluzioni al sistema :$f(x_e,0) = 0$.
-
-Consideriamo lo studio di un punto $x_o$ vicino a $x_e$, ci sono tre possibilità:
-\begin{enumerate}
-    \item Il sistema rimane in un intorno di $x_e$ ( stabilità semplice)
-    \item Il sistema tende a $x_e$ (stabilità asintotica)
-    \item Il sistema diverge (instabilità)
-\end{enumerate}
-
-\subsection{Definizione formale di stabilità di un punto di equilibrio}
-
-Preso un punto di equilibrio $x_e$ , questo è stabile
-\textbf{semplicemente} se:
-comunque scegliamo un intorno di questo punto $(∀ε > 0)$, esiste sempre un intorno
-(più piccolo) di quel punto
-$(∃δ(ε) > 0)$ tale che, se scegliamo un punto $x_o $ in questo intorno
-$(‖x_o − x_e ‖ ≤ δ(ε))$, si avrà che l'evoluzione del sistema nel tempo rimarrà
-sempre $(∀t ≥ 0)$ nell'intorno di raggio $ε (‖x(t) - x_e ‖ ≤ ε)$.
-\[
-\forall \varepsilon>0 \exists \delta(\varepsilon) : ||x_0-x_e||<\delta(\varepsilon) \Longrightarrow ||x(t)-x_e||\le \varepsilon \forall t\ge 0    
-\]
-È invece stabile \textbf{asintoticamente} se è stabile semplicemente e inoltre al passare del tempo la distanza dei due punti diminuisce:
-\[
-\forall \varepsilon>0 \exists \delta(\varepsilon)>0 : ||x_0-x_e|| \le \delta(\varepsilon)\Longrightarrow ||x(t)-x_e|| \le \varepsilon \forall t\ge0 \and
-\lim_{t\to\infty}||x(t)-x_e|| = 0 
-\]
-
-
-
-\subsection{Definizione, condizioni e criteri di stabilità interna per sistemi lineari:}
-Un sistema è stabile se reagisce in modo positivo all'effetto delle perturbazioni,
-nel senso di contenere l'effetto dell'evoluzione libera. 
-
-Per un sistema lineare $\overset{\cdot}{x}(t)=Ax(t)+B u(t)$,
-gli stati di equilibrio sono quelli che soddisfano
-l'equazione: $\overset{\cdot}{x} = A x_e = 0$, sicuramente verificata per $x_e=0$ e quindi l'origine dello spazio di stato è sempre
-lo stato di equilibrio.
-
-Esso è unico se e solo se la matrice dinamica è invertibile  $(det(A)\neq 0)$.
-Le proprietà di una stato di equilibrio sono equivalenti a quelle di ogni altro (per cui si ha la possibilità di limitare lo studio allo stato zero);
-come conseguenza si parla di stabilità interna come di una proprietà del sistema e non di un particolare stato di equilibrio.
-
-Le condizioni di stabilità sono:
-\begin{itemize}
-    \item Un sistema è \textbf{semplicemente stabile} se e solo se, preso un valore k finito si ha che ${|e^{At}|\leq k}$ .
-    Questa condizione richiede che tutti gli autovalori abbiano
-    parte reale minore o uguale a zero se semplici (molteplicià unitaria), e minore di zero se a molteplicità maggiore.
-    \item Un sistema è \textbf{asintoticamente stabile} se e solo se è stabile semplicemente,
-    e inoltre \(\displaystyle \lim_{t \to\infty }|e^{At}|=0 \), quindi gli autovalori devono essere tutti strettamente minori di 0.
-\end{itemize}
-
-Lo studio della \textbf{STABILITÀ INTERNA} si riduce allo studio della stabilità dell'origine: implica la stabilità di tutti i modi.
 
 \subsection{Definizione smorzamento e pulsazione naturale}
 Nel caso di autovalori complessi, cioè con una $W(s)$ che abbia  al denominatore 
@@ -235,7 +199,6 @@ Se ho che $K(s)$ è una matrice razionale strettamente propria posso quindi riso
 
 Le radici del denominatore di $W(s)$ sono dette poli della funzione, sono un sottoinsieme degli autovalori della matrice dinamica del sistema.
 In particolare sono gli autovalori simultaneamente osservabili ed eccitabili.
-
 
 
 \subsection{Scomposizione canonica rispetto alla raggiungibilità}
@@ -281,6 +244,7 @@ Dimostro che un modo è eccitabile se $v_i'B\neq 0$:
 \[ e^{At}B = \sum_{i=1}^{n}e^{\lambda_i t} u_i v_i'B \]
 È evidente che se  $v_i'B = 0$ il modo non può comparire nella risposta impulsiva dello stato
 
+
 \subsection{Legame tra raggiungibilità del sistema e eccitabilità dei modi}
 
 Un sistema non interamente raggiungibile è modellabile come l'interconnessione tra un sistema
@@ -304,7 +268,6 @@ C_1 & C_2
 
 Così modellato risulta evidente che tutti i modi eccitabili sono quelli legati alle matrici $A_{11}$ e $B_1$,
 cioè quelli nel sottosistema interamente raggiungibile.
-
 
 
 \subsection{I modi naturali dei sistemi lineari a tempo continuo: definizione e parametri caratteristici}
@@ -402,12 +365,10 @@ L'insieme degli stati inosservabili è
 Definita la matrice di osservabilità :
 \[O = \begin{pmatrix}C\\...\\CA^{n-1}\end{pmatrix}\]
 L' insieme degli stati inosservabili nel tempo discreto è:
-\[\mathfrak{I} = \left\{ x\in\mathbb{R}^n | Ce^{At}=0\ \forall\ t > 0 = ker(O)\right\}\]
+\[\mathfrak{I} = \left\{ x\in\mathbb{R}^n | CA^t=0\ \forall\ t > 0 = ker(O)\right\}\]
 
-
-Nel tempo discreto, se uno stato non è osservabile nei primi n passi certamente dopo non sarà osservabile,
-per il teorema di Cayley-Hamilton rimarrà non osservabile.
-
+Per Cayley-Hamilton ho che $Cx_I=0,CAx_I=0,...,CA^{n-1}x_I=0 \Longrightarrow CA^kx_i = \forall k>n$
+Nel tempo discreto, se uno stato non è osservabile nei primi n passi certamente dopo rimarrà inosservabile.
 
 
 \subsection{Per un sistema tempo discreto dimostrare che l'insieme degli stati inosservabili è :}
@@ -421,18 +382,13 @@ Considero ora il caso k=1: $y_L(k)=CAx_0$ e
 \[
      CAx_0=0 \Longleftrightarrow x(0) \in Ker(CA)
 \]
-Quindi per il generico passo $k$ gli stati inosservabili appartengono a $Ker(CA^{n-1})$.
-
-Per un sistema lineare l'insieme degli stati inosservabili è dato quindi da tutti gli stati
+Quindi per il generico passo $k$ gli stati inosservabili appartengono a $Ker(CA^{k})$.
+Per Cayley-Hamilton ho che $Cx_I=0,CAx_I=0,...,CA^{n-1}x_I=0 \Longrightarrow CA^kx_i = \forall k>n$ e quindi 
+per un sistema lineare l'insieme degli stati inosservabili è dato quindi da tutti gli stati
 che non si osservano in nessuno dei passi, quindi: 
 \[
     I=Ker \begin{pmatrix}C\\CA\\...\\CA^{n-1}\end{pmatrix}
 \]
-
-
-
-
-
 
 
 \subsection{Definizione di raggiungibilità di uno stato; caratterizzare l'insieme degli stati raggiungibili per sistemi dinamici lineari stazionari; confrontare il caso tempo continuo e tempo discreto}
@@ -452,7 +408,8 @@ e se uno stato non si riesce a raggiungere in $n$ passi allora non si può più 
 
 \subsection{Un sistema dinamico può esser rappresentato tramite un modello implicito o esplicito. \\
 (a) Illustrare i diversi vantaggi e svantaggi delle due rappresentazioni; \\
-(b) Per sistemi a tempo discreto lineari e stazionari, indicare i passaggi matematici che permettono di passare da una rappresentazione all'altra e viceversa.
+(b) Per sistemi a tempo discreto lineari e stazionari, indicare i passaggi matematici che permettono
+di passare da una rappresentazione all'altra e viceversa.
 }
 Un sistema implicito ha una struttura del tipo:
 $$
@@ -478,8 +435,6 @@ Arrivo a quella implicita sapendo che
 \[ A = \lim_{t\to 0}\frac{\partial }{\partial t}\Phi(t) \quad,\quad B = H(0) \]
 
 
-
-
 \subsection{Dimostrazione passaggio da forma esplicita a implicita}
 
 \begin{align*}
@@ -491,7 +446,6 @@ Arrivo a quella implicita sapendo che
 \end{align*}
 
 \[ A = \left.\frac{d}{dt}\Phi(t)\right|_{0} \quad,\quad B = \left.H(t)\right|_{0} \]
-
 
 
 \subsection{\boldmath Dimostrazione che data un'evoluzione da $x(t_0)$ a $x(t)$, vale la stessa da $x(t_1)$ con $<t_0<t_1<t$}
@@ -535,19 +489,6 @@ Da cui finalmente posso dire che
 \[ H(0)u(t) = Bu(t) \Rightarrow H(0) = B \]
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 \subsection{Definizione di guadagno e interpretazione fisica}
 Il guadagno è il fattore costante che compare nella forma di Bode della funzione di trasferimento,
 esso è definito per ogni elemento ed è pari al valore che assume la $W(s)$
@@ -556,6 +497,7 @@ Il guadagno della funzione di trasferimento di un sistema ha,
 nel caso in cui esista la risposta a regime permanente,
 il significato fisico di valore di regime della risposta al gradino unitario,
 cioè $W(s)|_{s=0}$.
+
 
 \subsection{Definizione di raggiungibilità ed inosservabilità; caratterizzazione e proprietà degli insiemi di tali stati}
 L'osservabilità riguarda il comportamento stato-uscita.
@@ -576,6 +518,7 @@ L'insieme degli stati raggiungibili è denotato con $\mathcal{R}$, cioè :
 \quad \mathcal{R}=
 Im(B\ AB\ .....\ A^{n-1}B)\]
 
+
 \subsection{Può un sistema lineare essere caratterizzato da modi naturali aventi la stessa legge di moto?}
 Si, se la matrice A ha autovalori coincidenti ma è regolare $(M_G=1)$,
 si hanno in corrispondenza di ogni autovalore con molteplicità algebrica $>1$,
@@ -587,22 +530,6 @@ $M_A$ dello stesso e in corrispondenza di autovalori complessi e coniugati
 della coppia di autovalori.
 
 
-\subsection{Definizione di stabilità esterna e condizioni}
-La stabilità esterna è anche detta stbilità ingresso-uscita
-ed è una proprietà che indica come un sistema risponde
-a fronte di ingressi limitati.
-
-Le condizioni affinché un sistema sia stabile esternamente sono:
-\begin{itemize}
-\item Condizione Necessaria: \textbf{Stabilità esterna nello stato zero}:
-\(\displaystyle \int_{0}^{t} |W(\tau)d\tau|< K\ \forall\ t\),
-quindi gli autovalori che sono simultaneamente eccitabili e osservabili
-devono avere parte reale negativa.
-\item Condizione Sufficiente: $|\Psi|<k\ \forall t$,
-quindi gli autovalori osservabili in uscita devono essere a parte
-reale strettamente negativa se con molteplicità geometrica maggiore di 1,
-o parte reale non positiva se con molteplicità geometrica pari a 1.
-\end{itemize}
 
 \subsection{\boldmath Dato un sistema a tempo continuo $(A, B, C, D)$ con $D = 0$, $\Lambda$
 l'insieme degli
@@ -610,7 +537,8 @@ autovalori, $\Lambda_e$ e $\Lambda_o$ gli insiemi degli autovalori associati ai 
 osservabili. Dimostrare che $\Lambda_e  \bigcap\Lambda_o = \emptyset \Longrightarrow W(t) = 0$}
 
 La risposta impulsiva dipende dalla matrice delle risposte impulsive
-$W(t)=Ce^{At}B=\sum_{i=1}^{n}C u_i v_i' B$.
+\(\displaystyle W(t)=Ce^{At}B=\sum_{i=1}^{n}C u_i v_i' B\).
+
 In questa rappresentazione $C u_i$ è non nulla solo per i modi osservabili,
 e $v_i'B$ è non nulla solo per i modi eccitabili,
 quindi se un autovalore non è osservabile $(Cu_i=0)$ o non è eccitabile $(v_iB=0)$
@@ -624,11 +552,248 @@ ruolo della proprietà di raggiungibilità nel problema
 di assegnazione degli autovalori con retroazione dallo stato.
 
 
-
 \subsection{W(t), W(s) e W($j\omega$): cosa rappresentano e qual è il loro significato fisico.}
 -W(t) è la matrice delle risposte impulsive in uscita e descrive il comportamento forzato ingresso-uscita. Permette di calcolare la risposta forzata ad un ingresso u(t) andando ad eseguire l'integrale di convoluzione $Y_F(t)=\int_{t_0}^{t} W(t-\tau)u(\tau)d\tau $\\
 -W(s) è la trasformata di Laplace di W(t) ed è detta funzione di trasferimento, è un modello forzato di un sistema dinamico lineare stazionario. Conoscendo W(s) si può calcolare una qualsiasi risposta forzata ad un dato ingresso.\\
 -W($j\omega$) è la risposta armonica e descrive il comportamento in  frequenza di un sistema e allo stesso tempo consente di dare alla funzione di trasferimento un'interpretazione fisica. Il modulo e la fase della risposta armonica, per una data pulsazione, rendono conto del comportamento a regime permanente a quella pulsazione.
+
+\subsection{Enunciato e dimostrazione teorema di Nyquist}
+Condizione necessaria e sufficiente per la stabilità asintotica di un sistema a retroazione unitaria e che il numero di 
+giri che il vettore rappresentativo di $1+F(j\omega)$ compie attorno allo 0 (ossia i giri che fa $F(j\omega)$ attorno a -1),
+sia uguale al numero di autovalori a parte reale positiva del sistema a anello aperto.
+
+\subsubsection{Dimostrazione:}
+Dato il sistema 
+\[S = \begin{cases} \overset{\cdot}{x} = Ax+Bu\\ y = Cx \end{cases}\]
+e introducendo una controreazione unitaria all'uscita $u = -y +v$ viene:
+\[S_{CH} = \begin{cases} \overset{\cdot}{x} = (A-BC)x+Bv\\ y = Cx \end{cases}\]
+Il sistema $S$ lo chiamiamo a anello aperto e $S_{CH}$ a anello chiuso.
+
+Ora poniamo $d_{AP}(s) = |sI-A|$ (il denominatore di $F(s)$) e $d_{CH}(s) = |sI-A+BC|$ il denominatore
+(polinomio caratteristico)
+della funzione di trasferimento a anello chiuso.
+
+Come sappiamo il sisterma complessivo è stabile se $d_{CH}$ non ha radici a parte reale positiva,
+inoltre è dimostrabile che vale la:
+\begin{equation}\label{Rapporto}
+  \frac{d_{CH}(s)}{d_{AP}(s)} =   |I +C(sI - A)^{-1}B| = |I+F(s)|
+\end{equation}
+infatti a partire da 
+\begin{align*}
+    |sI-A+BC| &=& |sI-A||I +(sI - A)^{-1}BC|\\
+                &=&|sI-A||I +C(sI - A)^{-1}B|
+\end{align*}
+mi viene
+
+\[
+    \frac{d_{CH}(s)}{d_{AP}(s)}    = \frac{|sI-A+BC|}{|sI-A|} = \frac{|sI-A||I +C(sI - A)^{-1}B|}{|sI-A|}
+\]
+(che dimostra la (\ref{Rapporto})).
+
+Ora consideriamo un polinomio generico $p(s)$ di grado $n$ con le matrici $p_{1,2,..}$.
+Ponendo $s = j\omega$ viene 
+\[ 
+    p(j\omega) = {k(j\omega-p_1)...(j\omega - p_n)}
+\]
+Inizialmente studio il caso in cui non ci siano radici nulle:
+Ogni fattore $j\omega - p_i$ è rappresentabile nel piano complesso come un vettore tra $p_i$ e $j\omega$.
+
+Ora consideriamo due poli, uno con parte reale positiva $p_i$ e uno negativa $p_j$  con i vettori associati.
+
+\incfig{pipj.jpeg}{0.5}
+
+Facendo variare $\omega$ da $-\infty$ a $+\infty$ gli estremi dei vettori variano posizionandosi
+sull'asse immaginario sempre più su. Quindi si può dire che per $\omega=-\infty$ i vettori sono entrambi verticali verso il basso,
+e per $\omega=\infty$ verso l'alto.
+
+Da questa consapevolezza cosa posso ricavare? Che per i poli positivi passare da $\omega=-\infty$ a $\omega=\infty$
+significa far fare al vettore un giro di $-\pi$, mentre per quelli negativi un giro di $\pi$.
+
+Ora definiamo come $\Delta_{\varphi}(p)$ la variazione di fase dell'intero polinomio
+quando $\omega$ varia da $-\infty$ a $\infty$: indicando con $n_p$ il numero di radici a parte reale positiva di $p(s)$
+è verificata la:
+\begin{equation}\label{varphi}
+    \Delta_{\varphi}(p) = (n-n_p)\pi-n_p\pi=n\pi-2\pi n_p
+\end{equation}
+
+Ora riscrivendo la (\ref{Rapporto}) calcolando in $s = j\omega$ e calcolando le variazioni di fase,
+viene:
+\[
+\Delta_{\varphi}\left(\frac{d_{CH}(j\omega)}{d_{AP}(j\omega)} \right)= \Delta_{\varphi}\left(|I+F(j\omega)|\right)
+\]
+Sapendo le proprietà del prodotto tra fasi questa la riscriviamo come
+\[
+    \Delta_{\varphi}\left(\frac{d_{CH}(j\omega)}{d_{AP}(j\omega)} \right)=
+    \Delta_{\varphi}(d_{CH}(j\omega))-\Delta_{\varphi}(d_{AP}(j\omega))
+\]
+Ora, applicando la (\ref{varphi}) a entrambi i polinomi, indicando $Z_p$ il numero di a radici parte reale positiva
+di $d_{CH}(j\omega)$ e con $P_p$ quello di $d_{AP}(j\omega)$ viene
+\[
+    \Delta_{\varphi}\left(\frac{d_{CH}(j\omega)}{d_{AP}(j\omega)} \right)=
+    (n\pi-2\pi Z_p)-(n\pi-2\pi P_p)=2\pi(Z_p-P_p)
+\]
+Quindi a partire dal diagramma polare di $|1+F(s)|$ è possibile determinare quanti giri 
+fa il vettore della funzone attorno allo zero. Indicando questo numer con $N$,
+(positivo se le rotazioni sono antirorarie e negativo altrimenti) mi viene:
+\[
+\Delta_{\varphi}(1+F(j\omega))=2\pi N    
+\]
+e quindi la (\ref(varphi)) si riscrive come 
+\[
+    2\pi(Z_p-P_p)=2\pi N \quad \Longrightarrow \quad P_p-Z_p = N
+\]
+Ovviamente il sistema è asintoticamente stabile solo se $Z_p=0$ e quindi 
+\[N= P_p\quad\quad \text{è quello che volevo dimostrare}\]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Stabilità}
+
+\subsection{Definizione punto di equilibrio}
+Consideriamo il sistema deifnito dall'equazione di stato: $ \overset{\cdot}{x} = f(x(t),u(t)) $, un punto di 
+equilibrio $x_e$ del sistema è definito dal fatto che $f(x_e,u_e) = 0$ per qualche $u_e$.
+
+Ci limitiamo allo studio del caso in cui $u_e = 0$.
+
+Quindi un sistema ammette punti di equilibrio se esistono soluzioni al sistema :$f(x_e,0) = 0$.
+
+Consideriamo lo studio di un punto $x_o$ vicino a $x_e$, ci sono tre possibilità:
+\begin{enumerate}
+    \item Il sistema rimane in un intorno di $x_e$ ( stabilità semplice)
+    \item Il sistema tende a $x_e$ (stabilità asintotica)
+    \item Il sistema diverge (instabilità)
+\end{enumerate}
+
+
+\subsection{Definizione formale di stabilità di un punto di equilibrio}
+
+Preso un punto di equilibrio $x_e$ , questo è stabile
+\textbf{semplicemente} se:
+comunque scegliamo un intorno di questo punto $(∀ε > 0)$, esiste sempre un intorno
+(più piccolo) di quel punto
+$(∃δ(ε) > 0)$ tale che, se scegliamo un punto $x_o $ in questo intorno
+$(‖x_o - x_e ‖ \le \delta(\varepsilon))$, si avrà che l'evoluzione del sistema nel tempo rimarrà
+sempre $(∀t ≥ 0)$ nell'intorno di raggio $ε (‖x(t) - x_e ‖ ≤ ε)$.
+\[
+\forall \varepsilon>0 \exists \delta(\varepsilon) : ||x_0-x_e||<\delta(\varepsilon) \Longrightarrow ||x(t)-x_e||\le \varepsilon \forall t\ge 0    
+\]
+È invece stabile \textbf{asintoticamente} se è stabile semplicemente e inoltre al passare del tempo la distanza dei due punti diminuisce:
+\[
+\forall \varepsilon>0 \exists \delta(\varepsilon)>0 : ||x_0-x_e|| \le \delta(\varepsilon)\Longrightarrow ||x(t)-x_e|| \le \varepsilon \forall t\ge0 \and
+\lim_{t\to\infty}||x(t)-x_e|| = 0 
+\]
+
+
+\subsection{Definizione, condizioni e criteri di stabilità interna per sistemi lineari:}
+Un sistema è stabile se reagisce in modo positivo all'effetto delle perturbazioni,
+nel senso di contenere l'effetto dell'evoluzione libera. 
+
+Per un sistema lineare $\overset{\cdot}{x}(t)=Ax(t)+B u(t)$,
+gli stati di equilibrio sono quelli che soddisfano
+l'equazione: $\overset{\cdot}{x} = A x_e = 0$, sicuramente verificata per $x_e=0$ e quindi l'origine dello spazio di stato è sempre
+lo stato di equilibrio.
+
+Esso è unico se e solo se la matrice dinamica è invertibile  $(det(A)\neq 0)$.
+Le proprietà di una stato di equilibrio sono equivalenti a quelle di ogni altro (per cui si ha la possibilità di limitare lo studio allo stato zero);
+come conseguenza si parla di stabilità interna come di una proprietà del sistema e non di un particolare stato di equilibrio.
+
+Le condizioni di stabilità sono:
+\begin{itemize}
+    \item Un sistema è \textbf{semplicemente stabile} se e solo se, preso un valore k finito si ha che ${|e^{At}|\leq k}$ .
+    Questa condizione richiede che tutti gli autovalori abbiano
+    parte reale minore o uguale a zero se semplici (molteplicià unitaria), e minore di zero se a molteplicità maggiore.
+    \item Un sistema è \textbf{asintoticamente stabile} se e solo se è stabile semplicemente,
+    e inoltre \(\displaystyle \lim_{t \to\infty }|e^{At}|=0 \), quindi gli autovalori devono essere tutti strettamente minori di 0.
+\end{itemize}
+
+Lo studio della \textbf{STABILITÀ INTERNA} si riduce allo studio della stabilità dell'origine: implica la stabilità di tutti i modi.
+
+
+\subsection{Relazioni tra stabilità esterna e interna}
+\begin{enumerate}
+    \item stabilità interna $\Longrightarrow$ stabilità esterna.
+    \item stabilità esterna $\Longrightarrow$ stabilità esterna nello stato zero.
+    \item stabilità esterna nello stato zero $\Longrightarrow$ stabilità esterna se tutti i modi sono eccitabili
+    \item stabilità esterna $\Longrightarrow$
+    stabilità interna asintotica se tutti i modi sono eccitabili e osservabili.
+    \item stabilità esterna $\Longrightarrow$ 
+    stabilità interna semplice se tutti i modi sono e osservabili.
+\end{enumerate}
+
+
+\subsection{Stabilità esterna nello stato zero}
+Se è verificata la condizione: "$y \text{ limitata} \Longrightarrow u \text{ limitato}$" allora si parla di stabilità esterna.
+Un sistema è stabile nello stato zero se e solo se \(\displaystyle \int_{0}^{t}||W(\tau)||d\tau < k \ \forall t \).
+
+Ovvero la norma della funzione di trasferimento deve essere sommabile nell' inter-
+vallo considerato. Considerando il punto di vista degli autovalori la condizione può
+esprimersi come: \textit{gli autovalori che sono simultaneamente eccitabili ed osservabili
+devono essere a parte reale negativa.}
+
+
+\subsection{Definizione di stabilità esterna e condizioni}
+La stabilità esterna è anche detta stbilità ingresso-uscita
+ed è una proprietà che indica come un sistema risponde
+a fronte di ingressi limitati.
+
+Le condizioni necessarie e sufficienti affinché un sistema sia stabile esternamente sono:
+\begin{itemize}
+\item  \textbf{Stabilità esterna nello stato zero}:
+\(\displaystyle \int_{0}^{t} |W(\tau)d\tau|< K\ \forall\ t\),
+quindi gli autovalori che sono simultaneamente eccitabili e osservabili
+devono avere parte reale negativa.
+\item $|\Psi(t)|<k\ \forall t$,
+quindi \textit{gli autovalori osservabili in uscita devono essere a parte
+reale strettamente negativa se con molteplicità geometrica maggiore di 1,
+o parte reale non positiva se con molteplicità geometrica pari a 1.}
+\end{itemize}
+
+
 
 \section{Dimostrazioni di risposte a regime permanente}
 
@@ -666,8 +831,8 @@ Considero inizialmente l'ingresso $u(k)=e^{j \theta k}$ e ottengo:
     Y_r(k)=\sum_{\tau =- \infty}^{k} W(k-\tau)e^{-j\theta \tau}, \quad \text{ora pongo }\quad k-\tau=\xi
 \]
 Così viene:
-\[ Y_r(k)=\sum_{\xi =0}^{\infty} W(\xi)e^{j\theta (k-\xi)} = e^{-j\theta k} \sum_{\xi =0}^{\infty} W(\xi)e^{-j\theta \xi}
-= e^{-j\theta k} W(Z)|_{e^{j \theta}} \].
+\[ Y_r(k)=\sum_{\xi =0}^{\infty} W(\xi)e^{j\theta (k-\xi)} = e^{j\theta k} \sum_{\xi =0}^{\infty} W(\xi)e^{-j\theta \xi}
+= e^{j\theta k} W(Z)|_{e^{j \theta}} \].
 Di conseguenza la risposta a regime permanente a questo ingresso è:
 
 $Y_r(k)=e^{j \theta k}W(e^{j \theta})$.
