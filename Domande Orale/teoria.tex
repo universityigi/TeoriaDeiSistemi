@@ -557,6 +557,68 @@ di assegnazione degli autovalori con retroazione dallo stato.
 -W(s) è la trasformata di Laplace di W(t) ed è detta funzione di trasferimento, è un modello forzato di un sistema dinamico lineare stazionario. Conoscendo W(s) si può calcolare una qualsiasi risposta forzata ad un dato ingresso.\\
 -W($j\omega$) è la risposta armonica e descrive il comportamento in  frequenza di un sistema e allo stesso tempo consente di dare alla funzione di trasferimento un'interpretazione fisica. Il modulo e la fase della risposta armonica, per una data pulsazione, rendono conto del comportamento a regime permanente a quella pulsazione.
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Stabilità}
+
+\subsection{Studiare la stabilità di un sistema non lineare}
+Prendiamo il sistema 
+\[
+\begin{cases}
+    \overset{\cdot}{x} = f(x(t),u(t))\\
+    y(t) = h(x(t),u(t))
+\end{cases}    
+\]
+con $x\in\mathbb{R}^n,u\in\mathbb{R}^p,y\in\mathbb{R}^q,f:\mathbb{R}^nx\mathbb{R}^p\to\mathbb{R}^n,h:\mathbb{R}^nx\mathbb{R}^p\to\mathbb{R}^q$
+
+Dato che la permanenza in unos stato è determinata dall'assenza di variazioni, un punto di equilibrio
+è un punto $x_e$ tale che $f(x_e,u) = 0$ per qualche u.
+E basta, le definizioni di stabilità sono le solite.
+
+
 \subsection{Enunciato e dimostrazione teorema di Nyquist}
 Condizione necessaria e sufficiente per la stabilità asintotica di un sistema a retroazione unitaria e che il numero di 
 giri che il vettore rappresentativo di $1+F(j\omega)$ compie attorno allo 0 (ossia i giri che fa $F(j\omega)$ attorno a -1),
@@ -638,61 +700,13 @@ fa il vettore della funzone attorno allo zero. Indicando questo numer con $N$,
 \[
 \Delta_{\varphi}(1+F(j\omega))=2\pi N    
 \]
-e quindi la (\ref(varphi)) si riscrive come 
+e quindi la (\ref{varphi}) si riscrive come 
 \[
     2\pi(Z_p-P_p)=2\pi N \quad \Longrightarrow \quad P_p-Z_p = N
 \]
 Ovviamente il sistema è asintoticamente stabile solo se $Z_p=0$ e quindi 
 \[N= P_p\quad\quad \text{è quello che volevo dimostrare}\]
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\section{Stabilità}
 
 \subsection{Definizione punto di equilibrio}
 Consideriamo il sistema deifnito dall'equazione di stato: $ \overset{\cdot}{x} = f(x(t),u(t)) $, un punto di 
