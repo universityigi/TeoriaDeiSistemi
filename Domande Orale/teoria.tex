@@ -85,65 +85,17 @@ La rappresentazione esplicita di un sistema è
 \[ x(t) = \Phi(t)x_0 +\int_{0}^{t} H(t-\tau) u(\tau) d \tau
 \]
 La funzione di stato negli appunti di non so chi è
-\[ \Psi \left(t_0-t,x(t),\left.u(t)\right|_{(t_0,t]}\right) \]
+\[ \Psi \left(t_0-t,x_0,\left.u(t)\right|_{(t_0,t]}\right) \]
 La linearità è rispetto allo stato e all'ingresso 
 (non sto per scrivere una dimostrazione, è solo boh far vedere i passaggi)
 \
 \begin{align*}
-    \Psi \left(t_0-t,\alpha x_1(t)+\beta x_2(t),\alpha\left.u_1(t)\right|_{(t_0,t]}+\beta\left.u_2(t)\right|_{(t_0,t]}\right) =\\
-    = \alpha\Psi \left(t_0-t,x_1(t),\left.u_1(t)\right|_{(t_0,t]}\right)+\beta\Psi \left(t_0-t,x_2(t),\left.u_2(t)\right|_{(t_0,t]}\right)
+    \Psi \left(t_0-t,\alpha x_1+\beta x_2,\alpha\left.u_1(t)\right|_{(t_0,t]}+\beta\left.u_2(t)\right|_{(t_0,t]}\right) =\\
+    = \alpha\Psi \left(t_0-t,x_1,\left.u_1(t)\right|_{(t_0,t]}\right)+\beta\Psi \left(t_0-t,x_2,\left.u_2(t)\right|_{(t_0,t]}\right)
 \end{align*}
 \[
-    \Psi \left(t_0-t,x_1(t),\left.u_2(t)\right|_{(t_0,t]}\right)  = \underbrace{\Psi\left(t-t_0,x_1(t),0\right)}_{\text{evoluzione libera}}+
+    \Psi \left(t_0-t,x_1,\left.u_2(t)\right|_{(t_0,t]}\right)  = \underbrace{\Psi\left(t-t_0,x_1,0\right)}_{\text{evoluzione libera}}+
     \underbrace{\Psi\left(t-t_0,0,\left.u_2(t)\right|_{(t_0,t]}\right)}_{\text{evoluzione forzata}}
-\]
-
-
-\subsection{Rappresentazione per sistemi a tempo discreto}
-Il sistema nel tempo ha la rappresentazione:
-\[x(t) = \Phi(t-t_0)x(t_0)+\sum_{t=t_0}^{t-1}H(t-\tau)u(\tau)\]
-Per semplificare i calcoli uso la trasformata Zeta:
-\[F(z) = \sum_{t=0}^{\infty}f(t)z^{-1}\]
-
-Passiamo dalla rappresentazione implicita del sistema:
-\[\begin{cases}
-    x(k+1)=Ax(k)+Bu(k)\\
-    x(0)=x_0
-\end{cases}
-\]
-La trasformo in $\mathcal{Z}$:
-\[
-    \begin{array}{rcl}
-        \mathcal{Z} (x(k+1))) & = & \mathcal{Z} [Ax(k)+Bu(k)] \\
-         & = & A\mathcal{Z}[x(k)]+B\mathcal{Z} [u(k)] \\
-         & = & AX(z)+BU(z)
-    \end{array}    
-\]
-e considerando che \[ \mathcal{Z}(x(t+1)) = zX(z)-zx(0) \]
-allora con la trasformata Z ottengo 
-\[
-\begin{array}{rcl}
-    \mathcal{Z} (x(k+1))) & = & \mathcal{Z} [Ax(k)+Bu(k)] \\
-    zX(z)-zx(0) & = & AX(z)+BU(z)\\
-    zX(z)-AX(z) & = & zx(0)+BU(z)\\
-    (zI-A)X(z) & = & zx(0)+BU(z)\\
-    X(z) & = & (zI-A)^{-1}zx_0+(zI-A)^{-1}BU(z))
-\end{array}
-\]
-
-dove :
-\begin{itemize}
-    \item $\Phi(z)=(zI-A)^{-1}z$
-    \item $H(z)=(zI-A)^{-1}B$
-    \item $\Psi(z)=C(zI-A)^{-1}z$
-    \item $W(z)=C(zI-A)^{-1}B+D$
-\end{itemize}
-Con queste definizioni posso scrivere:
-\[
-\begin{cases}
-    x(z)=\Phi(z)x_0+Bu(z)\\
-    y(z)=\Psi(z)x_0+W(z)u(z)
-\end{cases}\\
 \]
 
 
@@ -370,22 +322,11 @@ Con questo a mente vediamo $\overset{\sim}{A}z_I$:
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 \subsection{L'osservabilità dei sistemi lineari a tempo discreto: definizione e condizioni}
 Definita la matrice di osservabilità :
 \[O = \begin{pmatrix}C\\...\\CA^{n-1}\end{pmatrix}\]
 L' insieme degli stati inosservabili nel tempo discreto è:
-\[\mathfrak{I} = \left\{ x\in\mathbb{R}^n | CA^t=0\ \forall\ t > 0 = ker(O)\right\}\]
+\[\mathfrak{I} = \left\{ x\in\mathbb{R}^n | CA^t=0\ \forall\ t > 0\right\} = ker(O)\]
 
 Per Cayley-Hamilton ho che $Cx_I=0,CAx_I=0,...,CA^{n-1}x_I=0 \Longrightarrow CA^kx_i = \forall k>n$
 Nel tempo discreto, se uno stato non è osservabile nei primi n passi certamente dopo rimarrà inosservabile.
@@ -417,9 +358,9 @@ che porta l'evoluzione dello stato da $x_0$ a $x_r$.
 \[ \exists t_0 < T,\ \left.u\right|_{[t_0,T]}\ :\ e^{A(T-t_0)}x_0+ \int_{t_0}^{t} e^{A(t-\tau)}Bu(\tau) d\tau = x_r \]
 Per la rappresentazione lineare stazionaria viene considerato lo stato $x(t_0)=0$. 
 L'insieme degli stati raggiungibili all'istante $T$ è denotato con $\mathcal{R}(T)$ cioè :
-\[\mathcal{R}(T)=\left\{ x_r : x= \int_{t_0}^{t} e^{A(t-\tau)}Bu(\tau)d\tau
+\[\mathcal{R}(T)=\left\{ x_r : x= \int_{t_0}^{t} e^{A(t-\tau)}Bu(\tau)d\tau\right\}
 \quad, \quad
-x_r \in \mathcal{R}=Im(B\ AB ..... A^{T-1}B) \right\} \]
+x_r \in \mathcal{R}=Im(B\ AB ..... A^{T-1}B)  \]
 
 Per i sistemi a tempo continuo la raggiungibilità è differenziale e ha equivalenza con la controllabilità,
 invece nei sistemi a tempo discreto la raggiungibilità implica la controllabilità ma non viceversa,
@@ -470,7 +411,7 @@ Da cui finalmente posso dire che
 \subsection{Definizione di guadagno e interpretazione fisica}
 Il guadagno è il fattore costante che compare nella forma di Bode della funzione di trasferimento,
 esso è definito per ogni elemento ed è pari al valore che assume la $W(s)$
-in $s=0 $dopo aver eliminato l'eventuale eccesso di poli in zero.
+in $s=0$ dopo aver eliminato l'eventuale eccesso di poli in zero.
 Il guadagno della funzione di trasferimento di un sistema ha,
 nel caso in cui esista la risposta a regime permanente,
 il significato fisico di valore di regime della risposta al gradino unitario,
@@ -562,15 +503,48 @@ Nel senso che preso il sistema facico la matrice $R = (B AB A^2B)$, $\mathfrak{R
 $T^{-1} = (\mathfrak{R} .completamento)$ etc. etc.
 
 
+\subsection{Osservatore Asintotico}
+Allora io ho un sistema $S$ di cui voglio sapere lo stato ma ho solo l'uscita. Devo inventarmi un modo per stimare lo stato.
+
+Credo un nuovo sistema 
+\[
+    S_2 : \begin{cases} \overset{\cdot}{z} = Az+Bu\\
+        y = Cz 
+    \end{cases}    
+\]
+Dato che io sto cercando un sistema che mi emuli il primo, ha senso chiamare "errore" la differenza tra lo stato di uno e dell'altro:
+\[
+e = z-x \Longleftrightarrow \overset{\cdot}{e}  = \overset{\cdot}{z}-\overset{\cdot}{x} = A(z-x) = Ae  
+\]
+Io voglio ovviamente che questo errore vada a 0, infatti questo vorrebbe dire che il comportamento dei due sistemi è uguale:
+\[
+\lim_{t\to\infty}||e(t)|| = 0 \Longleftrightarrow \lim_{t\to\infty}||z(t)-x(t)|| = 0    
+\]
+
+Per risolvere il problema includo l'errore nello stato del secondo sistema:
+
+
+\[e_y = y-y_z\]
+\incfig{oss_asint.jpeg}{0.7}
+
+Così che l'equazione di stato viene:
+\[
+O : \begin{cases}
+    \overset{\cdot}{z}= Az +Bu+K(Cx-Cz) = (A-KC)z+Bu+KCx   \\
+    y_z = z
+    \end{cases}
+\]
+
+
+
 
 \section{Passaggi di Rappresentazione}
-
 
 \subsection{Un sistema dinamico può esser rappresentato tramite un modello implicito o esplicito. \\
 (a) Illustrare i diversi vantaggi e svantaggi delle due rappresentazioni; \\
 (b) Per sistemi a tempo discreto lineari e stazionari, indicare i passaggi matematici che permettono
-di passare da una rappresentazione all'altra e viceversa.
-}
+di passare da una rappresentazione all'altra e viceversa.}
+
 Un sistema implicito ha una struttura del tipo:
 $$
 \begin{cases}
@@ -618,7 +592,7 @@ Partiamo dal sistema solito
 $\overset{\cdot}{x} = Ax+Bu$ è un'equazione differenziale lineare non omogenea
 $\overset{\cdot}{x} = Ax$ è invece omogenea, e ha come soluzione generale $x(t) = ke^{At}$,
 in $t_0$ ha soluzione 
-\[ x(t_0) = e^{A(t-t_0)}x(t_0) \to k = e^{-At_0}x_0 \]
+\[ x(t_0) = ke^{A(t_0-t)} \to k = e^{A(t-t_0)}x_0 \]
 
 Per $Bu(t)$ vedo la soluzione particolare in un istante $t$ qualsiasi e con tutti i contributi da $t_0$ a $t$, cioè
 \[ \int_{t_0}^{t}e^{A(t-\tau)}Bu(\tau)d\tau \]
@@ -706,7 +680,7 @@ Il sistema a tempo discreto equivalente, detto $T_c$ il tempo di campionamento �
 Partiamo dalla rappresentazione $x(t+1) = Ax(t)+Bu(t)$ con $t_0,x(t_0)$.
 Noto $u(t_0)$ devo arrivare a: 
 \begin{equation}\label{eplsTdiscreto}
-    x(t) = \Phi(t-t_0)x(t_0)+\sum_{t=t_0}^{t-1}H(t-\tau)u(\tau)
+    x(t) = \Phi(t-t_0)x(t_0)+\sum_{\tau=t_0}^{t-1}H(t-\tau)u(\tau)
 \end{equation}
 Provando a calcolare $x(t_0+1),x(t_0+2)$ etc arrivo alla forma
 $x(t_0+k) = A^kx(t_0)+\sum_{\tau = 0}^{k-1}A^{k-\tau-1}B u(t_0+\tau)$,
@@ -718,7 +692,7 @@ di cui la prima parte è già simile a (\ref{eplsTdiscreto}).
 
 Ora poniamo $T = \tau-t_0$ e poi $\tau=T$: così mi viene:
 \[
-    x(t) =A^{t-t_0}x(t_0)+\sum{\tau=t_0}^{t-1}A^{t-\tau-1}Bu(\tau)
+    x(t) =A^{t-t_0}x(t_0)+\sum_{\tau=t_0}^{t-1}A^{t-\tau-1}Bu(\tau)
 \]
 Che è praticamente (\ref{eplsTdiscreto}). A questo punto posso concludere ponendo:
 \begin{align*}
@@ -776,12 +750,13 @@ Per comodità di calcoli tengo a mente la trasformata di $f(t+1)$
     &=&z\left( \underbrace{\sum_{\tau=1}^{\infty}f(\tau) z^{-t}+f(0)}_{Z[f(t)]}-f(0) \right)\\
     &=&zF(z)-zf(0)
 \end{align*}
-Allora dato che $F(x+1) = zX(z)-zx(0)$:
+Allora dato che $F(x(k+1)) = zX(z)-zx(0)$:
 \begin{align*}
     zX(z)-zx(0) &=& Ax(z)+Bu(z)\\
     zX(z)-Ax(z) &=& zx(0)+Bu(z)\\
     (zI-A)X(z) &=& zx(0)+Bu(z)\\
-    X(z) &=& \underbrace{(zI-A)^{-1}zx(0)}_{Z[\Phi(t)x_0]}+  \underbrace{(zI-A)^{-1}zx(0)}_{Z[\sum_{t=t_0}^{t-1}H(t-\tau)u(\tau)]}
+    X(z) &=& \underbrace{(zI-A)^{-1}zx(0)}_{Z[\Phi(t)x_0]}+
+    \underbrace{(zI-A)^{-1}BU(z)}_{Z[\sum_{t=t_0}^{t-1}H(t-\tau)u(\tau)]}
 \end{align*}
 
 
@@ -875,7 +850,7 @@ Ora, applicando la (\ref{varphi}) a entrambi i polinomi, indicando $Z_p$ il nume
 di $d_{CH}(j\omega)$ e con $P_p$ quello di $d_{AP}(j\omega)$ viene
 \[
     \Delta_{\varphi}\left(\frac{d_{CH}(j\omega)}{d_{AP}(j\omega)} \right)=
-    (n\pi-2\pi Z_p)-(n\pi-2\pi P_p)=2\pi(Z_p-P_p)
+    (n\pi-2\pi Z_p)-(n\pi-2\pi P_p)=2\pi(P_p-Z_p )
 \]
 Quindi a partire dal diagramma polare di $|1+F(s)|$ è possibile determinare quanti giri 
 fa il vettore della funzone attorno allo zero. Indicando questo numer con $N$,
@@ -885,7 +860,7 @@ fa il vettore della funzone attorno allo zero. Indicando questo numer con $N$,
 \]
 e quindi la (\ref{varphi}) si riscrive come 
 \[
-    2\pi(Z_p-P_p)=2\pi N \quad \Longrightarrow \quad P_p-Z_p = N
+    2\pi(P_p-Z_p )=2\pi N \quad \Longrightarrow \quad P_p-Z_p = N
 \]
 Ovviamente il sistema è asintoticamente stabile solo se $Z_p=0$ e quindi 
 \[N= P_p\quad\quad \text{è quello che volevo dimostrare}\]
@@ -895,9 +870,13 @@ Ovviamente il sistema è asintoticamente stabile solo se $Z_p=0$ e quindi
 Consideriamo il sistema deifnito dall'equazione di stato: $ \overset{\cdot}{x} = f(x(t),u(t)) $, un punto di 
 equilibrio $x_e$ del sistema è definito dal fatto che $f(x_e,u_e) = 0$ per qualche $u_e$.
 
+
+
 Ci limitiamo allo studio del caso in cui $u_e = 0$.
 
 Quindi un sistema ammette punti di equilibrio se esistono soluzioni al sistema :$f(x_e,0) = 0$.
+
+\incfig{x_e.jpeg}{0.5}
 
 Consideriamo lo studio di un punto $x_o$ vicino a $x_e$, ci sono tre possibilità:
 \begin{enumerate}
@@ -964,11 +943,14 @@ Lo studio della \textbf{STABILITÀ INTERNA} si riduce allo studio della stabilit
 
 
 \subsection{Stabilità esterna nello stato zero}
-Se è verificata la condizione: "$y \text{ limitata} \Longrightarrow u \text{ limitato}$" allora si parla di stabilità esterna.
+Se è verificata la condizione: "$u \text{ limitato} \Longrightarrow y \text{ limitata}$" allora si parla di stabilità esterna.
 Un sistema è stabile nello stato zero se e solo se \(\displaystyle \int_{0}^{t}||W(\tau)||d\tau < k \ \forall t \).
-
-Ovvero la norma della funzione di trasferimento deve essere sommabile nell' inter-
-vallo considerato. Considerando il punto di vista degli autovalori la condizione può
+In formule è
+\[
+    \forall\ M>0  \exists N_M>0 : x_0=0 \wedge  ||u(t)||<M\Longrightarrow||y(t)||<N_M
+\]
+Ovvero la norma della funzione di trasferimento deve essere sommabile nell' intervallo
+considerato. Considerando il punto di vista degli autovalori la condizione può
 esprimersi come: \textit{gli autovalori che sono simultaneamente eccitabili ed osservabili
 devono essere a parte reale negativa.}
 
@@ -1020,12 +1002,14 @@ lo sfasamento invece è $ L(W(j\omega))=\Phi(\omega)=arctan \frac{Im}{Re}$.
 \subsection{\boldmath Dimostrare la formula della risposta a regime permanente all'ingresso $u(k) = sin(\theta k)$ per un sistema a tempo discreto.}
 Si ricorda che per i sistemi tempo discreto
 
-\[Y_r(k)=\sum_{\tau =- \infty}^{k} W(k-\tau)u(\tau)\]e che $u(k)=\frac {e^{j\theta k} - e^{-j\theta k}}{2j} $.
+\[Y_r(k)=\sum_{\tau =- \infty}^{k} W(k-\tau)u(\tau)\]e che
+$u(k)=\frac {e^{j\theta k} - e^{-j\theta k}}{2j} $.
 
 
 Considero inizialmente l'ingresso $u(k)=e^{j \theta k}$ e ottengo:
 \[ 
-    Y_r(k)=\sum_{\tau =- \infty}^{k} W(k-\tau)e^{-j\theta \tau}, \quad \text{ora pongo }\quad k-\tau=\xi
+    Y_r(k)=\sum_{\tau =- \infty}^{k} W(k-\tau)e^{j\theta \tau},
+    \quad \text{ora pongo }\quad k-\tau=\xi
 \]
 Così viene:
 \[ Y_r(k)=\sum_{\xi =0}^{\infty} W(\xi)e^{j\theta (k-\xi)} = e^{j\theta k} \sum_{\xi =0}^{\infty} W(\xi)e^{-j\theta \xi}
@@ -1038,7 +1022,10 @@ e grazie a questi due risultati ottengo la risposta
 nel caso di ingresso sinusoidale:
 \[
     Y_r(k)=\frac{e^{j \theta k}W(e^{j \theta})-e^{-j \theta k}W(e^{j \theta})}{2j}
+    = M(\theta)\sin(\theta t +\phi(\theta))
 \]
+
+
 \subsection{\boldmath Si dimostri che, se esiste, la risposta a regime permanente a $u(t) = \delta _{-1}(t)$(ingresso a gradino) è uguale al guadagno del sistema}
 Considerando l'ingresso $u(t) = \delta_{-1}(t)$ un ingresso costante,
 la risposta a regime sarà del tipo 
