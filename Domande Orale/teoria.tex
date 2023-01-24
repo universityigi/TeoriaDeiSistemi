@@ -37,7 +37,7 @@
 
 %\sectionfont{\fontsize{13}{15}\selectfont}
 %\setlength{\parindent}{
-%0em}
+%0em}+
 
 
 \begin{document}
@@ -75,27 +75,6 @@ Da qui mi ricavo la matrice di cambiamento di base:
 Quindi alla fine mi viene 
 \[
     \overset{\sim}{A} = TAT^{-1}\quad \overset{\sim}{B} = TB \quad \overset{\sim}{C} = CT^{-1}
-\]
-
-\subsection{Dato un sistema in forma esplicita, dimostra che il sistema è lineare}
-Una funzione di variabili reali $f$ è lineare se, dati due punti qualunque
-$x$ e $y$, e due costanti $a$ e $b$ anch'esse arbitrarie, si ha che $f(ax+by)=af(x)+bf(y)$.
-
-La rappresentazione esplicita di un sistema è 
-\[ x(t) = \Phi(t)x_0 +\int_{0}^{t} H(t-\tau) u(\tau) d \tau
-\]
-La funzione di stato negli appunti di non so chi è
-\[ \Psi \left(t_0-t,x_0,\left.u(t)\right|_{(t_0,t]}\right) \]
-La linearità è rispetto allo stato e all'ingresso 
-(non sto per scrivere una dimostrazione, è solo boh far vedere i passaggi)
-\
-\begin{align*}
-    \Psi \left(t_0-t,\alpha x_1+\beta x_2,\alpha\left.u_1(t)\right|_{(t_0,t]}+\beta\left.u_2(t)\right|_{(t_0,t]}\right) =\\
-    = \alpha\Psi \left(t_0-t,x_1,\left.u_1(t)\right|_{(t_0,t]}\right)+\beta\Psi \left(t_0-t,x_2,\left.u_2(t)\right|_{(t_0,t]}\right)
-\end{align*}
-\[
-    \Psi \left(t_0-t,x_1,\left.u_2(t)\right|_{(t_0,t]}\right)  = \underbrace{\Psi\left(t-t_0,x_1,0\right)}_{\text{evoluzione libera}}+
-    \underbrace{\Psi\left(t-t_0,0,\left.u_2(t)\right|_{(t_0,t]}\right)}_{\text{evoluzione forzata}}
 \]
 
 
@@ -207,61 +186,6 @@ Così modellato risulta evidente che tutti i modi eccitabili sono quelli legati 
 cioè quelli nel sottosistema interamente raggiungibile.
 
 
-\subsection{I modi naturali dei sistemi lineari a tempo continuo: definizione e parametri caratteristici}
-
-I modi naturali sono le evoluzioni nello spazio di stato attraverso le quali è possibile esprimere l'evoluzione libera.
-In base agli autovalori che vi sono associati si hanno due casi:\\
-\begin{itemize}
-    \item I modi naturali \textbf{aperiodici} in presenza di autovalori \textbf{reali e distinti}
-    Il parametro caratteristico è $\lambda$, che determina l'andamento temporale.
-    \begin{itemize}
-        \item   Se $\lambda<0$ il modo è convergente
-        \item   Se $\lambda>0$ si ha un andamento divergente
-        \item   Se $\lambda=0$ si ha un andamento costante.
-    \end{itemize}
-    \item I modi naturali \textbf{pseudoperiodici}, associati a coppie di autovalori \textbf{complessi coniugati}
-    i cui parametri caratteristici sono :
-    \begin{itemize}
-        \item $\alpha$ (ampiezza): se $\alpha>0$ il modo è una spirale divergente,
-        se $\alpha<0$ il modo è una spirale convergente
-        e se $\alpha=0$ il modo rimane costante sulla traiettorie di un ellisse.
-    \item $\xi$ (smorzamento): al suo aumento  corrisponde un maggior inviluppo della fase oscillatoria.
-    \item $\omega_n$ (pulsazione naturale) rappresenta la pulsazione del modo quando lo smorzamento è nullo.
-    \end{itemize}
-\end{itemize}
-\[ \omega_n=\sqrt{\alpha^2+\omega^2}=\frac{\sqrt{1+\xi^2}}{\omega}\quad , \quad \xi=sen(\theta)=\frac{-\alpha}{\omega_n} \]
-
-
-
-\subsection{Modi naturali per sistemi a tempo discreto}
-I modi naturali per il caso discreto,così come per i sitemi tempo continuo, sono le evoluzioni nello spazio di stato attraverso le quali è possibile esprimere l'evoluzione libera. In base agli autovalori che vi sono associati si hanno tre casi:\\
-\begin{itemize}
-    \item Modi naturali aperiodici associati ad autovalori reali positivi.
-    Il parametro caratteristico è $\lambda$ che determina l'andamento temporale.
-    \begin{itemize}
-        \item Se $|\lambda|=1$ si ha un modo costante
-        \item Se $|\lambda|<1$ si ha un modo convergente a 0
-        \item Se $|\lambda|>1$ si ha un modo divergente.
-    \end{itemize}
-    \item Modi naturali alternanti in presenza di autovalori reali negativi,
-    anche quì il parametro caratteristico è $\lambda$ e:
-    \begin{itemize}
-        \item Se $\lambda=-1$ il modo oscilla tra -1 e 1
-        \item Se $\lambda>-1$ converge a 0 oscillando
-        \item Se $\lambda<-1$ diverge oscillando.
-    \end{itemize}
-    \item modi naturali pseudoperiodici associati a coppie di autovalori complessi coniugati: in questo caso
-    scegliamo la rappresentazione polare $\alpha + i \omega = \rho e^{i\theta}$ con
-    $\rho = \sqrt{\alpha^2+\omega^2}, \theta = arctan\left(\frac{\omega}{\alpha}\right)$, quindi
-    i parametri caratteristici sono : 
-    \begin{itemize}
-        \item $\rho$ (ampiezza) , se $\rho>1$ il modo è una spirale divergente,
-        se $\rho<1$ il modo è una spirale convergente e se $\rho=1$
-        il modo rimane costante sulla traiettoria di un' ellisse.
-        \item $\theta$ (fase) rappresenta la fase del modo.
-    \end{itemize}
-\end{itemize}
-
 \subsection{Osservabilità nei sistemi lineari}
 Presi due stati iniziali $x_{0a},x_{0b}$ distinti, e consideratene le uscite $y_a,y_b$, se le due uscite 
 sono uguali per ogni t allora i due stati sono \textbf{indistinguibili}.
@@ -367,57 +291,6 @@ invece nei sistemi a tempo discreto la raggiungibilità implica la controllabili
 e se uno stato non si riesce a raggiungere in $n$ passi allora non si può più raggiungere.
 
 
-\subsection{\boldmath Dimostrazione che data un'evoluzione da $x(t_0)$ a $x(t)$, vale la stessa da $x(t_1)$ con $<t_0<t_1<t$}
-Per farlo prendo due equazioni:
-\begin{equation}
-    x(t) = \Phi(t-t_0)x(t_0)+\int_{t_0}^{t} H(t-\tau)u(\tau)d\tau
-\end{equation}
-\begin{equation}
-    x(t) = \Phi(t-t_1)x(t_1)+\int_{t_1}^{t} H(t-\tau)u(\tau)d\tau
-\end{equation}
-(Questa roba si trova uguale su edotm ma scrivere mi aiuta a studiare)
-Ora voglio dimostrare che le due si equivalgono
-
-\[ x(t) = \Phi(t-t_1)\underbrace{\left[ \Phi(t_1-t_0)x(t_0)+\int_{t_0}^{t_1} H(t-\tau)u(\tau)d\tau\right]}_{x(t_1)}+\int_{t_1}^{t} H(t-\tau)u(\tau)d\tau \]
-\[x(t) = \Phi(t-t_1)\Phi(t_1-t_0)x(t_0)+\Phi(t-t_1)\int_{t_0}^{t_1} H(t-\tau)u(\tau)d\tau+\int_{t_1}^{t} H(t-\tau)u(\tau)d\tau\]
-\[ \Phi(t-t_0)x(t_0)= \Phi(t-t_1)\Phi(t-t_0)x(t_0)\Longleftrightarrow\Phi(t-t_0)\Phi(t-t_1)\Phi(t-t_0) \]
-\[ \int_{t_0}^{t} H(t-\tau)u(\tau)d\tau = \Phi(t-t_1)\int_{t_0}^{t_1} H(t_1-\tau)u(\tau)d\tau+\int_{t_1}^{t} H(t-\tau)u(\tau)d\tau \] 
-A sinistra applico la linearità dell'integrale:
-\[ \int_{t_0}^{t_1} H(t_1-\tau)u(\tau)d\tau+\int_{t_1}^{t} H(t-\tau)u(\tau)d\tau
- = \Phi(t-t_1)\int_{t_0}^{t_1} H(t_1-\tau)u(\tau)d\tau+\int_{t_1}^{t} H(t-\tau)u(\tau)d\tau \]
-e quindi alla fine:
-\[ \int_{t_0}^{t_1} H(t-\tau)u(\tau)d\tau = \int_{t_0}^{t_1}\Phi(t-t_1) H(t_1-\tau)u(\tau)d\tau \]
-\[ H(t-\tau) = \Phi(t-t_1) H(t_1-\tau) \]
-Riassumento
-\[\begin{cases} 
-        \Phi(t-t_0) = \Phi(t-t_1)\Phi(t_1-t_0)\\
-        H(t-\tau) = \Phi(t-t_1) H(t_1-\tau)
-\end{cases}
-\]
-Ora andiamo a derivare la prima equazione del sistema in forma esplicita (1) per vedere se otteniamo
-esattamente la forma implicita di partenza:
-\[ \overset{\cdot}{x} = \frac{\partial \Phi(t-t_0)}{\partial t}x(t_0)+\int_{t_0}^{t} \frac{\partial}{\partial t}\left( \Phi(t-t_1) H(t_1-\tau)\right)u(\tau)d\tau \]
-\[ \overset{\cdot}{x} = \frac{\partial \Phi(t-t_1)}{\partial t}\left(\Phi(t_1-t_0)x(t_0)+\int_{t_0}^{t}H(t_1-\tau)u(\tau)d\tau\right)+H(0)u(t) \]
-Ora prendiamo il limite $t_1\to t$:
-\[ \overset{\cdot}{x} = \lim_{t_1\to t}\frac{\partial \Phi(t-t_1)}{\partial t}\left(\Phi(t_1-t_0)x(t_0)+\int_{t_0}^{t_1}H(t_1-\tau)u(\tau)d\tau\right)+H(o)u(t) \]
-\[ \overset{\cdot}{x} = \lim_{t_1\to t}\frac{\partial \Phi(t-t_1)}{\partial t}x(t)+H(0)u(t) \]
-\[ \overset{\cdot}{x} = \frac{\partial \Phi(t\to0)}{\partial t}x(t)+H(0)u(t) \]
-
-Da cui finalmente posso dire che 
-\[ \frac{\partial \Phi(t\to 0)}{\partial t}x(t) =\lim_{t\to 0}\frac{\partial \Phi(t)}{\partial t}x(t) = Ax(t) \]
-\[ H(0)u(t) = Bu(t) \Rightarrow H(0) = B \]
-
-
-\subsection{Definizione di guadagno e interpretazione fisica}
-Il guadagno è il fattore costante che compare nella forma di Bode della funzione di trasferimento,
-esso è definito per ogni elemento ed è pari al valore che assume la $W(s)$
-in $s=0$ dopo aver eliminato l'eventuale eccesso di poli in zero.
-Il guadagno della funzione di trasferimento di un sistema ha,
-nel caso in cui esista la risposta a regime permanente,
-il significato fisico di valore di regime della risposta al gradino unitario,
-cioè $W(s)|_{s=0}$.
-
-
 \subsection{Definizione di raggiungibilità ed inosservabilità; caratterizzazione e proprietà degli insiemi di tali stati}
 L'osservabilità riguarda il comportamento stato-uscita.
 Uno stato è detto inosservabile quando corrisponde ad un'evoluzione libera in uscita identicamente nulla,
@@ -436,6 +309,74 @@ L'insieme degli stati raggiungibili è denotato con $\mathcal{R}$, cioè :
 \[ \mathcal{R}(T)=\left\{x_r : x=\int_{t_0}^{t}e^{A(t-\tau)}Bu(\tau)d\tau, u[t_0,T]\right\}
 \quad \mathcal{R}=
 Im(B\ AB\ .....\ A^{n-1}B)\]
+
+
+
+\subsection{I modi naturali dei sistemi lineari a tempo continuo: definizione e parametri caratteristici}
+
+I modi naturali sono le evoluzioni nello spazio di stato attraverso le quali è possibile esprimere l'evoluzione libera.
+In base agli autovalori che vi sono associati si hanno due casi:\\
+\begin{itemize}
+    \item I modi naturali \textbf{aperiodici} in presenza di autovalori \textbf{reali e distinti}
+    Il parametro caratteristico è $\lambda$, che determina l'andamento temporale.
+    \begin{itemize}
+        \item   Se $\lambda<0$ il modo è convergente
+        \item   Se $\lambda>0$ si ha un andamento divergente
+        \item   Se $\lambda=0$ si ha un andamento costante.
+    \end{itemize}
+    \item I modi naturali \textbf{pseudoperiodici}, associati a coppie di autovalori \textbf{complessi coniugati}
+    i cui parametri caratteristici sono :
+    \begin{itemize}
+        \item $\alpha$ (ampiezza): se $\alpha>0$ il modo è una spirale divergente,
+        se $\alpha<0$ il modo è una spirale convergente
+        e se $\alpha=0$ il modo rimane costante sulla traiettorie di un ellisse.
+    \item $\xi$ (smorzamento): al suo aumento  corrisponde un maggior inviluppo della fase oscillatoria.
+    \item $\omega_n$ (pulsazione naturale) rappresenta la pulsazione del modo quando lo smorzamento è nullo.
+    \end{itemize}
+\end{itemize}
+\[ \omega_n=\sqrt{\alpha^2+\omega^2}=\frac{\sqrt{1+\xi^2}}{\omega}\quad , \quad \xi=sen(\theta)=\frac{-\alpha}{\omega_n} \]
+
+
+
+\subsection{Modi naturali per sistemi a tempo discreto}
+I modi naturali per il caso discreto,così come per i sitemi tempo continuo, sono le evoluzioni nello spazio di stato attraverso le quali è possibile esprimere l'evoluzione libera. In base agli autovalori che vi sono associati si hanno tre casi:\\
+\begin{itemize}
+    \item Modi naturali aperiodici associati ad autovalori reali positivi.
+    Il parametro caratteristico è $\lambda$ che determina l'andamento temporale.
+    \begin{itemize}
+        \item Se $|\lambda|=1$ si ha un modo costante
+        \item Se $|\lambda|<1$ si ha un modo convergente a 0
+        \item Se $|\lambda|>1$ si ha un modo divergente.
+    \end{itemize}
+    \item Modi naturali alternanti in presenza di autovalori reali negativi,
+    anche quì il parametro caratteristico è $\lambda$ e:
+    \begin{itemize}
+        \item Se $\lambda=-1$ il modo oscilla tra -1 e 1
+        \item Se $\lambda>-1$ converge a 0 oscillando
+        \item Se $\lambda<-1$ diverge oscillando.
+    \end{itemize}
+    \item modi naturali pseudoperiodici associati a coppie di autovalori complessi coniugati: in questo caso
+    scegliamo la rappresentazione polare $\alpha + i \omega = \rho e^{i\theta}$ con
+    $\rho = \sqrt{\alpha^2+\omega^2}, \theta = arctan\left(\frac{\omega}{\alpha}\right)$, quindi
+    i parametri caratteristici sono : 
+    \begin{itemize}
+        \item $\rho$ (ampiezza) , se $\rho>1$ il modo è una spirale divergente,
+        se $\rho<1$ il modo è una spirale convergente e se $\rho=1$
+        il modo rimane costante sulla traiettoria di un' ellisse.
+        \item $\theta$ (fase) rappresenta la fase del modo.
+    \end{itemize}
+\end{itemize}
+
+
+\subsection{Definizione di guadagno e interpretazione fisica}
+Il guadagno è il fattore costante che compare nella forma di Bode della funzione di trasferimento,
+esso è definito per ogni elemento ed è pari al valore che assume la $W(s)$
+in $s=0$ dopo aver eliminato l'eventuale eccesso di poli in zero.
+Il guadagno della funzione di trasferimento di un sistema ha,
+nel caso in cui esista la risposta a regime permanente,
+il significato fisico di valore di regime della risposta al gradino unitario,
+cioè $W(s)|_{s=0}$.
+
 
 
 \subsection{Può un sistema lineare essere caratterizzato da modi naturali aventi la stessa legge di moto?}
@@ -501,6 +442,21 @@ Per passare alla forma canonica raggiungibile lo farei come studio della raggiun
 \large
 Nel senso che preso il sistema facico la matrice $R = (B AB A^2B)$, $\mathfrak{R}=Im(R)$,
 $T^{-1} = (\mathfrak{R} .completamento)$ etc. etc.
+
+
+
+\subsection{Proprietà di semigruppo}
+Le matrici $\Phi(t),H(t),\Psi(t),W(t)$ ddevono soddisfare le seguenti proprietà:
+
+\begin{enumerate}
+    \item Proprietà di semigruppo : \[ \Phi(0)=1,Phi(t-t_0) = \Phi(t-t_1)\Phi(t_1-t_0) \forall\ t_-\le t_1\le t\]
+    \item Fattorizzazione sulle matrici $H,Psi,W$:
+    \begin{align*}
+        H(t-\tau) = \Phi(t-t_1)H(t_1-\tau) &,& \Psi(t-t_0)=\Psi(t-t_1)\Phi(t_1-t_0)\\
+        W(t-\tau) = \Psi(t-t_1)H(t_1-\tau) &
+    \end{align*}
+\end{enumerate}
+
 
 
 \subsection{Osservatore Asintotico}
@@ -777,6 +733,20 @@ Dato che la permanenza in unos stato è determinata dall'assenza di variazioni, 
 E basta, le definizioni di stabilità sono le solite per i punti di equilibrio.
 
 
+\subsection{Lyapunov di sistemi non lineari a tempo discreto}
+Definita la \textit{funzione di Lyapunov} $V(x)$ introduco la  funzione 
+\textit{differenza prima} $\Delta V(x) = V(x(t+1))-V(x(t))$ e il punto d'equilibrio è:
+$x_e = f(x_e)$
+\paragraph{Teorema $3.8.1$:} Lo stato $x_e$ di equilibrio è localmente stabile asintoticamente se esiste una
+funzione $V(x)$ definita positiva in un intorno $I_{x_e}$ tale che la syua differenza prima lungo il moto 
+\[ \Delta V(x) = V(x(t+1))-V(x(t)) = V(f(x(t)))-V(x(t)) \] sia \textbf{definita negativa}.
+
+\paragraph{Teorema $3.8.2$:}Lo stato $x_e$ di equilibrio è localmente stabile semplicemente se $\exists V(x)$ definita
+positiva in $I_{x_e}$, tale che la sua differenza prima lungo il moto  $V(x) = V(x(t+1))-V(x(t))$ sia 
+\textbf{semi-definita negativa}
+
+
+
 \subsection{Enunciato e dimostrazione teorema di Nyquist}
 Condizione necessaria e sufficiente per la stabilità asintotica di un sistema a retroazione unitaria e che il numero di 
 giri che il vettore rappresentativo di $1+F(j\omega)$ compie attorno allo 0 (ossia i giri che fa $F(j\omega)$ attorno a -1),
@@ -972,6 +942,100 @@ reale strettamente negativa se con molteplicità geometrica maggiore di 1,
 o parte reale non positiva se con molteplicità geometrica pari a 1.}
 \end{itemize}
 
+\section{Dimostazioni formali}
+
+\subsection{Dato un sistema in forma esplicita, dimostra che il sistema è lineare}
+Una funzione di variabili reali $f$ è lineare se, dati due punti qualunque
+$x$ e $y$, e due costanti $a$ e $b$ anch'esse arbitrarie, si ha che $f(ax+by)=af(x)+bf(y)$.
+
+La rappresentazione esplicita di un sistema è 
+\[ x(t) = \Phi(t)x_0 +\int_{0}^{t} H(t-\tau) u(\tau) d \tau
+\]
+La funzione di stato è
+\[ \Psi \left(t_0-t,x_0,\left.u(t)\right|_{(t_0,t]}\right) \]
+S è lineare se $\forall$ coppia $(t,t_0) \in (\mathbb{R}x\mathbb{R})$, $\Psi$ è lineare sul prodotto $XxU$ 
+(lo spazio degli stati per gli ingressi):
+
+\
+\begin{align*}
+    \Psi \left(t_0-t,\alpha x_1+\beta x_2,\alpha\left.u_1(t)\right|_{(t_0,t]}+\beta\left.u_2(t)\right|_{(t_0,t]}\right) =\\
+    = \alpha\Psi \left(t_0-t,x_1,\left.u_1(t)\right|_{(t_0,t]}\right)+\beta\Psi \left(t_0-t,x_2,\left.u_2(t)\right|_{(t_0,t]}\right)
+\end{align*}
+\[
+    \Psi \left(t_0-t,x_1,\left.u_2(t)\right|_{(t_0,t]}\right)  = \underbrace{\Psi\left(t-t_0,x_1,0\right)}_{\text{evoluzione libera}}+
+    \underbrace{\Psi\left(t-t_0,0,\left.u_2(t)\right|_{(t_0,t]}\right)}_{\text{evoluzione forzata}}
+\]
+
+La forma esplicita del mio sistema è 
+\[
+x(t) = \Phi(\alpha x_1+\beta x_2) + \int_{t_0}^{t} H(t-\tau)(\alpha u_1 +\beta u_2)d\tau    
+\]
+che verifica banalmente la linearità.
+
+
+\subsection{\boldmath Dimostrazione che data un'evoluzione da $x(t_0)$ a $x(t)$, vale la stessa da $x(t_1)$ con $<t_0<t_1<t$}
+Per farlo prendo due equazioni:
+\begin{equation}
+    x(t) = \Phi(t-t_0)x(t_0)+\int_{t_0}^{t} H(t-\tau)u(\tau)d\tau
+\end{equation}
+\begin{equation}
+    x(t) = \Phi(t-t_1)x(t_1)+\int_{t_1}^{t} H(t-\tau)u(\tau)d\tau
+\end{equation}
+(Questa roba si trova uguale su edotm ma scrivere mi aiuta a studiare)
+Ora voglio dimostrare che le due si equivalgono
+
+\[ x(t) = \Phi(t-t_1)\underbrace{\left[ \Phi(t_1-t_0)x(t_0)+\int_{t_0}^{t_1} H(t-\tau)u(\tau)d\tau\right]}_{x(t_1)}+\int_{t_1}^{t} H(t-\tau)u(\tau)d\tau \]
+\[x(t) = \Phi(t-t_1)\Phi(t_1-t_0)x(t_0)+\Phi(t-t_1)\int_{t_0}^{t_1} H(t-\tau)u(\tau)d\tau+\int_{t_1}^{t} H(t-\tau)u(\tau)d\tau\]
+\[ \Phi(t-t_0)x(t_0)= \Phi(t-t_1)\Phi(t-t_0)x(t_0)\Longleftrightarrow\Phi(t-t_0)\Phi(t-t_1)\Phi(t-t_0) \]
+\[ \int_{t_0}^{t} H(t-\tau)u(\tau)d\tau = \Phi(t-t_1)\int_{t_0}^{t_1} H(t_1-\tau)u(\tau)d\tau+\int_{t_1}^{t} H(t-\tau)u(\tau)d\tau \] 
+A sinistra applico la linearità dell'integrale:
+\[ \int_{t_0}^{t_1} H(t_1-\tau)u(\tau)d\tau+\int_{t_1}^{t} H(t-\tau)u(\tau)d\tau
+ = \Phi(t-t_1)\int_{t_0}^{t_1} H(t_1-\tau)u(\tau)d\tau+\int_{t_1}^{t} H(t-\tau)u(\tau)d\tau \]
+e quindi alla fine:
+\[ \int_{t_0}^{t_1} H(t-\tau)u(\tau)d\tau = \int_{t_0}^{t_1}\Phi(t-t_1) H(t_1-\tau)u(\tau)d\tau \]
+\[ H(t-\tau) = \Phi(t-t_1) H(t_1-\tau) \]
+Riassumento
+\[\begin{cases} 
+        \Phi(t-t_0) = \Phi(t-t_1)\Phi(t_1-t_0)\\
+        H(t-\tau) = \Phi(t-t_1) H(t_1-\tau)
+\end{cases}
+\]
+Ora andiamo a derivare la prima equazione del sistema in forma esplicita (1) per vedere se otteniamo
+esattamente la forma implicita di partenza:
+\[ \overset{\cdot}{x} = \frac{\partial \Phi(t-t_0)}{\partial t}x(t_0)+\int_{t_0}^{t} \frac{\partial}{\partial t}\left( \Phi(t-t_1) H(t_1-\tau)\right)u(\tau)d\tau \]
+\[ \overset{\cdot}{x} = \frac{\partial \Phi(t-t_1)}{\partial t}\left(\Phi(t_1-t_0)x(t_0)+\int_{t_0}^{t}H(t_1-\tau)u(\tau)d\tau\right)+H(0)u(t) \]
+Ora prendiamo il limite $t_1\to t$:
+\[ \overset{\cdot}{x} = \lim_{t_1\to t}\frac{\partial \Phi(t-t_1)}{\partial t}\left(\Phi(t_1-t_0)x(t_0)+\int_{t_0}^{t_1}H(t_1-\tau)u(\tau)d\tau\right)+H(o)u(t) \]
+\[ \overset{\cdot}{x} = \lim_{t_1\to t}\frac{\partial \Phi(t-t_1)}{\partial t}x(t)+H(0)u(t) \]
+\[ \overset{\cdot}{x} = \frac{\partial \Phi(t\to0)}{\partial t}x(t)+H(0)u(t) \]
+
+Da cui finalmente posso dire che 
+\[ \frac{\partial \Phi(t\to 0)}{\partial t}x(t) =\lim_{t\to 0}\frac{\partial \Phi(t)}{\partial t}x(t) = Ax(t) \]
+\[ H(0)u(t) = Bu(t) \Rightarrow H(0) = B \]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \section{Dimostrazioni di risposte a regime permanente}
@@ -1071,6 +1135,9 @@ affinché un modo non compaia nella $W(t)$ deve essere non eccitabile oppure non
 
 
 
+
+
+
 \section{Esercizi}
 
 \subsection{Trovare il valore massimo del parametro r tale per cui il sistema retroazionato sia stabile. }
@@ -1121,6 +1188,15 @@ Che viene
     0\text{ grado}&-k
 \end{align*}
 Che avendo sia $2k$ che $-k$ non può venire mai bene.
+
+\subsection{Trovare $P_2$ }
+
+\incfig{p1ps.jpeg}{0.5}
+
+\[ L[u] = \frac{1}{s} \quad,\quad L[y] = \frac{1}{s-1}\]
+\[ y(s) = u(s)W(s) \quad\to\quad W(s)=\frac{1}{s+1}P_2(s) \]
+\[ \frac{1}{s-1} = \frac{1}{s}\frac{1}{s+1}P_2(s) \]
+\[ \frac{s(s+1)}{s-1} = P_2(s) \to W_{tot}=\frac{s}{s-1} \]
 
 
 
