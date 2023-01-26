@@ -186,95 +186,6 @@ Così modellato risulta evidente che tutti i modi eccitabili sono quelli legati 
 cioè quelli nel sottosistema interamente raggiungibile.
 
 
-\subsection{Osservabilità nei sistemi lineari}
-Presi due stati iniziali $x_{0a},x_{0b}$ distinti, e consideratene le uscite $y_a,y_b$, se le due uscite 
-sono uguali per ogni t allora i due stati sono \textbf{indistinguibili}.
-
-Per inciso, le due uscite sono uguali per ogni $t$ se,
-considerando 
-
-\[ y_{0i} = \Psi(t)x_{0i} + \int_{0}^{t} W(t-\tau) u(\tau) d\tau \]
-si verifica la seguente:
-\[
-    \begin{array}{rcl}
-        y_{0a}-y_{0b} & = & \Psi(t)x_{0a} + \int_{0}^{t} W(t-\tau) u(\tau) d\tau - \Psi(t)x_{0b} - \int_{0}^{t} W(t-\tau) u(\tau) d\tau \\
-        0 & = & \Psi(t)x_{0a} - \Psi(t)x_{0b} \  \forall\   t>0
-    \end{array}    
-\]
-Chiamato stato inosservabile la differenza tra i due $x_I = x_{0a}-x_{0b}$
-\[
-    \begin{array}{rcl}
-        y_{0a}-y_{0b}  = 0 & \Longleftrightarrow & \Psi(t)(x_{0a} -x_{0b} ) = 0  \\
-        \Psi(t)x_I = C e^{At}x_I \equiv 0
-    \end{array}    
-\]
-Dato che se una funzione è identicamente nulla in un intervallo, lo sono anche
-le sue derivate, per il criterio di Cayley-Hamilton si verifica:
-\[ C A^n x_I = 0 \Longrightarrow C A^{n+1} x_I = 0 \]
-e gli stati che soddisfano questa eguaglianza sono inosservabili.
-Per trovare questi stati costruisco il sistema lineare omogeneo:
-\[\begin{pmatrix}C\\...\\CA^{n-1}\end{pmatrix}x_I = 0\]
-che ammette soluzioni diverse da zero se la matrice non ha rango pieno, e quindi gli stati inosservabili,
-se ci sono, sono un sottospazio lineare dello spazio di stato.
-
-L'insieme degli stati inosservabili è 
-\[\mathfrak{I} = \{ x\in\mathbb{R}^n | Ce^{At}=0\ \forall\ t > 0\}\]
-
-\subsection{Perché A21 viene zero sempre nella forza canonica osservabile dopo il cambio di base }
-
-Una proprietà degli stati inosservabili è che
-\textbf{ il sottospazio $\mathfrak{I}$ è invariante rispetto a $A$},
-cioè $x_I \text{inossservabile} \Longrightarrow Ax_I \text{inossservabile}$, il che vale 
-per ogni cambiamento di coordinate.
-
-Consideriamo lo stato $\begin{pmatrix}z_1\\0\end{pmatrix}$,
-di certo anche $A\begin{pmatrix}z_1\\0\end{pmatrix}=\begin{pmatrix}\overset{\sim }{z_1}\\0\end{pmatrix}$
-sarà inosservabile.
-Con questo a mente vediamo $\overset{\sim}{A}z_I$:
-\[
-    \overset{\sim}{A}z_I=\begin{pmatrix}\overset{\sim }{A_{11}}&\overset{\sim }{A_{12}}\\
-        \overset{\sim }{A_{21}}&\overset{\sim }{A_{22}}\end{pmatrix}\begin{pmatrix}z_1\\0\end{pmatrix}=
-    \begin{pmatrix}\overset{\sim }{z_1}\\0\end{pmatrix} \Longrightarrow
-    \begin{array}{rcl}
-    \overset{\sim }{A_{11}}z_{1} &= \overset{\sim }{z_1}&\\
-    \overset{\sim }{A_{21}}z_{1} &= 0 &\to  \overset{\sim }{A_{21}}=0
-    \end{array}
-\]
-
-
-
-
-
-
-\subsection{L'osservabilità dei sistemi lineari a tempo discreto: definizione e condizioni}
-Definita la matrice di osservabilità :
-\[O = \begin{pmatrix}C\\...\\CA^{n-1}\end{pmatrix}\]
-L' insieme degli stati inosservabili nel tempo discreto è:
-\[\mathfrak{I} = \left\{ x\in\mathbb{R}^n | CA^t=0\ \forall\ t > 0\right\} = ker(O)\]
-
-Per Cayley-Hamilton ho che $Cx_I=0,CAx_I=0,...,CA^{n-1}x_I=0 \Longrightarrow CA^kx_i = \forall k>n$
-Nel tempo discreto, se uno stato non è osservabile nei primi n passi certamente dopo rimarrà inosservabile.
-
-
-\subsection{Per un sistema tempo discreto dimostrare che l'insieme degli stati inosservabili è :}
-\[ \text{ker}\begin{pmatrix}C\\...\\CA^{n-1}\end{pmatrix}\]
-Se considero l'evoluzione di un sistema $y_L(k)=CA^Kx(0)$, affinché lo stato $x_0 = x(0)$
-sia inosservabile $y_L(k)=0\ \forall k$.
-
-Considero il caso in cui k=0 :
-l'evoluzione è  $y_L(k)=CA^0x_0=CIx_0=Cx_0$, e per definizione ho $C\ x_0=0$ se $x_0 \in Ker(C)$\\
-Considero ora il caso k=1: $y_L(k)=CAx_0$ e 
-\[
-     CAx_0=0 \Longleftrightarrow x(0) \in Ker(CA)
-\]
-Quindi per il generico passo $k$ gli stati inosservabili appartengono a $Ker(CA^{k})$.
-Per Cayley-Hamilton ho che $Cx_I=0,CAx_I=0,...,CA^{n-1}x_I=0 \Longrightarrow CA^kx_i = \forall k>n$ e quindi 
-per un sistema lineare l'insieme degli stati inosservabili è dato quindi da tutti gli stati
-che non si osservano in nessuno dei passi, quindi: 
-\[
-    I=Ker \begin{pmatrix}C\\CA\\...\\CA^{n-1}\end{pmatrix}
-\]
-
 
 \subsection{Definizione di raggiungibilità di uno stato; caratterizzare l'insieme degli stati raggiungibili per sistemi dinamici lineari stazionari; confrontare il caso tempo continuo e tempo discreto}
 Uno stato $x_r$ è detto raggiungibile all'istante T da $x_0$ se esistono un $t_0<T$, ed un ingresso sull'intervallo di tempo $[t_0,T)$
@@ -309,6 +220,104 @@ L'insieme degli stati raggiungibili è denotato con $\mathcal{R}$, cioè :
 \[ \mathcal{R}(T)=\left\{x_r : x=\int_{t_0}^{t}e^{A(t-\tau)}Bu(\tau)d\tau, u[t_0,T]\right\}
 \quad \mathcal{R}=
 Im(B\ AB\ .....\ A^{n-1}B)\]
+
+
+
+
+\subsection{Osservabilità nei sistemi lineari}
+Presi due stati iniziali $x_{0a},x_{0b}$ distinti, e consideratene le uscite $y_a,y_b$, se le due uscite 
+sono uguali per ogni t allora i due stati sono \textbf{indistinguibili}.
+
+Per inciso, le due uscite sono uguali per ogni $t$ se,
+considerando 
+
+\[ y_{0i} = \Psi(t)x_{0i} + \int_{0}^{t} W(t-\tau) u(\tau) d\tau \]
+si verifica la seguente:
+\[
+    \begin{array}{rcl}
+        y_{0a}-y_{0b} & = & \Psi(t)x_{0a} + \int_{0}^{t} W(t-\tau) u(\tau) d\tau - \Psi(t)x_{0b} - \int_{0}^{t} W(t-\tau) u(\tau) d\tau \\
+        0 & = & \Psi(t)x_{0a} - \Psi(t)x_{0b} \  \forall\   t>0
+    \end{array}    
+\]
+Chiamato stato inosservabile la differenza tra i due $x_I = x_{0a}-x_{0b}$
+\[
+    \begin{array}{rcl}
+        y_{0a}-y_{0b}  = 0 & \Longleftrightarrow & \Psi(t)(x_{0a} -x_{0b} ) = 0  \\
+        \Psi(t)x_I = C e^{At}x_I \equiv 0
+    \end{array}    
+\]
+Dato che se una funzione è identicamente nulla in un intervallo, lo sono anche
+le sue derivate, per il criterio di Cayley-Hamilton si verifica:
+\[ C A^n x_I = 0 \Longrightarrow C A^{n+1} x_I = 0 \]
+e gli stati che soddisfano questa eguaglianza sono inosservabili.
+Per trovare questi stati costruisco il sistema lineare omogeneo:
+\[\begin{pmatrix}C\\...\\CA^{n-1}\end{pmatrix}x_I = 0\]
+che ammette soluzioni diverse da zero se la matrice non ha rango pieno, e quindi gli stati inosservabili,
+se ci sono, sono un sottospazio lineare dello spazio di stato.
+
+L'insieme degli stati inosservabili è 
+\[\mathfrak{I} = \{ x\in\mathbb{R}^n | Ce^{At}=0\ \forall\ t > 0\}\]
+
+
+
+\subsection{L'osservabilità dei sistemi lineari a tempo discreto: definizione e condizioni}
+Definita la matrice di osservabilità :
+\[O = \begin{pmatrix}C\\...\\CA^{n-1}\end{pmatrix}\]
+L' insieme degli stati inosservabili nel tempo discreto è:
+\[\mathfrak{I} = \left\{ x\in\mathbb{R}^n | CA^t=0\ \forall\ t > 0\right\} = ker(O)\]
+
+Per Cayley-Hamilton ho che $Cx_I=0,CAx_I=0,...,CA^{n-1}x_I=0 \Longrightarrow CA^kx_i = \forall k>n$
+Nel tempo discreto, se uno stato non è osservabile nei primi n passi certamente dopo rimarrà inosservabile.
+
+
+\subsection{Per un sistema tempo discreto dimostrare che l'insieme degli stati inosservabili è :}
+\[ \text{ker}\begin{pmatrix}C\\...\\CA^{n-1}\end{pmatrix}\]
+Se considero l'evoluzione di un sistema $y_L(k)=CA^Kx(0)$, affinché lo stato $x_0 = x(0)$
+sia inosservabile $y_L(k)=0\ \forall k$.
+
+Considero il caso in cui k=0 :
+l'evoluzione è  $y_L(k)=CA^0x_0=CIx_0=Cx_0$, e per definizione ho $C\ x_0=0$ se $x_0 \in Ker(C)$\\
+Considero ora il caso k=1: $y_L(k)=CAx_0$ e 
+\[
+     CAx_0=0 \Longleftrightarrow x(0) \in Ker(CA)
+\]
+Quindi per il generico passo $k$ gli stati inosservabili appartengono a $Ker(CA^{k})$.
+Per Cayley-Hamilton ho che $Cx_I=0,CAx_I=0,...,CA^{n-1}x_I=0 \Longrightarrow CA^kx_i = \forall k>n$ e quindi 
+per un sistema lineare l'insieme degli stati inosservabili è dato quindi da tutti gli stati
+che non si osservano in nessuno dei passi, quindi: 
+\[
+    I=Ker \begin{pmatrix}C\\CA\\...\\CA^{n-1}\end{pmatrix}
+\]
+
+
+
+
+
+
+
+\subsection{Perché A21 viene zero sempre nella forza canonica osservabile dopo il cambio di base }
+
+Una proprietà degli stati inosservabili è che
+\textbf{ il sottospazio $\mathfrak{I}$ è invariante rispetto a $A$},
+cioè $x_I \text{inossservabile} \Longrightarrow Ax_I \text{inossservabile}$, il che vale 
+per ogni cambiamento di coordinate.
+
+Consideriamo lo stato $\begin{pmatrix}z_1\\0\end{pmatrix}$,
+di certo anche $A\begin{pmatrix}z_1\\0\end{pmatrix}=\begin{pmatrix}\overset{\sim }{z_1}\\0\end{pmatrix}$
+sarà inosservabile.
+Con questo a mente vediamo $\overset{\sim}{A}z_I$:
+\[
+    \overset{\sim}{A}z_I=\begin{pmatrix}\overset{\sim }{A_{11}}&\overset{\sim }{A_{12}}\\
+        \overset{\sim }{A_{21}}&\overset{\sim }{A_{22}}\end{pmatrix}\begin{pmatrix}z_1\\0\end{pmatrix}=
+    \begin{pmatrix}\overset{\sim }{z_1}\\0\end{pmatrix} \Longrightarrow
+    \begin{array}{rcl}
+    \overset{\sim }{A_{11}}z_{1} &= \overset{\sim }{z_1}&\\
+    \overset{\sim }{A_{21}}z_{1} &= 0 &\to  \overset{\sim }{A_{21}}=0
+    \end{array}
+\]
+
+
+
 
 
 
@@ -368,16 +377,6 @@ I modi naturali per il caso discreto,così come per i sitemi tempo continuo, son
 \end{itemize}
 
 
-\subsection{Definizione di guadagno e interpretazione fisica}
-Il guadagno è il fattore costante che compare nella forma di Bode della funzione di trasferimento,
-esso è definito per ogni elemento ed è pari al valore che assume la $W(s)$
-in $s=0$ dopo aver eliminato l'eventuale eccesso di poli in zero.
-Il guadagno della funzione di trasferimento di un sistema ha,
-nel caso in cui esista la risposta a regime permanente,
-il significato fisico di valore di regime della risposta al gradino unitario,
-cioè $W(s)|_{s=0}$.
-
-
 
 \subsection{Può un sistema lineare essere caratterizzato da modi naturali aventi la stessa legge di moto?}
 Si, se la matrice A ha autovalori coincidenti ma è regolare $(M_G=1)$,
@@ -404,6 +403,17 @@ e $v_i'B$ è non nulla solo per i modi eccitabili,
 quindi se un autovalore non è osservabile $(Cu_i=0)$ o non è eccitabile $(v_iB=0)$
 non compare in $W(t)$.
 Se nessun autovalore compare in $W(t)$, quest'ultima è nulla e allora la risposta impulsiva è nulla.
+
+
+\subsection{Definizione di guadagno e interpretazione fisica}
+Il guadagno è il fattore costante che compare nella forma di Bode della funzione di trasferimento,
+esso è definito per ogni elemento ed è pari al valore che assume la $W(s)$
+in $s=0$ dopo aver eliminato l'eventuale eccesso di poli in zero.
+Il guadagno della funzione di trasferimento di un sistema ha,
+nel caso in cui esista la risposta a regime permanente,
+il significato fisico di valore di regime della risposta al gradino unitario,
+cioè $W(s)|_{s=0}$.
+
 
 
 \subsection{Il ruolo dell'osservabilità nella ricostruzione del comportamento interno}
@@ -1052,6 +1062,22 @@ vale a dire che è necessaria la \textbf{limitatezza delle evoluzioni interne (S
 e quindi tutti gli autovalori del sistema devono avere parte reale negativa.
 
 
+
+\subsection{Risposta a regime permanente per sistemi a tempo discreto}
+La risposta a regime permanente, ad un assegnato ingresso, è quella funzione del tempo intorno alla quale, indipendentemente dallo stato iniziale,
+tende ad arrestarsi la risposta in uscita al crescere del tempo.
+Per sistemi tempo discreto si definisce con:
+\[Y_r(k)=\sum_{\tau =- \infty}^{k} W(k-\tau)u(\tau) \]
+Si assume anche in questo caso che il sistema sia stabile internamente (modulo minore o uguale a uno degli autovalori con ordine geometrico unitario,
+strettamente inferiore ad uno gli altri), per evitare che vi siano evoluzioni che crescono
+indefinitamente impedendone il funzionamento.
+
+Valgono inoltre le ipotesi che i
+modi osservabili siano asintoticamente stabili (cioè che i corrispondenti autovalori siano a modulo inferiore ad uno), per assicurare l'indipendenza dallo stato iniziale, e che
+il sistema sia esternamente stabile nello stato zero (modulo inferiore ad uno dei
+poli della funzione di trasferimento).
+
+
 \subsection{Risposta a regime permanente ad ingressi sinusoidali per sistemi a tempo continuo}
 La risposta a regime permanente è quell'andamento
 nel tempo al quale tende ad assestarsi la risposta
@@ -1112,20 +1138,6 @@ Se effettuo il cambio di coordinate
 \[ z=Tx \quad \to \quad \widetilde{A}=TAT^{-1}, \widetilde{B}=TB, \widetilde{C}=CT^{-1}, \widetilde{D}=D\]
 ottengo:
 $\widetilde{W}=\widetilde{C}e^{At}\widetilde{B}+\widetilde{D}=CT^{-1}Te^{At}T^{-1}TB+D=W(t)$
-
-\subsection{Risposta a regime permanente per sistemi a tempo discreto}
-La risposta a regime permanente, ad un assegnato ingresso, è quella funzione del tempo intorno alla quale, indipendentemente dallo stato iniziale,
-tende ad arrestarsi la risposta in uscita al crescere del tempo.
-Per sistemi tempo discreto si definisce con:
-\[Y_r(k)=\sum_{\tau =- \infty}^{k} W(k-\tau)u(\tau) \]
-Si assume anche in questo caso che il sistema sia stabile internamente (modulo minore o uguale a uno degli autovalori con ordine geometrico unitario,
-strettamente inferiore ad uno gli altri), per evitare che vi siano evoluzioni che crescono
-indefinitamente impedendone il funzionamento.
-
-Valgono inoltre le ipotesi che i
-modi osservabili siano asintoticamente stabili (cioè che i corrispondenti autovalori siano a modulo inferiore ad uno), per assicurare l'indipendenza dallo stato iniziale, e che
-il sistema sia esternamente stabile nello stato zero (modulo inferiore ad uno dei
-poli della funzione di trasferimento).
 
 \subsection{È possibile che un sistema abbia funzione di trasferimento uguale a zero? Se si, sotto
 quali condizioni?}
