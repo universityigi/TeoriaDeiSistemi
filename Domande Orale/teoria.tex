@@ -625,8 +625,8 @@ Lo stato, in forma esplicità, sarà quindi : \(\displaystyle x(t) = e^{A(t-t_0)
 Per studiarlo in forma discreta, detto $T_c$ il tempo di campionamento, pongo $t_0$ come un generico istante $kT_c$, e $t$ come l'istante successivo
 $(k+1)T_c$. Così mi viene:
 \begin{align*} 
-    x((k+1)T_c) &=& e^{AT_c}x(kT_x) &+ \int_{kT_c}^{(k+1)T_c} e ^{A((k+1)T_c-\tau)}B u(\tau) d\tau \\
-    x((k+1)T_c) &=& e^{AT_c}x(kT_x) &+ \int_{kT_c}^{(k+1)T_c} e ^{A((k+1)T_c-\tau)}B  d\tau \ u(kT_c)
+    x((k+1)T_c) &=& e^{AT_c}x(kT_c) &+ \int_{kT_c}^{(k+1)T_c} e ^{A((k+1)T_c-\tau)}B u(\tau) d\tau \\
+    x((k+1)T_c) &=& e^{AT_c}x(kT_c) &+ \int_{kT_c}^{(k+1)T_c} e ^{A((k+1)T_c-\tau)}B  d\tau \ u(kT_c)
 \end{align*}
 ponendo quindi le rappresentazioni 
 
