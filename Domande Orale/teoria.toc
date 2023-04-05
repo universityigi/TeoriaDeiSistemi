@@ -1,0 +1,60 @@
+\contentsline {section}{\numberline {1}Domande di Teoria}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Forma di Kalman di un sistema}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Definizione smorzamento e pulsazione naturale}{4}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Problema della realizzazione}{4}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Relazione tra poli di W(s) e gli autovalori}{4}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}Scomposizione canonica rispetto alla raggiungibilità}{4}{subsection.1.5}%
+\contentsline {subsection}{\numberline {1.6}Definire eccitabilità di un modo naturale e dimostrarne la condizione. Come sono legate l'eccitabilità dei modi naturali con la raggiungibilità del sistema?}{5}{subsection.1.6}%
+\contentsline {subsection}{\numberline {1.7}Legame tra raggiungibilità del sistema e eccitabilità dei modi}{5}{subsection.1.7}%
+\contentsline {subsection}{\numberline {1.8}Definizione di raggiungibilità di uno stato; caratterizzare l'insieme degli stati raggiungibili per sistemi dinamici lineari stazionari; confrontare il caso tempo continuo e tempo discreto}{5}{subsection.1.8}%
+\contentsline {subsection}{\numberline {1.9}Definizione di raggiungibilità ed inosservabilità; caratterizzazione e proprietà degli insiemi di tali stati}{6}{subsection.1.9}%
+\contentsline {subsection}{\numberline {1.10}Osservabilità nei sistemi lineari}{6}{subsection.1.10}%
+\contentsline {subsection}{\numberline {1.11}L'osservabilità dei sistemi lineari a tempo discreto: definizione e condizioni}{7}{subsection.1.11}%
+\contentsline {subsection}{\numberline {1.12}Per un sistema tempo discreto dimostrare che l'insieme degli stati inosservabili è :}{7}{subsection.1.12}%
+\contentsline {subsection}{\numberline {1.13}Perché A21 viene zero sempre nella forza canonica osservabile dopo il cambio di base }{8}{subsection.1.13}%
+\contentsline {subsection}{\numberline {1.14}I modi naturali dei sistemi lineari a tempo continuo: definizione e parametri caratteristici}{8}{subsection.1.14}%
+\contentsline {subsection}{\numberline {1.15}Modi naturali per sistemi a tempo discreto}{9}{subsection.1.15}%
+\contentsline {subsection}{\numberline {1.16}Può un sistema lineare essere caratterizzato da modi naturali aventi la stessa legge di moto?}{9}{subsection.1.16}%
+\contentsline {subsection}{\numberline {1.17}\boldmath Dato un sistema a tempo continuo $(A, B, C, D)$ con $D = 0$, $\Lambda $ l'insieme degli autovalori, $\Lambda _e$ e $\Lambda _o$ gli insiemi degli autovalori associati ai modi eccitabili e osservabili. Dimostrare che $\Lambda _e \DOTSB \bigcap@ \slimits@ \Lambda _o = \emptyset \DOTSB \Relbar \joinrel \Rightarrow W(t) = 0$}{9}{subsection.1.17}%
+\contentsline {subsection}{\numberline {1.18}Definizione di guadagno e interpretazione fisica}{10}{subsection.1.18}%
+\contentsline {subsection}{\numberline {1.19}Il ruolo dell'osservabilità nella ricostruzione del comportamento interno}{10}{subsection.1.19}%
+\contentsline {subsection}{\numberline {1.20}W(t), W(s) e W($j\omega $): cosa rappresentano e qual è il loro significato fisico.}{10}{subsection.1.20}%
+\contentsline {subsection}{\numberline {1.21}Scrivere un sistema (cioè scrivere le matrici $A, B, C$) in forma canonica osservabile con $n=3, p=q=1$. Determinare un cambio di base per metterlo in forma canonica raggiungibile}{10}{subsection.1.21}%
+\contentsline {subsection}{\numberline {1.22}Proprietà di semigruppo}{10}{subsection.1.22}%
+\contentsline {subsection}{\numberline {1.23}Osservatore Asintotico}{11}{subsection.1.23}%
+\contentsline {section}{\numberline {2}Passaggi di Rappresentazione}{12}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Un sistema dinamico può esser rappresentato tramite un modello implicito o esplicito. \\ (a) Illustrare i diversi vantaggi e svantaggi delle due rappresentazioni; \\ (b) Per sistemi a tempo discreto lineari e stazionari, indicare i passaggi matematici che permettono di passare da una rappresentazione all'altra e viceversa.}{12}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Dimostrazione passaggio da forma esplicita a implicita}{12}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Dimostrazione passaggio da forma implicita a esplicita}{13}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Sistema a tempo discreto equivalente ad un dato sistema a tempo continuo}{14}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Come si passa dalla rappresentazione implicita a quella esplicita nel tempo discreto}{15}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Come si passa dalla rappresentazione esplicita a quella implicita nel tempo discreto}{15}{subsection.2.6}%
+\contentsline {subsection}{\numberline {2.7}Come si passa da rappresentazione a tempo continuo a rappresentazione con Laplace}{16}{subsection.2.7}%
+\contentsline {subsection}{\numberline {2.8}Come si passa da rappresentazione a tempo discreto a rappresentazione con la trasformata Zeta}{16}{subsection.2.8}%
+\contentsline {section}{\numberline {3}Stabilità}{17}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Studiare la stabilità di un sistema non lineare}{17}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Lyapunov di sistemi non lineari a tempo discreto}{17}{subsection.3.2}%
+\contentsline {paragraph}{Teorema $3.8.1$:}{17}{subsection.3.2}%
+\contentsline {paragraph}{Teorema $3.8.2$:}{17}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Enunciato e dimostrazione teorema di Nyquist}{17}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Dimostrazione:}{17}{subsubsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.4}Definizione punto di equilibrio}{19}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Definizione formale di stabilità di un punto di equilibrio}{20}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Definizione, condizioni e criteri di stabilità interna per sistemi lineari:}{20}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.7}Relazioni tra stabilità esterna e interna}{20}{subsection.3.7}%
+\contentsline {subsection}{\numberline {3.8}Stabilità esterna nello stato zero}{21}{subsection.3.8}%
+\contentsline {subsection}{\numberline {3.9}Definizione di stabilità esterna e condizioni}{21}{subsection.3.9}%
+\contentsline {section}{\numberline {4}Dimostazioni formali}{21}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Dato un sistema in forma esplicita, dimostra che il sistema è lineare}{21}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}\boldmath Dimostrazione che data un'evoluzione da $x(t_0)$ a $x(t)$, vale la stessa da $x(t_1)$ con $<t_0<t_1<t$}{22}{subsection.4.2}%
+\contentsline {section}{\numberline {5}Dimostrazioni di risposte a regime permanente}{23}{section.5}%
+\contentsline {subsection}{\numberline {5.1}La risposta a regime permanente: definizione e condizioni di esistenza}{23}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Risposta a regime permanente per sistemi a tempo discreto}{23}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Risposta a regime permanente ad ingressi sinusoidali per sistemi a tempo continuo}{24}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}\boldmath Dimostrare la formula della risposta a regime permanente all'ingresso $u(k) = sin(\theta k)$ per un sistema a tempo discreto.}{24}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}\boldmath Si dimostri che, se esiste, la risposta a regime permanente a $u(t) = \delta _{-1}(t)$(ingresso a gradino) è uguale al guadagno del sistema}{25}{subsection.5.5}%
+\contentsline {subsection}{\numberline {5.6}Dimostrare che la funzione di trasferimento W(s) non dipende dalla scelta delle coordinate}{25}{subsection.5.6}%
+\contentsline {subsection}{\numberline {5.7}È possibile che un sistema abbia funzione di trasferimento uguale a zero? Se si, sotto quali condizioni?}{25}{subsection.5.7}%
+\contentsline {section}{\numberline {6}Esercizi}{26}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Trovare il valore massimo del parametro r tale per cui il sistema retroazionato sia stabile. }{26}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Trovare $P_2$ }{27}{subsection.6.2}%

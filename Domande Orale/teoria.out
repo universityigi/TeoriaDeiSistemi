@@ -1,0 +1,58 @@
+\BOOKMARK [1][-]{section.1}{Domande di Teoria}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{Forma di Kalman di un sistema}{section.1}% 2
+\BOOKMARK [2][-]{subsection.1.2}{Definizione smorzamento e pulsazione naturale}{section.1}% 3
+\BOOKMARK [2][-]{subsection.1.3}{Problema della realizzazione}{section.1}% 4
+\BOOKMARK [2][-]{subsection.1.4}{Relazione tra poli di W\(s\) e gli autovalori}{section.1}% 5
+\BOOKMARK [2][-]{subsection.1.5}{Scomposizione canonica rispetto alla raggiungibilit\340}{section.1}% 6
+\BOOKMARK [2][-]{subsection.1.6}{Definire eccitabilit\340 di un modo naturale e dimostrarne la condizione. Come sono legate l'eccitabilit\340 dei modi naturali con la raggiungibilit\340 del sistema?}{section.1}% 7
+\BOOKMARK [2][-]{subsection.1.7}{Legame tra raggiungibilit\340 del sistema e eccitabilit\340 dei modi}{section.1}% 8
+\BOOKMARK [2][-]{subsection.1.8}{Definizione di raggiungibilit\340 di uno stato; caratterizzare l'insieme degli stati raggiungibili per sistemi dinamici lineari stazionari; confrontare il caso tempo continuo e tempo discreto}{section.1}% 9
+\BOOKMARK [2][-]{subsection.1.9}{Definizione di raggiungibilit\340 ed inosservabilit\340; caratterizzazione e propriet\340 degli insiemi di tali stati}{section.1}% 10
+\BOOKMARK [2][-]{subsection.1.10}{Osservabilit\340 nei sistemi lineari}{section.1}% 11
+\BOOKMARK [2][-]{subsection.1.11}{L'osservabilit\340 dei sistemi lineari a tempo discreto: definizione e condizioni}{section.1}% 12
+\BOOKMARK [2][-]{subsection.1.12}{Per un sistema tempo discreto dimostrare che l'insieme degli stati inosservabili \350 :}{section.1}% 13
+\BOOKMARK [2][-]{subsection.1.13}{Perch\351 A21 viene zero sempre nella forza canonica osservabile dopo il cambio di base }{section.1}% 14
+\BOOKMARK [2][-]{subsection.1.14}{I modi naturali dei sistemi lineari a tempo continuo: definizione e parametri caratteristici}{section.1}% 15
+\BOOKMARK [2][-]{subsection.1.15}{Modi naturali per sistemi a tempo discreto}{section.1}% 16
+\BOOKMARK [2][-]{subsection.1.16}{Pu\362 un sistema lineare essere caratterizzato da modi naturali aventi la stessa legge di moto?}{section.1}% 17
+\BOOKMARK [2][-]{subsection.1.17}{Dato un sistema a tempo continuo \(A, B, C, D\) con D = 0, \040l'insieme degli autovalori, e e o gli insiemi degli autovalori associati ai modi eccitabili e osservabili. Dimostrare che e o = -3muW\(t\) = 0}{section.1}% 18
+\BOOKMARK [2][-]{subsection.1.18}{Definizione di guadagno e interpretazione fisica}{section.1}% 19
+\BOOKMARK [2][-]{subsection.1.19}{Il ruolo dell'osservabilit\340 nella ricostruzione del comportamento interno}{section.1}% 20
+\BOOKMARK [2][-]{subsection.1.20}{W\(t\), W\(s\) e W\(j\): cosa rappresentano e qual \350 il loro significato fisico.}{section.1}% 21
+\BOOKMARK [2][-]{subsection.1.21}{Scrivere un sistema \(cio\350 scrivere le matrici A, B, C\) in forma canonica osservabile con n=3, p=q=1. Determinare un cambio di base per metterlo in forma canonica raggiungibile}{section.1}% 22
+\BOOKMARK [2][-]{subsection.1.22}{Propriet\340 di semigruppo}{section.1}% 23
+\BOOKMARK [2][-]{subsection.1.23}{Osservatore Asintotico}{section.1}% 24
+\BOOKMARK [1][-]{section.2}{Passaggi di Rappresentazione}{}% 25
+\BOOKMARK [2][-]{subsection.2.1}{Un sistema dinamico pu\362 esser rappresentato tramite un modello implicito o esplicito. \040\(a\) Illustrare i diversi vantaggi e svantaggi delle due rappresentazioni; \040\(b\) Per sistemi a tempo discreto lineari e stazionari, indicare i passaggi matematici che permettono di passare da una rappresentazione all'altra e viceversa.}{section.2}% 26
+\BOOKMARK [2][-]{subsection.2.2}{Dimostrazione passaggio da forma esplicita a implicita}{section.2}% 27
+\BOOKMARK [2][-]{subsection.2.3}{Dimostrazione passaggio da forma implicita a esplicita}{section.2}% 28
+\BOOKMARK [2][-]{subsection.2.4}{Sistema a tempo discreto equivalente ad un dato sistema a tempo continuo}{section.2}% 29
+\BOOKMARK [2][-]{subsection.2.5}{Come si passa dalla rappresentazione implicita a quella esplicita nel tempo discreto}{section.2}% 30
+\BOOKMARK [2][-]{subsection.2.6}{Come si passa dalla rappresentazione esplicita a quella implicita nel tempo discreto}{section.2}% 31
+\BOOKMARK [2][-]{subsection.2.7}{Come si passa da rappresentazione a tempo continuo a rappresentazione con Laplace}{section.2}% 32
+\BOOKMARK [2][-]{subsection.2.8}{Come si passa da rappresentazione a tempo discreto a rappresentazione con la trasformata Zeta}{section.2}% 33
+\BOOKMARK [1][-]{section.3}{Stabilit\340}{}% 34
+\BOOKMARK [2][-]{subsection.3.1}{Studiare la stabilit\340 di un sistema non lineare}{section.3}% 35
+\BOOKMARK [2][-]{subsection.3.2}{Lyapunov di sistemi non lineari a tempo discreto}{section.3}% 36
+\BOOKMARK [2][-]{subsection.3.3}{Enunciato e dimostrazione teorema di Nyquist}{section.3}% 37
+\BOOKMARK [3][-]{subsubsection.3.3.1}{Dimostrazione:}{subsection.3.3}% 38
+\BOOKMARK [2][-]{subsection.3.4}{Definizione punto di equilibrio}{section.3}% 39
+\BOOKMARK [2][-]{subsection.3.5}{Definizione formale di stabilit\340 di un punto di equilibrio}{section.3}% 40
+\BOOKMARK [2][-]{subsection.3.6}{Definizione, condizioni e criteri di stabilit\340 interna per sistemi lineari:}{section.3}% 41
+\BOOKMARK [2][-]{subsection.3.7}{Relazioni tra stabilit\340 esterna e interna}{section.3}% 42
+\BOOKMARK [2][-]{subsection.3.8}{Stabilit\340 esterna nello stato zero}{section.3}% 43
+\BOOKMARK [2][-]{subsection.3.9}{Definizione di stabilit\340 esterna e condizioni}{section.3}% 44
+\BOOKMARK [1][-]{section.4}{Dimostazioni formali}{}% 45
+\BOOKMARK [2][-]{subsection.4.1}{Dato un sistema in forma esplicita, dimostra che il sistema \350 lineare}{section.4}% 46
+\BOOKMARK [2][-]{subsection.4.2}{Dimostrazione che data un'evoluzione da x\(t0\) a x\(t\), vale la stessa da x\(t1\) con <t0<t1<t}{section.4}% 47
+\BOOKMARK [1][-]{section.5}{Dimostrazioni di risposte a regime permanente}{}% 48
+\BOOKMARK [2][-]{subsection.5.1}{La risposta a regime permanente: definizione e condizioni di esistenza}{section.5}% 49
+\BOOKMARK [2][-]{subsection.5.2}{Risposta a regime permanente per sistemi a tempo discreto}{section.5}% 50
+\BOOKMARK [2][-]{subsection.5.3}{Risposta a regime permanente ad ingressi sinusoidali per sistemi a tempo continuo}{section.5}% 51
+\BOOKMARK [2][-]{subsection.5.4}{Dimostrare la formula della risposta a regime permanente all'ingresso u\(k\) = sin\(k\) per un sistema a tempo discreto.}{section.5}% 52
+\BOOKMARK [2][-]{subsection.5.5}{Si dimostri che, se esiste, la risposta a regime permanente a u\(t\) = -1\(t\)\(ingresso a gradino\) \350 uguale al guadagno del sistema}{section.5}% 53
+\BOOKMARK [2][-]{subsection.5.6}{Dimostrare che la funzione di trasferimento W\(s\) non dipende dalla scelta delle coordinate}{section.5}% 54
+\BOOKMARK [2][-]{subsection.5.7}{\310 possibile che un sistema abbia funzione di trasferimento uguale a zero? Se si, sotto quali condizioni?}{section.5}% 55
+\BOOKMARK [1][-]{section.6}{Esercizi}{}% 56
+\BOOKMARK [2][-]{subsection.6.1}{Trovare il valore massimo del parametro r tale per cui il sistema retroazionato sia stabile. }{section.6}% 57
+\BOOKMARK [2][-]{subsection.6.2}{Trovare P2 }{section.6}% 58
