@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1676632638 "/home/mecella/Desktop/scuola/TDS/TeoriaDeiSistemi/Domande Orale/teoria.tex" "/home/mecella/Desktop/scuola/TDS/TeoriaDeiSistemi/Domande Orale/teoria.pdf" "teoria" 1676632647
+["pdflatex"] 1676632638 "/home/mecella/Desktop/scuola/TDS/TeoriaDeiSistemi/Domande Orale/teoria.tex" "/home/mecella/Desktop/scuola/TDS/TeoriaDeiSistemi/Domande Orale/teoria.pdf" "teoria" 1680690818
   "./figures/ZOH.jpeg" 1673443699 2965 3202eab5aa4a3764ba287e0faf412004 ""
   "./figures/discreto.jpeg" 1673444390 5557 e3a77e1c3068050a633cec9dc6351548 ""
   "./figures/oss_asint.jpeg" 1674411735 19970 b5b8c2e3aa991c8ecfa65bfa6b42c294 ""
@@ -153,10 +153,10 @@
   "teoria.tex" 1676632647 52670 fc964c9fa803c536e98b8ca186f06b46 ""
   "teoria.toc" 1676632639 8368 205fddd84b3a3b4b5212720324f44caf "pdflatex"
   (generated)
-  "teoria.toc"
-  "teoria.log"
   "teoria.out"
-  "teoria.pdf"
-  "/home/mecella/Desktop/scuola/TDS/TeoriaDeiSistemi/Domande Orale/teoria.log"
   "/home/mecella/Desktop/scuola/TDS/TeoriaDeiSistemi/Domande Orale/teoria.pdf"
+  "teoria.toc"
+  "teoria.pdf"
   "teoria.aux"
+  "/home/mecella/Desktop/scuola/TDS/TeoriaDeiSistemi/Domande Orale/teoria.log"
+  "teoria.log"
