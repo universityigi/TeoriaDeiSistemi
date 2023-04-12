@@ -9,7 +9,7 @@
 \usepackage{mathrsfs}
 \usepackage{hyperref}
 \usepackage{mathtools}
-
+\usepackage{xcolor}
 \usepackage{titlesec}
 \usepackage[ margin=1in]{geometry}
 \usepackage{graphicx}
@@ -608,7 +608,7 @@ Lo schema sarà quindi:
 In questo caso il problema è che il sistema di cui ho già il modello si aspetta un ingresso continuo, quindi dovrò usare lo Zero Order Holder per
 farglielo arrivare.
 
-Inoltre anche l'uscita del sistema sarà continua, e quindi per ottenerla disxcreta dovrò usare un campionatore.
+Inoltre anche l'uscita del sistema sarà continua, e quindi per ottenerla discreta dovrò usare un campionatore.
 
 \incfig{discreto.jpeg}{0.4}
 
@@ -671,7 +671,7 @@ Che è praticamente (\ref{eplsTdiscreto}). A questo punto posso concludere ponen
 
 Partendo da
 \[
-    x(t) = \Phi(t-t_0)x(t_0)+\sum_{t=t_0}^{t-1}H(t-\tau)u(\tau)
+    x(t) = \Phi(t-t_0)x(t_0)+\sum_{\tau=t_0}^{t-1}H(t-\tau)u(\tau)
 \]
 voglio arrivare a $x(t+1) = Ax(t)+Bu(t)$: 
 
@@ -738,9 +738,33 @@ Prendiamo il sistema
 \]
 con $x\in\mathbb{R}^n,u\in\mathbb{R}^p,y\in\mathbb{R}^q,f:\mathbb{R}^nx\mathbb{R}^p\to\mathbb{R}^n,h:\mathbb{R}^nx\mathbb{R}^p\to\mathbb{R}^q$
 
-Dato che la permanenza in unos stato è determinata dall'assenza di variazioni, un punto di equilibrio
+Dato che la permanenza in uno stato è determinata dall'assenza di variazioni, un punto di equilibrio
 è un punto $x_e$ tale che $f(x_e,u) = 0$ per qualche u.
 E basta, le definizioni di stabilità sono le solite per i punti di equilibrio.
+
+\subsection{Lyapunov di sistemi non lineari a tempo continuo}
+Consideriamo un punto di equilibrio del sistema
+non lineare x ; prendiamo una funzione scalare $V (x)$, con la caratteristica che è nulla per il punto di interesse
+e positiva nell'intorno di questo punto:
+\begin{align*}
+    V(x) : \mathbb{R}^n\to\mathbb{R} & & 
+    V(x_e) = 0 & & V(x) >0\ \forall x \in I_{x_e}
+\end{align*}
+$V(x)$ è detta \textbf{definita positiva} nell'intorno di $x_e$ indicato con $I_{x_e}$.
+
+Se ha $<, \ge, \le$ nella formula si dice 
+\textit{definita negativa, semidefinita positiva, semidefinita negativa}.
+
+Il criterio di Lyapunov consiste nel fatto che se esiste una funzione definita positiva $V (x) > 0$ tale da avere la
+funzione derivata \textit{definita negativa}
+$\overset{\cdot}{V}(x) = \frac{\partial V(x)}{\partial t} =\frac{\partial V(x)}{\partial x}\frac{\partial x}{\partial t}
+=\frac{\partial V(x)}{\partial x} \overset{\cdot}{x} <0$
+allora il punto di equilibrio è localmente \textbf{asintoticamente stabile}.
+Se invece  la sua derivata è \textit{semidefinita negativa}, allora è
+\textbf{semplicemente stabile} localmente.
+
+
+
 
 
 \subsection{Lyapunov di sistemi non lineari a tempo discreto}
@@ -748,13 +772,31 @@ Definita la \textit{funzione di Lyapunov} $V(x)$ introduco la  funzione
 \textit{differenza prima} $\Delta V(x) = V(x(t+1))-V(x(t))$ e il punto d'equilibrio è:
 $x_e = f(x_e)$
 \paragraph{Teorema $3.8.1$:} Lo stato $x_e$ di equilibrio è localmente stabile asintoticamente se esiste una
-funzione $V(x)$ definita positiva in un intorno $I_{x_e}$ tale che la syua differenza prima lungo il moto 
+funzione $V(x)$ definita positiva in un intorno $I_{x_e}$ tale che la sua differenza prima lungo il moto 
 \[ \Delta V(x) = V(x(t+1))-V(x(t)) = V(f(x(t)))-V(x(t)) \] sia \textbf{definita negativa}.
 
 \paragraph{Teorema $3.8.2$:}Lo stato $x_e$ di equilibrio è localmente stabile semplicemente se $\exists V(x)$ definita
 positiva in $I_{x_e}$, tale che la sua differenza prima lungo il moto  $V(x) = V(x(t+1))-V(x(t))$ sia 
 \textbf{semi-definita negativa}
 
+\subsection{Lyapunov di sistemi  lineari a tempo continuo}
+Dato il sistema che ha come equazione di stato \(\displaystyle \overset{\cdot}{x} = Ax+Bu \).
+La più adatta è $V(x) = x'Qx$.
+Per semplicita assumo che $Q$ è simmetrica.
+Se $Q$ è {\color{blue} \textit{definita positiva}} (ovvero i determinanti dei minori principali sono tutti positivi) allora
+$V(x)$ è {\color{blue} \textit{definita positiva}}.
+La derivata di $V(x)$ sarà:
+\[ \overset{\cdot}{V}(x) = \overset{\cdot}{x} ' Qx + x' Q\overset{\cdot}{x} = (Ax)' Qx + x' QAx = x' A' Qx + x' QAx = x' (A' Q + QA)x\]
+
+Secondo il criterio di Lyapunov, se $\overset{\cdot}{V}(x)$ è definita negativa, allora il punto di equilibrio $x_e$
+è stabile asintoticamente.
+$x' (A' Q + QA)x$ è definita negativa se $A'Q + QA$ è definita negativa, cioè  
+\[
+    A'Q + QA = -P \text{ con $P$ matrice positiva, che alla fine vuol dire } \overset{\cdot}{V}(x) = -x'Px <0
+\]
+La condizione per cui esista una Q che abbia queste condizioni è non solo
+sufficiente, ma anche necessaria, quindi il metodo darà sicuramente una soluzione unica.
+\[ \forall\ P > 0 \ \exists!\ Q>0 \Longleftrightarrow x_e = 0 \text{ stabile asisntoticamente}\]
 
 
 \subsection{Enunciato e dimostrazione teorema di Nyquist}
