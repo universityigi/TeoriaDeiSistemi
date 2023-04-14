@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2022.4.28)  6 APR 2023 17:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2022.4.28)  14 APR 2023 12:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -400,7 +400,7 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 ) (/home/mecella/Desktop/scuola/TDS/TeoriaDeiSistemi/Domande Orale/teoria.toc [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
-Overfull \hbox (23.8948pt too wide) in paragraph at lines 57--57
+Overfull \hbox (23.8948pt too wide) in paragraph at lines 58--58
  [][] [][][]\OT1/cmr/m/n/12 Si di-mostri che, se es-iste, la risposta a regime per-ma-nente a $\OML/cmm/b/it/12 u\OT1/cmr/bx/n/12 (\OML/cmm/b/it/12 t\OT1/cmr/bx/n/12 ) = \OML/cmm/b/it/12 ^^N[]\OT1/cmr/bx/n/12 (\OML/cmm/b/it/12 t\OT1/cmr/bx/n/12 )$\OT1/cmr/m/n/12 (ingresso 
  []
 
@@ -588,7 +588,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 433.
 
 [10]
-<./figures/oss_asint.jpeg, id=397, 528.97626pt x 322.20375pt>
+<./figures/oss_asint.jpeg, id=402, 528.97626pt x 322.20375pt>
 File: ./figures/oss_asint.jpeg Graphic file (type jpg)
 <use ./figures/oss_asint.jpeg>
 Package pdftex.def Info: ./figures/oss_asint.jpeg  used on input line 494.
@@ -603,186 +603,186 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\\' on input line 512.
 
 [11 </home/mecella/Desktop/scuola/TDS/TeoriaDeiSistemi/Domande Orale/./figures/oss_asint.jpeg>] [12]
-<./figures/ZOH.jpeg, id=409, 324.21124pt x 134.5025pt>
+<./figures/ZOH.jpeg, id=414, 324.21124pt x 134.5025pt>
 File: ./figures/ZOH.jpeg Graphic file (type jpg)
 <use ./figures/ZOH.jpeg>
 Package pdftex.def Info: ./figures/ZOH.jpeg  used on input line 606.
 (pdftex.def)             Requested size: 129.68219pt x 53.80003pt.
  [13]
-<./figures/discreto.jpeg, id=417, 363.3575pt x 159.59625pt>
+<./figures/discreto.jpeg, id=422, 363.3575pt x 159.59625pt>
 File: ./figures/discreto.jpeg Graphic file (type jpg)
 <use ./figures/discreto.jpeg>
 Package pdftex.def Info: ./figures/discreto.jpeg  used on input line 613.
 (pdftex.def)             Requested size: 145.34041pt x 63.83736pt.
  [14 </home/mecella/Desktop/scuola/TDS/TeoriaDeiSistemi/Domande Orale/./figures/ZOH.jpeg> </home/mecella/Desktop/scuola/TDS/TeoriaDeiSistemi/Domande Orale/./figures/discreto.jpeg>] [15] [16] [17] [18]
-<./figures/pipj.jpeg, id=449, 694.595pt x 422.57875pt>
+<./figures/pipj.jpeg, id=453, 694.595pt x 422.57875pt>
 File: ./figures/pipj.jpeg Graphic file (type jpg)
 <use ./figures/pipj.jpeg>
-Package pdftex.def Info: ./figures/pipj.jpeg  used on input line 845.
+Package pdftex.def Info: ./figures/pipj.jpeg  used on input line 866.
 (pdftex.def)             Requested size: 347.29665pt x 211.28885pt.
- [19 </home/mecella/Desktop/scuola/TDS/TeoriaDeiSistemi/Domande Orale/./figures/pipj.jpeg>]
-<./figures/x_e.jpeg, id=459, 606.265pt x 474.77374pt>
+ [19] [20 </home/mecella/Desktop/scuola/TDS/TeoriaDeiSistemi/Domande Orale/./figures/pipj.jpeg>]
+<./figures/x_e.jpeg, id=468, 606.265pt x 474.77374pt>
 File: ./figures/x_e.jpeg Graphic file (type jpg)
 <use ./figures/x_e.jpeg>
-Package pdftex.def Info: ./figures/x_e.jpeg  used on input line 901.
+Package pdftex.def Info: ./figures/x_e.jpeg  used on input line 922.
 (pdftex.def)             Requested size: 303.13176pt x 237.38629pt.
 
 
-LaTeX Warning: Command \textbardbl invalid in math mode on input line 918.
+LaTeX Warning: Command \textbardbl invalid in math mode on input line 939.
 
 
-LaTeX Warning: Command \textbardbl invalid in math mode on input line 918.
+LaTeX Warning: Command \textbardbl invalid in math mode on input line 939.
 
 
-LaTeX Warning: Command \textbardbl invalid in math mode on input line 918.
+LaTeX Warning: Command \textbardbl invalid in math mode on input line 939.
 
 
-LaTeX Warning: Command \textbardbl invalid in math mode on input line 918.
-
-Missing character: There is no † in font cmr12!
-Missing character: There is no † in font cmr12!
-
-LaTeX Warning: Command \textbardbl invalid in math mode on input line 919.
-
-
-LaTeX Warning: Command \textbardbl invalid in math mode on input line 919.
-
-
-LaTeX Warning: Command \textbardbl invalid in math mode on input line 919.
-
-
-LaTeX Warning: Command \textbardbl invalid in math mode on input line 919.
+LaTeX Warning: Command \textbardbl invalid in math mode on input line 939.
 
 Missing character: There is no † in font cmr12!
 Missing character: There is no † in font cmr12!
-[20 </home/mecella/Desktop/scuola/TDS/TeoriaDeiSistemi/Domande Orale/./figures/x_e.jpeg>] [21]
+
+LaTeX Warning: Command \textbardbl invalid in math mode on input line 940.
+
+
+LaTeX Warning: Command \textbardbl invalid in math mode on input line 940.
+
+
+LaTeX Warning: Command \textbardbl invalid in math mode on input line 940.
+
+
+LaTeX Warning: Command \textbardbl invalid in math mode on input line 940.
+
+Missing character: There is no † in font cmr12!
+Missing character: There is no † in font cmr12!
+[21 </home/mecella/Desktop/scuola/TDS/TeoriaDeiSistemi/Domande Orale/./figures/x_e.jpeg>] [22]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1028.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 1028.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1028.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1028.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1028.
+(hyperref)                removing `math shift' on input line 1049.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1028.
+(hyperref)                removing `subscript' on input line 1049.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 1028.
+(hyperref)                removing `math shift' on input line 1049.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1028.
+(hyperref)                removing `math shift' on input line 1049.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1028.
+(hyperref)                removing `math shift' on input line 1049.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 1028.
+(hyperref)                removing `math shift' on input line 1049.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 1028.
+(hyperref)                removing `subscript' on input line 1049.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1028.
+(hyperref)                removing `math shift' on input line 1049.
 
-[22] [23] [24]
-Overfull \hbox (4.93942pt too wide) in paragraph at lines 1134--1134
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1049.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 1049.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 1049.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1049.
+
+[23] [24]
+Overfull \hbox (4.93942pt too wide) in paragraph at lines 1155--1155
 |[]\OT1/cmr/bx/n/12 Dimostrare la for-mula della risposta a regime per-ma-nente all'ingresso $\OML/cmm/b/it/12 u\OT1/cmr/bx/n/12 (\OML/cmm/b/it/12 k\OT1/cmr/bx/n/12 ) =
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1134.
+(hyperref)                removing `math shift' on input line 1155.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\theta' on input line 1134.
+(hyperref)                removing `\theta' on input line 1155.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1134.
+(hyperref)                removing `math shift' on input line 1155.
 
-
-Overfull \hbox (33.0186pt too wide) in paragraph at lines 1161--1161
+[25]
+Overfull \hbox (33.0186pt too wide) in paragraph at lines 1182--1182
 |[]\OT1/cmr/bx/n/12 Si di-mostri che, se es-iste, la risposta a regime per-ma-nente a $\OML/cmm/b/it/12 u\OT1/cmr/bx/n/12 (\OML/cmm/b/it/12 t\OT1/cmr/bx/n/12 ) = \OML/cmm/b/it/12 ^^N[]\OT1/cmr/bx/n/12 (\OML/cmm/b/it/12 t\OT1/cmr/bx/n/12 )$(ingresso
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1161.
+(hyperref)                removing `math shift' on input line 1182.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\delta' on input line 1161.
+(hyperref)                removing `\delta' on input line 1182.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 1161.
+(hyperref)                removing `subscript' on input line 1182.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1161.
+(hyperref)                removing `math shift' on input line 1182.
 
-[25]
-<./figures/sistema.jpeg, id=495, 287.57437pt x 173.64874pt>
+[26]
+<./figures/sistema.jpeg, id=504, 287.57437pt x 173.64874pt>
 File: ./figures/sistema.jpeg Graphic file (type jpg)
 <use ./figures/sistema.jpeg>
-Package pdftex.def Info: ./figures/sistema.jpeg  used on input line 1199.
+Package pdftex.def Info: ./figures/sistema.jpeg  used on input line 1220.
 (pdftex.def)             Requested size: 345.08752pt x 208.37744pt.
- [26 </home/mecella/Desktop/scuola/TDS/TeoriaDeiSistemi/Domande Orale/./figures/sistema.jpeg>]
+ [27 </home/mecella/Desktop/scuola/TDS/TeoriaDeiSistemi/Domande Orale/./figures/sistema.jpeg>]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1246.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 1246.
+(hyperref)                removing `math shift' on input line 1267.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1246.
+(hyperref)                removing `subscript' on input line 1267.
 
-<./figures/p1ps.jpeg, id=503, 803.0pt x 188.705pt>
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1267.
+
+<./figures/p1ps.jpeg, id=512, 803.0pt x 188.705pt>
 File: ./figures/p1ps.jpeg Graphic file (type jpg)
 <use ./figures/p1ps.jpeg>
-Package pdftex.def Info: ./figures/p1ps.jpeg  used on input line 1248.
+Package pdftex.def Info: ./figures/p1ps.jpeg  used on input line 1269.
 (pdftex.def)             Requested size: 401.49902pt x 94.35226pt.
-[27 </home/mecella/Desktop/scuola/TDS/TeoriaDeiSistemi/Domande Orale/./figures/p1ps.jpeg>] (/home/mecella/Desktop/scuola/TDS/TeoriaDeiSistemi/Domande Orale/teoria.aux)
+[28 </home/mecella/Desktop/scuola/TDS/TeoriaDeiSistemi/Domande Orale/./figures/p1ps.jpeg>] (/home/mecella/Desktop/scuola/TDS/TeoriaDeiSistemi/Domande Orale/teoria.aux)
 Package rerunfilecheck Info: File `teoria.out' has not changed.
-(rerunfilecheck)             Checksum: D28536CD0D5A7A2AC3D889AE43E4B737;7305.
+(rerunfilecheck)             Checksum: 16271B158EE44A2193F94C4000330D24;7413.
  ) 
 Here is how much of TeX's memory you used:
- 7965 strings out of 479304
- 120351 string characters out of 5869779
+ 7968 strings out of 479304
+ 120388 string characters out of 5869779
  454844 words of memory out of 5000000
- 24882 multiletter control sequences out of 15000+600000
+ 24883 multiletter control sequences out of 15000+600000
  417143 words of font info for 81 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  71i,16n,74p,542b,422s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmbsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on "/home/mecella/Desktop/scuola/TDS/TeoriaDeiSistemi/Domande Orale/teoria.pdf" (27 pages, 467055 bytes).
+Output written on "/home/mecella/Desktop/scuola/TDS/TeoriaDeiSistemi/Domande Orale/teoria.pdf" (28 pages, 468638 bytes).
 PDF statistics:
- 619 PDF objects out of 1000 (max. 8388607)
- 549 compressed objects within 6 object streams
- 105 named destinations out of 1000 (max. 500000)
- 516 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 628 PDF objects out of 1000 (max. 8388607)
+ 557 compressed objects within 6 object streams
+ 107 named destinations out of 1000 (max. 500000)
+ 524 words of extra memory for PDF output out of 10000 (max. 10000000)
 

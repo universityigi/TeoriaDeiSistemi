@@ -30,31 +30,32 @@
 \BOOKMARK [2][-]{subsection.2.5}{Come si passa dalla rappresentazione implicita a quella esplicita nel tempo discreto}{section.2}% 30
 \BOOKMARK [2][-]{subsection.2.6}{Come si passa dalla rappresentazione esplicita a quella implicita nel tempo discreto}{section.2}% 31
 \BOOKMARK [2][-]{subsection.2.7}{Come si passa da rappresentazione a tempo continuo a rappresentazione con Laplace}{section.2}% 32
-\BOOKMARK [2][-]{subsection.2.8}{Come si passa da rappresentazione a tempo discreto a rappresentazione con la trasformata Zeta}{section.2}% 33
-\BOOKMARK [1][-]{section.3}{Stabilit\340}{}% 34
-\BOOKMARK [2][-]{subsection.3.1}{Studiare la stabilit\340 di un sistema non lineare}{section.3}% 35
-\BOOKMARK [2][-]{subsection.3.2}{Lyapunov di sistemi non lineari a tempo continuo}{section.3}% 36
-\BOOKMARK [2][-]{subsection.3.3}{Lyapunov di sistemi non lineari a tempo discreto}{section.3}% 37
-\BOOKMARK [2][-]{subsection.3.4}{Lyapunov di sistemi lineari a tempo continuo}{section.3}% 38
-\BOOKMARK [2][-]{subsection.3.5}{Enunciato e dimostrazione teorema di Nyquist}{section.3}% 39
-\BOOKMARK [3][-]{subsubsection.3.5.1}{Dimostrazione:}{subsection.3.5}% 40
-\BOOKMARK [2][-]{subsection.3.6}{Definizione punto di equilibrio}{section.3}% 41
-\BOOKMARK [2][-]{subsection.3.7}{Definizione formale di stabilit\340 di un punto di equilibrio}{section.3}% 42
-\BOOKMARK [2][-]{subsection.3.8}{Definizione, condizioni e criteri di stabilit\340 interna per sistemi lineari:}{section.3}% 43
-\BOOKMARK [2][-]{subsection.3.9}{Relazioni tra stabilit\340 esterna e interna}{section.3}% 44
-\BOOKMARK [2][-]{subsection.3.10}{Stabilit\340 esterna nello stato zero}{section.3}% 45
-\BOOKMARK [2][-]{subsection.3.11}{Definizione di stabilit\340 esterna e condizioni}{section.3}% 46
-\BOOKMARK [1][-]{section.4}{Dimostazioni formali}{}% 47
-\BOOKMARK [2][-]{subsection.4.1}{Dato un sistema in forma esplicita, dimostra che il sistema \350 lineare}{section.4}% 48
-\BOOKMARK [2][-]{subsection.4.2}{Dimostrazione che data un'evoluzione da x\(t0\) a x\(t\), vale la stessa da x\(t1\) con <t0<t1<t}{section.4}% 49
-\BOOKMARK [1][-]{section.5}{Dimostrazioni di risposte a regime permanente}{}% 50
-\BOOKMARK [2][-]{subsection.5.1}{La risposta a regime permanente: definizione e condizioni di esistenza}{section.5}% 51
-\BOOKMARK [2][-]{subsection.5.2}{Risposta a regime permanente per sistemi a tempo discreto}{section.5}% 52
-\BOOKMARK [2][-]{subsection.5.3}{Risposta a regime permanente ad ingressi sinusoidali per sistemi a tempo continuo}{section.5}% 53
-\BOOKMARK [2][-]{subsection.5.4}{Dimostrare la formula della risposta a regime permanente all'ingresso u\(k\) = sin\(k\) per un sistema a tempo discreto.}{section.5}% 54
-\BOOKMARK [2][-]{subsection.5.5}{Si dimostri che, se esiste, la risposta a regime permanente a u\(t\) = -1\(t\)\(ingresso a gradino\) \350 uguale al guadagno del sistema}{section.5}% 55
-\BOOKMARK [2][-]{subsection.5.6}{Dimostrare che la funzione di trasferimento W\(s\) non dipende dalla scelta delle coordinate}{section.5}% 56
-\BOOKMARK [2][-]{subsection.5.7}{\310 possibile che un sistema abbia funzione di trasferimento uguale a zero? Se si, sotto quali condizioni?}{section.5}% 57
-\BOOKMARK [1][-]{section.6}{Esercizi}{}% 58
-\BOOKMARK [2][-]{subsection.6.1}{Trovare il valore massimo del parametro r tale per cui il sistema retroazionato sia stabile. }{section.6}% 59
-\BOOKMARK [2][-]{subsection.6.2}{Trovare P2 }{section.6}% 60
+\BOOKMARK [2][-]{subsection.2.8}{Problema della realizzazione: forma canonica raggiungibile}{section.2}% 33
+\BOOKMARK [2][-]{subsection.2.9}{Come si passa da rappresentazione a tempo discreto a rappresentazione con la trasformata Zeta}{section.2}% 34
+\BOOKMARK [1][-]{section.3}{Stabilit\340}{}% 35
+\BOOKMARK [2][-]{subsection.3.1}{Studiare la stabilit\340 di un sistema non lineare}{section.3}% 36
+\BOOKMARK [2][-]{subsection.3.2}{Lyapunov di sistemi non lineari a tempo continuo}{section.3}% 37
+\BOOKMARK [2][-]{subsection.3.3}{Lyapunov di sistemi non lineari a tempo discreto}{section.3}% 38
+\BOOKMARK [2][-]{subsection.3.4}{Lyapunov di sistemi lineari a tempo continuo}{section.3}% 39
+\BOOKMARK [2][-]{subsection.3.5}{Enunciato e dimostrazione teorema di Nyquist}{section.3}% 40
+\BOOKMARK [3][-]{subsubsection.3.5.1}{Dimostrazione:}{subsection.3.5}% 41
+\BOOKMARK [2][-]{subsection.3.6}{Definizione punto di equilibrio}{section.3}% 42
+\BOOKMARK [2][-]{subsection.3.7}{Definizione formale di stabilit\340 di un punto di equilibrio}{section.3}% 43
+\BOOKMARK [2][-]{subsection.3.8}{Definizione, condizioni e criteri di stabilit\340 interna per sistemi lineari:}{section.3}% 44
+\BOOKMARK [2][-]{subsection.3.9}{Relazioni tra stabilit\340 esterna e interna}{section.3}% 45
+\BOOKMARK [2][-]{subsection.3.10}{Stabilit\340 esterna nello stato zero}{section.3}% 46
+\BOOKMARK [2][-]{subsection.3.11}{Definizione di stabilit\340 esterna e condizioni}{section.3}% 47
+\BOOKMARK [1][-]{section.4}{Dimostazioni formali}{}% 48
+\BOOKMARK [2][-]{subsection.4.1}{Dato un sistema in forma esplicita, dimostra che il sistema \350 lineare}{section.4}% 49
+\BOOKMARK [2][-]{subsection.4.2}{Dimostrazione che data un'evoluzione da x\(t0\) a x\(t\), vale la stessa da x\(t1\) con <t0<t1<t}{section.4}% 50
+\BOOKMARK [1][-]{section.5}{Dimostrazioni di risposte a regime permanente}{}% 51
+\BOOKMARK [2][-]{subsection.5.1}{La risposta a regime permanente: definizione e condizioni di esistenza}{section.5}% 52
+\BOOKMARK [2][-]{subsection.5.2}{Risposta a regime permanente per sistemi a tempo discreto}{section.5}% 53
+\BOOKMARK [2][-]{subsection.5.3}{Risposta a regime permanente ad ingressi sinusoidali per sistemi a tempo continuo}{section.5}% 54
+\BOOKMARK [2][-]{subsection.5.4}{Dimostrare la formula della risposta a regime permanente all'ingresso u\(k\) = sin\(k\) per un sistema a tempo discreto.}{section.5}% 55
+\BOOKMARK [2][-]{subsection.5.5}{Si dimostri che, se esiste, la risposta a regime permanente a u\(t\) = -1\(t\)\(ingresso a gradino\) \350 uguale al guadagno del sistema}{section.5}% 56
+\BOOKMARK [2][-]{subsection.5.6}{Dimostrare che la funzione di trasferimento W\(s\) non dipende dalla scelta delle coordinate}{section.5}% 57
+\BOOKMARK [2][-]{subsection.5.7}{\310 possibile che un sistema abbia funzione di trasferimento uguale a zero? Se si, sotto quali condizioni?}{section.5}% 58
+\BOOKMARK [1][-]{section.6}{Esercizi}{}% 59
+\BOOKMARK [2][-]{subsection.6.1}{Trovare il valore massimo del parametro r tale per cui il sistema retroazionato sia stabile. }{section.6}% 60
+\BOOKMARK [2][-]{subsection.6.2}{Trovare P2 }{section.6}% 61

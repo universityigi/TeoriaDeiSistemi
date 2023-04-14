@@ -30,33 +30,34 @@
 \contentsline {subsection}{\numberline {2.5}Come si passa dalla rappresentazione implicita a quella esplicita nel tempo discreto}{15}{subsection.2.5}%
 \contentsline {subsection}{\numberline {2.6}Come si passa dalla rappresentazione esplicita a quella implicita nel tempo discreto}{15}{subsection.2.6}%
 \contentsline {subsection}{\numberline {2.7}Come si passa da rappresentazione a tempo continuo a rappresentazione con Laplace}{16}{subsection.2.7}%
-\contentsline {subsection}{\numberline {2.8}Come si passa da rappresentazione a tempo discreto a rappresentazione con la trasformata Zeta}{16}{subsection.2.8}%
+\contentsline {subsection}{\numberline {2.8}Problema della realizzazione: forma canonica raggiungibile}{16}{subsection.2.8}%
+\contentsline {subsection}{\numberline {2.9}Come si passa da rappresentazione a tempo discreto a rappresentazione con la trasformata Zeta}{16}{subsection.2.9}%
 \contentsline {section}{\numberline {3}Stabilità}{17}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Studiare la stabilità di un sistema non lineare}{17}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Lyapunov di sistemi non lineari a tempo continuo}{17}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Lyapunov di sistemi non lineari a tempo discreto}{17}{subsection.3.3}%
-\contentsline {paragraph}{Teorema $3.8.1$:}{17}{subsection.3.3}%
-\contentsline {paragraph}{Teorema $3.8.2$:}{17}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Lyapunov di sistemi lineari a tempo continuo}{17}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.3}Lyapunov di sistemi non lineari a tempo discreto}{18}{subsection.3.3}%
+\contentsline {paragraph}{Teorema $3.8.1$:}{18}{subsection.3.3}%
+\contentsline {paragraph}{Teorema $3.8.2$:}{18}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Lyapunov di sistemi lineari a tempo continuo}{18}{subsection.3.4}%
 \contentsline {subsection}{\numberline {3.5}Enunciato e dimostrazione teorema di Nyquist}{18}{subsection.3.5}%
-\contentsline {subsubsection}{\numberline {3.5.1}Dimostrazione:}{18}{subsubsection.3.5.1}%
-\contentsline {subsection}{\numberline {3.6}Definizione punto di equilibrio}{20}{subsection.3.6}%
-\contentsline {subsection}{\numberline {3.7}Definizione formale di stabilità di un punto di equilibrio}{20}{subsection.3.7}%
+\contentsline {subsubsection}{\numberline {3.5.1}Dimostrazione:}{19}{subsubsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.6}Definizione punto di equilibrio}{21}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.7}Definizione formale di stabilità di un punto di equilibrio}{21}{subsection.3.7}%
 \contentsline {subsection}{\numberline {3.8}Definizione, condizioni e criteri di stabilità interna per sistemi lineari:}{21}{subsection.3.8}%
-\contentsline {subsection}{\numberline {3.9}Relazioni tra stabilità esterna e interna}{21}{subsection.3.9}%
-\contentsline {subsection}{\numberline {3.10}Stabilità esterna nello stato zero}{21}{subsection.3.10}%
+\contentsline {subsection}{\numberline {3.9}Relazioni tra stabilità esterna e interna}{22}{subsection.3.9}%
+\contentsline {subsection}{\numberline {3.10}Stabilità esterna nello stato zero}{22}{subsection.3.10}%
 \contentsline {subsection}{\numberline {3.11}Definizione di stabilità esterna e condizioni}{22}{subsection.3.11}%
-\contentsline {section}{\numberline {4}Dimostazioni formali}{22}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Dato un sistema in forma esplicita, dimostra che il sistema è lineare}{22}{subsection.4.1}%
+\contentsline {section}{\numberline {4}Dimostazioni formali}{23}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Dato un sistema in forma esplicita, dimostra che il sistema è lineare}{23}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}\boldmath Dimostrazione che data un'evoluzione da $x(t_0)$ a $x(t)$, vale la stessa da $x(t_1)$ con $<t_0<t_1<t$}{23}{subsection.4.2}%
-\contentsline {section}{\numberline {5}Dimostrazioni di risposte a regime permanente}{24}{section.5}%
-\contentsline {subsection}{\numberline {5.1}La risposta a regime permanente: definizione e condizioni di esistenza}{24}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Risposta a regime permanente per sistemi a tempo discreto}{24}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}Risposta a regime permanente ad ingressi sinusoidali per sistemi a tempo continuo}{24}{subsection.5.3}%
+\contentsline {section}{\numberline {5}Dimostrazioni di risposte a regime permanente}{25}{section.5}%
+\contentsline {subsection}{\numberline {5.1}La risposta a regime permanente: definizione e condizioni di esistenza}{25}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Risposta a regime permanente per sistemi a tempo discreto}{25}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Risposta a regime permanente ad ingressi sinusoidali per sistemi a tempo continuo}{25}{subsection.5.3}%
 \contentsline {subsection}{\numberline {5.4}\boldmath Dimostrare la formula della risposta a regime permanente all'ingresso $u(k) = sin(\theta k)$ per un sistema a tempo discreto.}{25}{subsection.5.4}%
-\contentsline {subsection}{\numberline {5.5}\boldmath Si dimostri che, se esiste, la risposta a regime permanente a $u(t) = \delta _{-1}(t)$(ingresso a gradino) è uguale al guadagno del sistema}{25}{subsection.5.5}%
+\contentsline {subsection}{\numberline {5.5}\boldmath Si dimostri che, se esiste, la risposta a regime permanente a $u(t) = \delta _{-1}(t)$(ingresso a gradino) è uguale al guadagno del sistema}{26}{subsection.5.5}%
 \contentsline {subsection}{\numberline {5.6}Dimostrare che la funzione di trasferimento W(s) non dipende dalla scelta delle coordinate}{26}{subsection.5.6}%
-\contentsline {subsection}{\numberline {5.7}È possibile che un sistema abbia funzione di trasferimento uguale a zero? Se si, sotto quali condizioni?}{26}{subsection.5.7}%
-\contentsline {section}{\numberline {6}Esercizi}{26}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Trovare il valore massimo del parametro r tale per cui il sistema retroazionato sia stabile. }{26}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Trovare $P_2$ }{27}{subsection.6.2}%
+\contentsline {subsection}{\numberline {5.7}È possibile che un sistema abbia funzione di trasferimento uguale a zero? Se si, sotto quali condizioni?}{27}{subsection.5.7}%
+\contentsline {section}{\numberline {6}Esercizi}{27}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Trovare il valore massimo del parametro r tale per cui il sistema retroazionato sia stabile. }{27}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Trovare $P_2$ }{28}{subsection.6.2}%

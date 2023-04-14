@@ -696,6 +696,27 @@ le matrici in Laplace sono:
      \Psi(s) = C \Phi(s)&,& W(s)=C\Phi(s)B+D 
 \end{align*}
 
+\subsection{Problema della realizzazione: forma canonica raggiungibile}
+Data la mia $W(s)= \underset{p\text{ x }q}{\begin{pmatrix}    &    \end{pmatrix}}$ voglio arrivare alla
+rappresentazione di stato (implicita). L'utilizzo della forma canonica raggiungibile significa mettere:
+\[  A = \underset{np \text{ x }np}{\begin{pmatrix}
+    0 & I & ... \\
+     & 0 & I &... \\
+    -a_0I & -a_1I  &...&-a_{n-1}I 
+    \end{pmatrix}},
+    B = \underset{np \text{ x }p}{\begin{pmatrix}
+        0\\
+        0\\
+        I
+    \end{pmatrix}},
+    C= \underset{q \text{ x }np}{\begin{pmatrix}
+        B_0 & B_1 & ...
+    \end{pmatrix}}
+\]
+
+
+
+
 
 \subsection{Come si passa da rappresentazione a tempo discreto a rappresentazione con la trasformata Zeta}
 
