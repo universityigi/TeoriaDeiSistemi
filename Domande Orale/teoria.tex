@@ -9,7 +9,7 @@
 \usepackage{mathrsfs}
 \usepackage{hyperref}
 \usepackage{mathtools}
-
+\usepackage{xcolor}
 \usepackage{titlesec}
 \usepackage[ margin=1in]{geometry}
 \usepackage{graphicx}
@@ -37,10 +37,11 @@
 
 %\sectionfont{\fontsize{13}{15}\selectfont}
 %\setlength{\parindent}{
-%0em}
+%0em}+
 
 
 \begin{document}
+\pagecolor{gray!30}
 \large
 \maketitle
 
@@ -75,75 +76,6 @@ Da qui mi ricavo la matrice di cambiamento di base:
 Quindi alla fine mi viene 
 \[
     \overset{\sim}{A} = TAT^{-1}\quad \overset{\sim}{B} = TB \quad \overset{\sim}{C} = CT^{-1}
-\]
-
-\subsection{Dato un sistema in forma esplicita, dimostra che il sistema è lineare}
-Una funzione di variabili reali $f$ è lineare se, dati due punti qualunque
-$x$ e $y$, e due costanti $a$ e $b$ anch'esse arbitrarie, si ha che $f(ax+by)=af(x)+bf(y)$.
-
-La rappresentazione esplicita di un sistema è 
-\[ x(t) = \Phi(t)x_0 +\int_{0}^{t} H(t-\tau) u(\tau) d \tau
-\]
-La funzione di stato negli appunti di non so chi è
-\[ \Psi \left(t_0-t,x(t),\left.u(t)\right|_{(t_0,t]}\right) \]
-La linearità è rispetto allo stato e all'ingresso 
-(non sto per scrivere una dimostrazione, è solo boh far vedere i passaggi)
-\
-\begin{align*}
-    \Psi \left(t_0-t,\alpha x_1(t)+\beta x_2(t),\alpha\left.u_1(t)\right|_{(t_0,t]}+\beta\left.u_2(t)\right|_{(t_0,t]}\right) =\\
-    = \alpha\Psi \left(t_0-t,x_1(t),\left.u_1(t)\right|_{(t_0,t]}\right)+\beta\Psi \left(t_0-t,x_2(t),\left.u_2(t)\right|_{(t_0,t]}\right)
-\end{align*}
-\[
-    \Psi \left(t_0-t,x_1(t),\left.u_2(t)\right|_{(t_0,t]}\right)  = \underbrace{\Psi\left(t-t_0,x_1(t),0\right)}_{\text{evoluzione libera}}+
-    \underbrace{\Psi\left(t-t_0,0,\left.u_2(t)\right|_{(t_0,t]}\right)}_{\text{evoluzione forzata}}
-\]
-
-
-\subsection{Rappresentazione per sistemi a tempo discreto}
-Il sistema nel tempo ha la rappresentazione:
-\[x(t) = \Phi(t-t_0)x(t_0)+\sum_{t=t_0}^{t-1}H(t-\tau)u(\tau)\]
-Per semplificare i calcoli uso la trasformata Zeta:
-\[F(z) = \sum_{t=0}^{\infty}f(t)z^{-1}\]
-
-Passiamo dalla rappresentazione implicita del sistema:
-\[\begin{cases}
-    x(k+1)=Ax(k)+Bu(k)\\
-    x(0)=x_0
-\end{cases}
-\]
-La trasformo in $\mathcal{Z}$:
-\[
-    \begin{array}{rcl}
-        \mathcal{Z} (x(k+1))) & = & \mathcal{Z} [Ax(k)+Bu(k)] \\
-         & = & A\mathcal{Z}[x(k)]+B\mathcal{Z} [u(k)] \\
-         & = & AX(z)+BU(z)
-    \end{array}    
-\]
-e considerando che \[ \mathcal{Z}(x(t+1)) = zX(z)-zx(0) \]
-allora con la trasformata Z ottengo 
-\[
-\begin{array}{rcl}
-    \mathcal{Z} (x(k+1))) & = & \mathcal{Z} [Ax(k)+Bu(k)] \\
-    zX(z)-zx(0) & = & AX(z)+BU(z)\\
-    zX(z)-AX(z) & = & zx(0)+BU(z)\\
-    (zI-A)X(z) & = & zx(0)+BU(z)\\
-    X(z) & = & (zI-A)^{-1}zx_0+(zI-A)^{-1}BU(z))
-\end{array}
-\]
-
-dove :
-\begin{itemize}
-    \item $\Phi(z)=(zI-A)^{-1}z$
-    \item $H(z)=(zI-A)^{-1}B$
-    \item $\Psi(z)=C(zI-A)^{-1}z$
-    \item $W(z)=C(zI-A)^{-1}B+D$
-\end{itemize}
-Con queste definizioni posso scrivere:
-\[
-\begin{cases}
-    x(z)=\Phi(z)x_0+Bu(z)\\
-    y(z)=\Psi(z)x_0+W(z)u(z)
-\end{cases}\\
 \]
 
 
@@ -190,7 +122,7 @@ In particolare sono gli autovalori simultaneamente osservabili ed eccitabili.
 Uno stato $x$ è raggiungibile al tempo t a partire dallo stato $x_0$ se esiste un istante di tempo $t_0 $
 ed un ingresso $u$, da $t_0$ a $t$, che porta lo stato $x$ al tempo $t$.
 
-Nei sistemi lineari \textbf{x è RAGGIUNGIBILE} da
+Nei sistemi lineari {\color{blue} \textbf{x è raggiungibile}} da
 $x_0=0 \Longleftrightarrow x \in \mathfrak{R} = \mathfrak{Im}(B\ AB\ ...\ A^{n-1}B)$ .
 
 Se,con $n$ la dimensione di $A$, ho $rg(B\ AB\ ...\ A^{n-1}B)=m<n$ esiste una matrice T non singolare tale che:\\\\
@@ -255,6 +187,141 @@ Così modellato risulta evidente che tutti i modi eccitabili sono quelli legati 
 cioè quelli nel sottosistema interamente raggiungibile.
 
 
+
+\subsection{Definizione di raggiungibilità di uno stato; caratterizzare l'insieme degli stati raggiungibili per sistemi dinamici lineari stazionari; confrontare il caso tempo continuo e tempo discreto}
+Uno stato $x_r$ è detto raggiungibile all'istante T da $x_0$ se esistono un $t_0<T$, ed un ingresso sull'intervallo di tempo $[t_0,T)$
+che porta l'evoluzione dello stato da $x_0$ a $x_r$.
+\[ \exists t_0 < T,\ \left.u\right|_{[t_0,T]}\ :\ e^{A(T-t_0)}x_0+ \int_{t_0}^{t} e^{A(t-\tau)}Bu(\tau) d\tau = x_r \]
+Per la rappresentazione lineare stazionaria viene considerato lo stato $x(t_0)=0$. 
+L'insieme degli stati raggiungibili all'istante $T$ è denotato con $\mathcal{R}(T)$ cioè :
+\[\mathcal{R}(T)=\left\{ x_r : x= \int_{t_0}^{t} e^{A(t-\tau)}Bu(\tau)d\tau\right\}
+\quad, \quad
+x_r \in \mathcal{R}=Im(B\ AB ..... A^{T-1}B)  \]
+
+Per i sistemi a tempo continuo la raggiungibilità è differenziale e ha equivalenza con la controllabilità,
+invece nei sistemi a tempo discreto la raggiungibilità implica la controllabilità ma non viceversa,
+e se uno stato non si riesce a raggiungere in $n$ passi allora non si può più raggiungere.
+
+
+\subsection{Definizione di raggiungibilità ed inosservabilità; caratterizzazione e proprietà degli insiemi di tali stati}
+L'osservabilità riguarda il comportamento stato-uscita.
+Uno stato è detto inosservabile quando corrisponde ad un'evoluzione libera in uscita identicamente nulla,
+cioè $Ce^{At}x_I=0$ dove $x_I=x_a-x_b$ ovvero due stati indistinguibili.
+L'insieme degli stati inosservabili è definito come:
+$\mathfrak{I} =\left\{ x \in R^n ; Ce^{At}x=0 , \forall t \geq 0 \right\}$ che equivale al 
+$\mathfrak{I}=ker \begin{pmatrix}C\\CA\\...\\CA^{n-1}\end{pmatrix}$,
+in cui $\begin{pmatrix}C\\CA\\...\\CA^{n-1}\end{pmatrix}$ è la matrice di osservabilità del sistema.
+
+Il sistema viene detto completamente osservabile se il rango di questa matrice è pari alla dimensione del sistema
+e di conseguenza tutti i modi naturali sono osservabili.
+Uno stato $x_r$ è detto raggiungibile all'istante $T$ da $x_0$ se $\exists\ t_0<T$, ed un ingresso sull'intervallo si tempo $[t_0,T)$
+che porta lo stato da $x_0$ a $x$.
+Per la rappresentazione lineare stazionaria viene considerato lo stato $x(t_0)=0$. 
+L'insieme degli stati raggiungibili è denotato con $\mathcal{R}$, cioè :
+\[ \mathcal{R}(T)=\left\{x_r : x=\int_{t_0}^{t}e^{A(t-\tau)}Bu(\tau)d\tau, u[t_0,T]\right\}
+\quad \mathcal{R}=
+Im(B\ AB\ .....\ A^{n-1}B)\]
+
+
+
+
+\subsection{Osservabilità nei sistemi lineari}
+Presi due stati iniziali $x_{0a},x_{0b}$ distinti, e consideratene le uscite $y_a,y_b$, se le due uscite 
+sono uguali per ogni t allora i due stati sono \textbf{indistinguibili}.
+
+Per inciso, le due uscite sono uguali per ogni $t$ se,
+considerando 
+
+\[ y_{0i} = \Psi(t)x_{0i} + \int_{0}^{t} W(t-\tau) u(\tau) d\tau \]
+si verifica la seguente:
+\[
+    \begin{array}{rcl}
+        y_{0a}-y_{0b} & = & \Psi(t)x_{0a} + \int_{0}^{t} W(t-\tau) u(\tau) d\tau - \Psi(t)x_{0b} - \int_{0}^{t} W(t-\tau) u(\tau) d\tau \\
+        0 & = & \Psi(t)x_{0a} - \Psi(t)x_{0b} \  \forall\   t>0
+    \end{array}    
+\]
+Chiamato stato inosservabile la differenza tra i due $x_I = x_{0a}-x_{0b}$
+\[
+    \begin{array}{rcl}
+        y_{0a}-y_{0b}  = 0 & \Longleftrightarrow & \Psi(t)(x_{0a} -x_{0b} ) = 0  \\
+        \Psi(t)x_I = C e^{At}x_I \equiv 0
+    \end{array}    
+\]
+Dato che se una funzione è identicamente nulla in un intervallo, lo sono anche
+le sue derivate, per il criterio di Cayley-Hamilton si verifica:
+\[ C A^n x_I = 0 \Longrightarrow C A^{n+1} x_I = 0 \]
+e gli stati che soddisfano questa eguaglianza sono inosservabili.
+Per trovare questi stati costruisco il sistema lineare omogeneo:
+\[\begin{pmatrix}C\\...\\CA^{n-1}\end{pmatrix}x_I = 0\]
+che ammette soluzioni diverse da zero se la matrice non ha rango pieno, e quindi gli stati inosservabili,
+se ci sono, sono un sottospazio lineare dello spazio di stato.
+
+L'insieme degli stati inosservabili è 
+\[\mathfrak{I} = \{ x\in\mathbb{R}^n | Ce^{At}=0\ \forall\ t > 0\}\]
+
+
+
+\subsection{L'osservabilità dei sistemi lineari a tempo discreto: definizione e condizioni}
+Definita la matrice di osservabilità :
+\[O = \begin{pmatrix}C\\...\\CA^{n-1}\end{pmatrix}\]
+L' insieme degli stati inosservabili nel tempo discreto è:
+\[\mathfrak{I} = \left\{ x\in\mathbb{R}^n | CA^t=0\ \forall\ t > 0\right\} = ker(O)\]
+
+Per Cayley-Hamilton ho che $Cx_I=0,CAx_I=0,...,CA^{n-1}x_I=0 \Longrightarrow CA^kx_i = \forall k>n$
+Nel tempo discreto, se uno stato non è osservabile nei primi n passi certamente dopo rimarrà inosservabile.
+
+
+\subsection{Per un sistema tempo discreto dimostrare che l'insieme degli stati inosservabili è :}
+\[ \text{ker}\begin{pmatrix}C\\...\\CA^{n-1}\end{pmatrix}\]
+Se considero l'evoluzione di un sistema $y_L(k)=CA^Kx(0)$, affinché lo stato $x_0 = x(0)$
+sia inosservabile $y_L(k)=0\ \forall k$.
+
+Considero il caso in cui k=0 :
+l'evoluzione è  $y_L(k)=CA^0x_0=CIx_0=Cx_0$, e per definizione ho $C\ x_0=0$ se $x_0 \in Ker(C)$\\
+Considero ora il caso k=1: $y_L(k)=CAx_0$ e 
+\[
+     CAx_0=0 \Longleftrightarrow x(0) \in Ker(CA)
+\]
+Quindi per il generico passo $k$ gli stati inosservabili appartengono a $Ker(CA^{k})$.
+Per Cayley-Hamilton ho che $Cx_I=0,CAx_I=0,...,CA^{n-1}x_I=0 \Longrightarrow CA^kx_i = \forall k>n$ e quindi 
+per un sistema lineare l'insieme degli stati inosservabili è dato quindi da tutti gli stati
+che non si osservano in nessuno dei passi, quindi: 
+\[
+    I=Ker \begin{pmatrix}C\\CA\\...\\CA^{n-1}\end{pmatrix}
+\]
+
+
+
+
+
+
+
+\subsection{Perché A21 viene zero sempre nella forza canonica osservabile dopo il cambio di base }
+
+Una proprietà degli stati inosservabili è che
+\textbf{ il sottospazio $\mathfrak{I}$ è invariante rispetto a $A$},
+cioè $x_I \text{inossservabile} \Longrightarrow Ax_I \text{inossservabile}$, il che vale 
+per ogni cambiamento di coordinate.
+
+Consideriamo lo stato $\begin{pmatrix}z_1\\0\end{pmatrix}$,
+di certo anche $A\begin{pmatrix}z_1\\0\end{pmatrix}=\begin{pmatrix}\overset{\sim }{z_1}\\0\end{pmatrix}$
+sarà inosservabile.
+Con questo a mente vediamo $\overset{\sim}{A}z_I$:
+\[
+    \overset{\sim}{A}z_I=\begin{pmatrix}\overset{\sim }{A_{11}}&\overset{\sim }{A_{12}}\\
+        \overset{\sim }{A_{21}}&\overset{\sim }{A_{22}}\end{pmatrix}\begin{pmatrix}z_1\\0\end{pmatrix}=
+    \begin{pmatrix}\overset{\sim }{z_1}\\0\end{pmatrix} \Longrightarrow
+    \begin{array}{rcl}
+    \overset{\sim }{A_{11}}z_{1} &= \overset{\sim }{z_1}&\\
+    \overset{\sim }{A_{21}}z_{1} &= 0 &\to  \overset{\sim }{A_{21}}=0
+    \end{array}
+\]
+
+
+
+
+
+
 \subsection{I modi naturali dei sistemi lineari a tempo continuo: definizione e parametri caratteristici}
 
 I modi naturali sono le evoluzioni nello spazio di stato attraverso le quali è possibile esprimere l'evoluzione libera.
@@ -310,191 +377,6 @@ I modi naturali per il caso discreto,così come per i sitemi tempo continuo, son
     \end{itemize}
 \end{itemize}
 
-\subsection{Osservabilità nei sistemi lineari}
-Presi due stati iniziali $x_{0a},x_{0b}$ distinti, e consideratene le uscite $y_a,y_b$, se le due uscite 
-sono uguali per ogni t allora i due stati sono \textbf{indistinguibili}.
-
-Per inciso, le due uscite sono uguali per ogni $t$ se,
-considerando 
-
-\[ y_{0i} = \Psi(t)x_{0i} + \int_{0}^{t} W(t-\tau) u(\tau) d\tau \]
-si verifica la seguente:
-\[
-    \begin{array}{rcl}
-        y_{0a}-y_{0b} & = & \Psi(t)x_{0a} + \int_{0}^{t} W(t-\tau) u(\tau) d\tau - \Psi(t)x_{0b} - \int_{0}^{t} W(t-\tau) u(\tau) d\tau \\
-        0 & = & \Psi(t)x_{0a} - \Psi(t)x_{0b} \  \forall\   t>0
-    \end{array}    
-\]
-Chiamato stato inosservabile la differenza tra i due $x_I = x_{0a}-x_{0b}$
-\[
-    \begin{array}{rcl}
-        y_{0a}-y_{0b}  = 0 & \Longleftrightarrow & \Psi(t)(x_{0a} -x_{0b} ) = 0  \\
-        \Psi(t)x_I = C e^{At}x_I \equiv 0
-    \end{array}    
-\]
-Dato che se una funzione è identicamente nulla in un intervallo, lo sono anche
-le sue derivate, per il criterio di Cayley-Hamilton si verifica:
-\[ C A^n x_I = 0 \Longrightarrow C A^{n+1} x_I = 0 \]
-e gli stati che soddisfano questa eguaglianza sono inosservabili.
-Per trovare questi stati costruisco il sistema lineare omogeneo:
-\[\begin{pmatrix}C\\...\\CA^{n-1}\end{pmatrix}x_I = 0\]
-che ammette soluzioni diverse da zero se la matrice non ha rango pieno, e quindi gli stati inosservabili,
-se ci sono, sono un sottospazio lineare dello spazio di stato.
-
-L'insieme degli stati inosservabili è 
-\[\mathfrak{I} = \{ x\in\mathbb{R}^n | Ce^{At}=0\ \forall\ t > 0\}\]
-
-\subsection{Perché A21 viene zero sempre nella forza canonica osservabile dopo il cambio di base }
-
-Una proprietà degli stati inosservabili è che
-\textbf{ il sottospazio $\mathfrak{I}$ è invariante rispetto a $A$},
-cioè $x_I \text{inossservabile} \Longrightarrow Ax_I \text{inossservabile}$, il che vale 
-per ogni cambiamento di coordinate.
-
-Consideriamo lo stato $\begin{pmatrix}z_1\\0\end{pmatrix}$,
-di certo anche $A\begin{pmatrix}z_1\\0\end{pmatrix}=\begin{pmatrix}\overset{\sim }{z_1}\\0\end{pmatrix}$
-sarà inosservabile.
-Con questo a mente vediamo $\overset{\sim}{A}z_I$:
-\[
-    \overset{\sim}{A}z_I=\begin{pmatrix}\overset{\sim }{A_{11}}&\overset{\sim }{A_{12}}\\
-        \overset{\sim }{A_{21}}&\overset{\sim }{A_{22}}\end{pmatrix}\begin{pmatrix}z_1\\0\end{pmatrix}=
-    \begin{pmatrix}\overset{\sim }{z_1}\\0\end{pmatrix} \Longrightarrow
-    \begin{array}{rcl}
-    \overset{\sim }{A_{11}}z_{1} &= \overset{\sim }{z_1}&\\
-    \overset{\sim }{A_{21}}z_{1} &= 0 &\to  \overset{\sim }{A_{21}}=0
-    \end{array}
-\]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\subsection{L'osservabilità dei sistemi lineari a tempo discreto: definizione e condizioni}
-Definita la matrice di osservabilità :
-\[O = \begin{pmatrix}C\\...\\CA^{n-1}\end{pmatrix}\]
-L' insieme degli stati inosservabili nel tempo discreto è:
-\[\mathfrak{I} = \left\{ x\in\mathbb{R}^n | CA^t=0\ \forall\ t > 0 = ker(O)\right\}\]
-
-Per Cayley-Hamilton ho che $Cx_I=0,CAx_I=0,...,CA^{n-1}x_I=0 \Longrightarrow CA^kx_i = \forall k>n$
-Nel tempo discreto, se uno stato non è osservabile nei primi n passi certamente dopo rimarrà inosservabile.
-
-
-\subsection{Per un sistema tempo discreto dimostrare che l'insieme degli stati inosservabili è :}
-\[ \text{ker}\begin{pmatrix}C\\...\\CA^{n-1}\end{pmatrix}\]
-Se considero l'evoluzione di un sistema $y_L(k)=CA^Kx(0)$, affinché lo stato $x_0 = x(0)$
-sia inosservabile $y_L(k)=0\ \forall k$.
-
-Considero il caso in cui k=0 :
-l'evoluzione è  $y_L(k)=CA^0x_0=CIx_0=Cx_0$, e per definizione ho $C\ x_0=0$ se $x_0 \in Ker(C)$\\
-Considero ora il caso k=1: $y_L(k)=CAx_0$ e 
-\[
-     CAx_0=0 \Longleftrightarrow x(0) \in Ker(CA)
-\]
-Quindi per il generico passo $k$ gli stati inosservabili appartengono a $Ker(CA^{k})$.
-Per Cayley-Hamilton ho che $Cx_I=0,CAx_I=0,...,CA^{n-1}x_I=0 \Longrightarrow CA^kx_i = \forall k>n$ e quindi 
-per un sistema lineare l'insieme degli stati inosservabili è dato quindi da tutti gli stati
-che non si osservano in nessuno dei passi, quindi: 
-\[
-    I=Ker \begin{pmatrix}C\\CA\\...\\CA^{n-1}\end{pmatrix}
-\]
-
-
-\subsection{Definizione di raggiungibilità di uno stato; caratterizzare l'insieme degli stati raggiungibili per sistemi dinamici lineari stazionari; confrontare il caso tempo continuo e tempo discreto}
-Uno stato $x_r$ è detto raggiungibile all'istante T da $x_0$ se esistono un $t_0<T$, ed un ingresso sull'intervallo di tempo $[t_0,T)$
-che porta l'evoluzione dello stato da $x_0$ a $x_r$.
-\[ \exists t_0 < T,\ \left.u\right|_{[t_0,T]}\ :\ e^{A(T-t_0)}x_0+ \int_{t_0}^{t} e^{A(t-\tau)}Bu(\tau) d\tau = x_r \]
-Per la rappresentazione lineare stazionaria viene considerato lo stato $x(t_0)=0$. 
-L'insieme degli stati raggiungibili all'istante $T$ è denotato con $\mathcal{R}(T)$ cioè :
-\[\mathcal{R}(T)=\left\{ x_r : x= \int_{t_0}^{t} e^{A(t-\tau)}Bu(\tau)d\tau
-\quad, \quad
-x_r \in \mathcal{R}=Im(B\ AB ..... A^{T-1}B) \right\} \]
-
-Per i sistemi a tempo continuo la raggiungibilità è differenziale e ha equivalenza con la controllabilità,
-invece nei sistemi a tempo discreto la raggiungibilità implica la controllabilità ma non viceversa,
-e se uno stato non si riesce a raggiungere in $n$ passi allora non si può più raggiungere.
-
-
-\subsection{\boldmath Dimostrazione che data un'evoluzione da $x(t_0)$ a $x(t)$, vale la stessa da $x(t_1)$ con $<t_0<t_1<t$}
-Per farlo prendo due equazioni:
-\begin{equation}
-    x(t) = \Phi(t-t_0)x(t_0)+\int_{t_0}^{t} H(t-\tau)u(\tau)d\tau
-\end{equation}
-\begin{equation}
-    x(t) = \Phi(t-t_1)x(t_1)+\int_{t_1}^{t} H(t-\tau)u(\tau)d\tau
-\end{equation}
-(Questa roba si trova uguale su edotm ma scrivere mi aiuta a studiare)
-Ora voglio dimostrare che le due si equivalgono
-
-\[ x(t) = \Phi(t-t_1)\underbrace{\left[ \Phi(t_1-t_0)x(t_0)+\int_{t_0}^{t_1} H(t-\tau)u(\tau)d\tau\right]}_{x(t_1)}+\int_{t_1}^{t} H(t-\tau)u(\tau)d\tau \]
-\[x(t) = \Phi(t-t_1)\Phi(t_1-t_0)x(t_0)+\Phi(t-t_1)\int_{t_0}^{t_1} H(t-\tau)u(\tau)d\tau+\int_{t_1}^{t} H(t-\tau)u(\tau)d\tau\]
-\[ \Phi(t-t_0)x(t_0)= \Phi(t-t_1)\Phi(t-t_0)x(t_0)\Longleftrightarrow\Phi(t-t_0)\Phi(t-t_1)\Phi(t-t_0) \]
-\[ \int_{t_0}^{t} H(t-\tau)u(\tau)d\tau = \Phi(t-t_1)\int_{t_0}^{t_1} H(t_1-\tau)u(\tau)d\tau+\int_{t_1}^{t} H(t-\tau)u(\tau)d\tau \] 
-A sinistra applico la linearità dell'integrale:
-\[ \int_{t_0}^{t_1} H(t_1-\tau)u(\tau)d\tau+\int_{t_1}^{t} H(t-\tau)u(\tau)d\tau
- = \Phi(t-t_1)\int_{t_0}^{t_1} H(t_1-\tau)u(\tau)d\tau+\int_{t_1}^{t} H(t-\tau)u(\tau)d\tau \]
-e quindi alla fine:
-\[ \int_{t_0}^{t_1} H(t-\tau)u(\tau)d\tau = \int_{t_0}^{t_1}\Phi(t-t_1) H(t_1-\tau)u(\tau)d\tau \]
-\[ H(t-\tau) = \Phi(t-t_1) H(t_1-\tau) \]
-Riassumento
-\[\begin{cases} 
-        \Phi(t-t_0) = \Phi(t-t_1)\Phi(t_1-t_0)\\
-        H(t-\tau) = \Phi(t-t_1) H(t_1-\tau)
-\end{cases}
-\]
-Ora andiamo a derivare la prima equazione del sistema in forma esplicita (1) per vedere se otteniamo
-esattamente la forma implicita di partenza:
-\[ \overset{\cdot}{x} = \frac{\partial \Phi(t-t_0)}{\partial t}x(t_0)+\int_{t_0}^{t} \frac{\partial}{\partial t}\left( \Phi(t-t_1) H(t_1-\tau)\right)u(\tau)d\tau \]
-\[ \overset{\cdot}{x} = \frac{\partial \Phi(t-t_1)}{\partial t}\left(\Phi(t_1-t_0)x(t_0)+\int_{t_0}^{t}H(t_1-\tau)u(\tau)d\tau\right)+H(0)u(t) \]
-Ora prendiamo il limite $t_1\to t$:
-\[ \overset{\cdot}{x} = \lim_{t_1\to t}\frac{\partial \Phi(t-t_1)}{\partial t}\left(\Phi(t_1-t_0)x(t_0)+\int_{t_0}^{t_1}H(t_1-\tau)u(\tau)d\tau\right)+H(o)u(t) \]
-\[ \overset{\cdot}{x} = \lim_{t_1\to t}\frac{\partial \Phi(t-t_1)}{\partial t}x(t)+H(0)u(t) \]
-\[ \overset{\cdot}{x} = \frac{\partial \Phi(t\to0)}{\partial t}x(t)+H(0)u(t) \]
-
-Da cui finalmente posso dire che 
-\[ \frac{\partial \Phi(t\to 0)}{\partial t}x(t) =\lim_{t\to 0}\frac{\partial \Phi(t)}{\partial t}x(t) = Ax(t) \]
-\[ H(0)u(t) = Bu(t) \Rightarrow H(0) = B \]
-
-
-\subsection{Definizione di guadagno e interpretazione fisica}
-Il guadagno è il fattore costante che compare nella forma di Bode della funzione di trasferimento,
-esso è definito per ogni elemento ed è pari al valore che assume la $W(s)$
-in $s=0 $dopo aver eliminato l'eventuale eccesso di poli in zero.
-Il guadagno della funzione di trasferimento di un sistema ha,
-nel caso in cui esista la risposta a regime permanente,
-il significato fisico di valore di regime della risposta al gradino unitario,
-cioè $W(s)|_{s=0}$.
-
-
-\subsection{Definizione di raggiungibilità ed inosservabilità; caratterizzazione e proprietà degli insiemi di tali stati}
-L'osservabilità riguarda il comportamento stato-uscita.
-Uno stato è detto inosservabile quando corrisponde ad un'evoluzione libera in uscita identicamente nulla,
-cioè $Ce^{At}x_I=0$ dove $x_I=x_a-x_b$ ovvero due stati indistinguibili.
-L'insieme degli stati inosservabili è definito come:
-$\mathfrak{I} =\left\{ x \in R^n ; Ce^{At}x=0 , \forall t \geq 0 \right\}$ che equivale al 
-$\mathfrak{I}=ker \begin{pmatrix}C\\CA\\...\\CA^{n-1}\end{pmatrix}$,
-in cui $\begin{pmatrix}C\\CA\\...\\CA^{n-1}\end{pmatrix}$ è la matrice di osservabilità del sistema.
-
-Il sistema viene detto completamente osservabile se il rango di questa matrice è pari alla dimensione del sistema
-e di conseguenza tutti i modi naturali sono osservabili.
-Uno stato $x_r$ è detto raggiungibile all'istante $T$ da $x_0$ se $\exists\ t_0<T$, ed un ingresso sull'intervallo si tempo $[t_0,T)$
-che porta lo stato da $x_0$ a $x$.
-Per la rappresentazione lineare stazionaria viene considerato lo stato $x(t_0)=0$. 
-L'insieme degli stati raggiungibili è denotato con $\mathcal{R}$, cioè :
-\[ \mathcal{R}(T)=\left\{x_r : x=\int_{t_0}^{t}e^{A(t-\tau)}Bu(\tau)d\tau, u[t_0,T]\right\}
-\quad \mathcal{R}=
-Im(B\ AB\ .....\ A^{n-1}B)\]
 
 
 \subsection{Può un sistema lineare essere caratterizzato da modi naturali aventi la stessa legge di moto?}
@@ -522,6 +404,17 @@ e $v_i'B$ è non nulla solo per i modi eccitabili,
 quindi se un autovalore non è osservabile $(Cu_i=0)$ o non è eccitabile $(v_iB=0)$
 non compare in $W(t)$.
 Se nessun autovalore compare in $W(t)$, quest'ultima è nulla e allora la risposta impulsiva è nulla.
+
+
+\subsection{Definizione di guadagno e interpretazione fisica}
+Il guadagno è il fattore costante che compare nella forma di Bode della funzione di trasferimento,
+esso è definito per ogni elemento ed è pari al valore che assume la $W(s)$
+in $s=0$ dopo aver eliminato l'eventuale eccesso di poli in zero.
+Il guadagno della funzione di trasferimento di un sistema ha,
+nel caso in cui esista la risposta a regime permanente,
+il significato fisico di valore di regime della risposta al gradino unitario,
+cioè $W(s)|_{s=0}$.
+
 
 
 \subsection{Il ruolo dell'osservabilità nella ricostruzione del comportamento interno}
@@ -563,14 +456,62 @@ $T^{-1} = (\mathfrak{R} .completamento)$ etc. etc.
 
 
 
-\section{Passaggi di Rappresentazione}
+\subsection{Proprietà di semigruppo}
+Le matrici $\Phi(t),H(t),\Psi(t),W(t)$ ddevono soddisfare le seguenti proprietà:
 
+\begin{enumerate}
+    \item Proprietà di semigruppo : \[ \Phi(0)=1,\Phi(t-t_0) = \Phi(t-t_1)\Phi(t_1-t_0) \forall\ t_-\le t_1\le t\]
+    \item Fattorizzazione sulle matrici $H,\Psi,W$:
+    \begin{align*}
+        H(t-\tau) = \Phi(t-t_1)H(t_1-\tau) &,& \Psi(t-t_0)=\Psi(t-t_1)\Phi(t_1-t_0)\\
+        W(t-\tau) = \Psi(t-t_1)H(t_1-\tau) &
+    \end{align*}
+\end{enumerate}
+
+
+
+\subsection{Osservatore Asintotico}
+Allora io ho un sistema $S$ di cui voglio sapere lo stato ma ho solo l'uscita. Devo inventarmi un modo per stimare lo stato.
+
+Credo un nuovo sistema 
+\[
+    S_2 : \begin{cases} \overset{\cdot}{z} = Az+Bu\\
+        y = Cz 
+    \end{cases}    
+\]
+Dato che io sto cercando un sistema che mi emuli il primo, ha senso chiamare "errore" la differenza tra lo stato di uno e dell'altro:
+\[
+e = z-x \Longleftrightarrow \overset{\cdot}{e}  = \overset{\cdot}{z}-\overset{\cdot}{x} = A(z-x) = Ae  
+\]
+Io voglio ovviamente che questo errore vada a 0, infatti questo vorrebbe dire che il comportamento dei due sistemi è uguale:
+\[
+\lim_{t\to\infty}||e(t)|| = 0 \Longleftrightarrow \lim_{t\to\infty}||z(t)-x(t)|| = 0    
+\]
+
+Per risolvere il problema includo l'errore nello stato del secondo sistema:
+
+
+\[e_y = y-y_z\]
+\incfig{oss_asint.jpeg}{0.7}
+
+Così che l'equazione di stato viene:
+\[
+O : \begin{cases}
+    \overset{\cdot}{z}= Az +Bu+K(Cx-Cz) = (A-KC)z+Bu+KCx   \\
+    y_z = z
+    \end{cases}
+\]
+
+
+
+
+\section{Passaggi di Rappresentazione}
 
 \subsection{Un sistema dinamico può esser rappresentato tramite un modello implicito o esplicito. \\
 (a) Illustrare i diversi vantaggi e svantaggi delle due rappresentazioni; \\
 (b) Per sistemi a tempo discreto lineari e stazionari, indicare i passaggi matematici che permettono
-di passare da una rappresentazione all'altra e viceversa.
-}
+di passare da una rappresentazione all'altra e viceversa.}
+
 Un sistema implicito ha una struttura del tipo:
 $$
 \begin{cases}
@@ -618,7 +559,7 @@ Partiamo dal sistema solito
 $\overset{\cdot}{x} = Ax+Bu$ è un'equazione differenziale lineare non omogenea
 $\overset{\cdot}{x} = Ax$ è invece omogenea, e ha come soluzione generale $x(t) = ke^{At}$,
 in $t_0$ ha soluzione 
-\[ x(t_0) = e^{A(t-t_0)}x(t_0) \to k = e^{-At_0}x_0 \]
+\[ x(t_0) = ke^{A(t_0-t)} \to k = e^{A(t-t_0)}x_0 \]
 
 Per $Bu(t)$ vedo la soluzione particolare in un istante $t$ qualsiasi e con tutti i contributi da $t_0$ a $t$, cioè
 \[ \int_{t_0}^{t}e^{A(t-\tau)}Bu(\tau)d\tau \]
@@ -631,7 +572,7 @@ Unendo le due mi viene quindi
 Questo è valido anche se $A$ è una matrice, verifichiamo che $e^{At}$ si comporta come nel caso
 scalare $e^{at}$:
 \[
-\frac{d}{dt}e^At =     \frac{d}{dt}\sum_{k=0}^{\infty}\frac{A^kt^k}{k!} =
+\frac{d}{dt}e^{At} =     \frac{d}{dt}\sum_{k=0}^{\infty}\frac{A^kt^k}{k!} =
  A\sum_{h=0}^{\infty}\frac{A^ht^h}{h!} = Ae^{At}
 \]
 
@@ -668,7 +609,7 @@ Lo schema sarà quindi:
 In questo caso il problema è che il sistema di cui ho già il modello si aspetta un ingresso continuo, quindi dovrò usare lo Zero Order Holder per
 farglielo arrivare.
 
-Inoltre anche l'uscita del sistema sarà continua, e quindi per ottenerla disxcreta dovrò usare un campionatore.
+Inoltre anche l'uscita del sistema sarà continua, e quindi per ottenerla discreta dovrò usare un campionatore.
 
 \incfig{discreto.jpeg}{0.4}
 
@@ -685,12 +626,12 @@ Lo stato, in forma esplicità, sarà quindi : \(\displaystyle x(t) = e^{A(t-t_0)
 Per studiarlo in forma discreta, detto $T_c$ il tempo di campionamento, pongo $t_0$ come un generico istante $kT_c$, e $t$ come l'istante successivo
 $(k+1)T_c$. Così mi viene:
 \begin{align*} 
-    x((k+1)T_c) &=& e^{AT_c}x(kT_x) &+ \int_{kT_c}^{(k+1)T_c} e ^{A((k+1)T_c-\tau)}B u(\tau) d\tau \\
-    x((k+1)T_c) &=& e^{AT_c}x(kT_x) &+ \int_{kT_c}^{(k+1)T_c} e ^{A((k+1)T_c-\tau)}B  d\tau \ u(kT_c)
+    x((k+1)T_c) &=& e^{AT_c}x(kT_c) &+ \int_{kT_c}^{(k+1)T_c} e ^{A((k+1)T_c-\tau)}B u(\tau) d\tau \\
+    x((k+1)T_c) &=& e^{AT_c}x(kT_c) &+ \int_{kT_c}^{(k+1)T_c} e ^{A((k+1)T_c-\tau)}B  d\tau \ u(kT_c)
 \end{align*}
 ponendo quindi le rappresentazioni 
 
-\(\displaystyle A_d=e^{AkT_c}, B_d=\int_{kT_c}^{(k+1)T_c} e^{A((k+1)T_c-\tau)}B d\tau , C_d = C,  D_d=D\)
+\(\displaystyle A_d=e^{AT_c}, B_d=\int_{kT_c}^{(k+1)T_c} e^{A((k+1)T_c-\tau)}B d\tau , C_d = C,  D_d=D\)
 
 Il sistema a tempo discreto equivalente, detto $T_c$ il tempo di campionamento è:
 
@@ -706,7 +647,7 @@ Il sistema a tempo discreto equivalente, detto $T_c$ il tempo di campionamento �
 Partiamo dalla rappresentazione $x(t+1) = Ax(t)+Bu(t)$ con $t_0,x(t_0)$.
 Noto $u(t_0)$ devo arrivare a: 
 \begin{equation}\label{eplsTdiscreto}
-    x(t) = \Phi(t-t_0)x(t_0)+\sum_{t=t_0}^{t-1}H(t-\tau)u(\tau)
+    x(t) = \Phi(t-t_0)x(t_0)+\sum_{\tau=t_0}^{t-1}H(t-\tau)u(\tau)
 \end{equation}
 Provando a calcolare $x(t_0+1),x(t_0+2)$ etc arrivo alla forma
 $x(t_0+k) = A^kx(t_0)+\sum_{\tau = 0}^{k-1}A^{k-\tau-1}B u(t_0+\tau)$,
@@ -718,7 +659,7 @@ di cui la prima parte è già simile a (\ref{eplsTdiscreto}).
 
 Ora poniamo $T = \tau-t_0$ e poi $\tau=T$: così mi viene:
 \[
-    x(t) =A^{t-t_0}x(t_0)+\sum{\tau=t_0}^{t-1}A^{t-\tau-1}Bu(\tau)
+    x(t) =A^{t-t_0}x(t_0)+\sum_{\tau=t_0}^{t-1}A^{t-\tau-1}Bu(\tau)
 \]
 Che è praticamente (\ref{eplsTdiscreto}). A questo punto posso concludere ponendo:
 \begin{align*}
@@ -731,7 +672,7 @@ Che è praticamente (\ref{eplsTdiscreto}). A questo punto posso concludere ponen
 
 Partendo da
 \[
-    x(t) = \Phi(t-t_0)x(t_0)+\sum_{t=t_0}^{t-1}H(t-\tau)u(\tau)
+    x(t) = \Phi(t-t_0)x(t_0)+\sum_{\tau=t_0}^{t-1}H(t-\tau)u(\tau)
 \]
 voglio arrivare a $x(t+1) = Ax(t)+Bu(t)$: 
 
@@ -756,6 +697,27 @@ le matrici in Laplace sono:
      \Psi(s) = C \Phi(s)&,& W(s)=C\Phi(s)B+D 
 \end{align*}
 
+\subsection{Problema della realizzazione: forma canonica raggiungibile}
+Data la mia $W(s)= \underset{p\text{ x }q}{\begin{pmatrix}    &    \end{pmatrix}}$ voglio arrivare alla
+rappresentazione di stato (implicita). L'utilizzo della forma canonica raggiungibile significa mettere:
+\[  A = \underset{np \text{ x }np}{\begin{pmatrix}
+    0 & I & ... \\
+     & 0 & I &... \\
+    -a_0I & -a_1I  &...&-a_{n-1}I 
+    \end{pmatrix}},
+    B = \underset{np \text{ x }p}{\begin{pmatrix}
+        0\\
+        0\\
+        I
+    \end{pmatrix}},
+    C= \underset{q \text{ x }np}{\begin{pmatrix}
+        B_0 & B_1 & ...
+    \end{pmatrix}}
+\]
+
+
+
+
 
 \subsection{Come si passa da rappresentazione a tempo discreto a rappresentazione con la trasformata Zeta}
 
@@ -776,12 +738,13 @@ Per comodità di calcoli tengo a mente la trasformata di $f(t+1)$
     &=&z\left( \underbrace{\sum_{\tau=1}^{\infty}f(\tau) z^{-t}+f(0)}_{Z[f(t)]}-f(0) \right)\\
     &=&zF(z)-zf(0)
 \end{align*}
-Allora dato che $F(x+1) = zX(z)-zx(0)$:
+Allora dato che $F(x(k+1)) = zX(z)-zx(0)$:
 \begin{align*}
     zX(z)-zx(0) &=& Ax(z)+Bu(z)\\
     zX(z)-Ax(z) &=& zx(0)+Bu(z)\\
     (zI-A)X(z) &=& zx(0)+Bu(z)\\
-    X(z) &=& \underbrace{(zI-A)^{-1}zx(0)}_{Z[\Phi(t)x_0]}+  \underbrace{(zI-A)^{-1}zx(0)}_{Z[\sum_{t=t_0}^{t-1}H(t-\tau)u(\tau)]}
+    X(z) &=& \underbrace{(zI-A)^{-1}zx(0)}_{Z[\Phi(t)x_0]}+
+    \underbrace{(zI-A)^{-1}BU(z)}_{Z[\sum_{t=t_0}^{t-1}H(t-\tau)u(\tau)]}
 \end{align*}
 
 
@@ -797,9 +760,65 @@ Prendiamo il sistema
 \]
 con $x\in\mathbb{R}^n,u\in\mathbb{R}^p,y\in\mathbb{R}^q,f:\mathbb{R}^nx\mathbb{R}^p\to\mathbb{R}^n,h:\mathbb{R}^nx\mathbb{R}^p\to\mathbb{R}^q$
 
-Dato che la permanenza in unos stato è determinata dall'assenza di variazioni, un punto di equilibrio
+Dato che la permanenza in uno stato è determinata dall'assenza di variazioni, un punto di equilibrio
 è un punto $x_e$ tale che $f(x_e,u) = 0$ per qualche u.
 E basta, le definizioni di stabilità sono le solite per i punti di equilibrio.
+
+\subsection{Lyapunov di sistemi non lineari a tempo continuo}
+Consideriamo un punto di equilibrio del sistema
+non lineare x ; prendiamo una funzione scalare $V (x)$, con la caratteristica che è nulla per il punto di interesse
+e positiva nell'intorno di questo punto:
+\begin{align*}
+    V(x) : \mathbb{R}^n\to\mathbb{R} & & 
+    V(x_e) = 0 & & V(x) >0\ \forall x \in I_{x_e}
+\end{align*}
+$V(x)$ è detta \textbf{definita positiva} nell'intorno di $x_e$ indicato con $I_{x_e}$.
+
+Se ha $<, \ge, \le$ nella formula si dice 
+\textit{definita negativa, semidefinita positiva, semidefinita negativa}.
+
+Il criterio di Lyapunov consiste nel fatto che se esiste una funzione definita positiva $V (x) > 0$ tale da avere la
+funzione derivata \textit{definita negativa}
+$\overset{\cdot}{V}(x) = \frac{\partial V(x)}{\partial t} =\frac{\partial V(x)}{\partial x}\frac{\partial x}{\partial t}
+=\frac{\partial V(x)}{\partial x} \overset{\cdot}{x} <0$
+allora il punto di equilibrio è localmente \textbf{asintoticamente stabile}.
+Se invece  la sua derivata è \textit{semidefinita negativa}, allora è
+\textbf{semplicemente stabile} localmente.
+
+
+
+
+
+\subsection{Lyapunov di sistemi non lineari a tempo discreto}
+Definita la \textit{funzione di Lyapunov} $V(x)$ introduco la  funzione 
+\textit{differenza prima} $\Delta V(x) = V(x(t+1))-V(x(t))$ e il punto d'equilibrio è:
+$x_e = f(x_e)$
+\paragraph{Teorema $3.8.1$:} Lo stato $x_e$ di equilibrio è localmente stabile asintoticamente se esiste una
+funzione $V(x)$ definita positiva in un intorno $I_{x_e}$ tale che la sua differenza prima lungo il moto 
+\[ \Delta V(x) = V(x(t+1))-V(x(t)) = V(f(x(t)))-V(x(t)) \] sia \textbf{definita negativa}.
+
+\paragraph{Teorema $3.8.2$:}Lo stato $x_e$ di equilibrio è localmente stabile semplicemente se $\exists V(x)$ definita
+positiva in $I_{x_e}$, tale che la sua differenza prima lungo il moto  $V(x) = V(x(t+1))-V(x(t))$ sia 
+\textbf{semi-definita negativa}
+
+\subsection{Lyapunov di sistemi  lineari a tempo continuo}
+Dato il sistema che ha come equazione di stato \(\displaystyle \overset{\cdot}{x} = Ax+Bu \).
+La più adatta è $V(x) = x'Qx$.
+Per semplicita assumo che $Q$ è simmetrica.
+Se $Q$ è {\color{blue} \textit{definita positiva}} (ovvero i determinanti dei minori principali sono tutti positivi) allora
+$V(x)$ è {\color{blue} \textit{definita positiva}}.
+La derivata di $V(x)$ sarà:
+\[ \overset{\cdot}{V}(x) = \overset{\cdot}{x} ' Qx + x' Q\overset{\cdot}{x} = (Ax)' Qx + x' QAx = x' A' Qx + x' QAx = x' (A' Q + QA)x\]
+
+Secondo il criterio di Lyapunov, se $\overset{\cdot}{V}(x)$ è definita negativa, allora il punto di equilibrio $x_e$
+è stabile asintoticamente.
+$x' (A' Q + QA)x$ è definita negativa se $A'Q + QA$ è definita negativa, cioè  
+\[
+    A'Q + QA = -P \text{ con $P$ matrice positiva, che alla fine vuol dire } \overset{\cdot}{V}(x) = -x'Px <0
+\]
+La condizione per cui esista una Q che abbia queste condizioni è non solo
+sufficiente, ma anche necessaria, quindi il metodo darà sicuramente una soluzione unica.
+\[ \forall\ P > 0 \ \exists!\ Q>0 \Longleftrightarrow x_e = 0 \text{ stabile asisntoticamente}\]
 
 
 \subsection{Enunciato e dimostrazione teorema di Nyquist}
@@ -875,7 +894,7 @@ Ora, applicando la (\ref{varphi}) a entrambi i polinomi, indicando $Z_p$ il nume
 di $d_{CH}(j\omega)$ e con $P_p$ quello di $d_{AP}(j\omega)$ viene
 \[
     \Delta_{\varphi}\left(\frac{d_{CH}(j\omega)}{d_{AP}(j\omega)} \right)=
-    (n\pi-2\pi Z_p)-(n\pi-2\pi P_p)=2\pi(Z_p-P_p)
+    (n\pi-2\pi Z_p)-(n\pi-2\pi P_p)=2\pi(P_p-Z_p )
 \]
 Quindi a partire dal diagramma polare di $|1+F(s)|$ è possibile determinare quanti giri 
 fa il vettore della funzone attorno allo zero. Indicando questo numer con $N$,
@@ -885,7 +904,7 @@ fa il vettore della funzone attorno allo zero. Indicando questo numer con $N$,
 \]
 e quindi la (\ref{varphi}) si riscrive come 
 \[
-    2\pi(Z_p-P_p)=2\pi N \quad \Longrightarrow \quad P_p-Z_p = N
+    2\pi(P_p-Z_p )=2\pi N \quad \Longrightarrow \quad P_p-Z_p = N
 \]
 Ovviamente il sistema è asintoticamente stabile solo se $Z_p=0$ e quindi 
 \[N= P_p\quad\quad \text{è quello che volevo dimostrare}\]
@@ -895,9 +914,13 @@ Ovviamente il sistema è asintoticamente stabile solo se $Z_p=0$ e quindi
 Consideriamo il sistema deifnito dall'equazione di stato: $ \overset{\cdot}{x} = f(x(t),u(t)) $, un punto di 
 equilibrio $x_e$ del sistema è definito dal fatto che $f(x_e,u_e) = 0$ per qualche $u_e$.
 
+
+
 Ci limitiamo allo studio del caso in cui $u_e = 0$.
 
 Quindi un sistema ammette punti di equilibrio se esistono soluzioni al sistema :$f(x_e,0) = 0$.
+
+\incfig{x_e.jpeg}{0.5}
 
 Consideriamo lo studio di un punto $x_o$ vicino a $x_e$, ci sono tre possibilità:
 \begin{enumerate}
@@ -964,11 +987,14 @@ Lo studio della \textbf{STABILITÀ INTERNA} si riduce allo studio della stabilit
 
 
 \subsection{Stabilità esterna nello stato zero}
-Se è verificata la condizione: "$y \text{ limitata} \Longrightarrow u \text{ limitato}$" allora si parla di stabilità esterna.
+Se è verificata la condizione: "$u \text{ limitato} \Longrightarrow y \text{ limitata}$" allora si parla di stabilità esterna.
 Un sistema è stabile nello stato zero se e solo se \(\displaystyle \int_{0}^{t}||W(\tau)||d\tau < k \ \forall t \).
-
-Ovvero la norma della funzione di trasferimento deve essere sommabile nell' inter-
-vallo considerato. Considerando il punto di vista degli autovalori la condizione può
+In formule è
+\[
+    \forall\ M>0  \exists N_M>0 : x_0=0 \wedge  ||u(t)||<M\Longrightarrow||y(t)||<N_M
+\]
+Ovvero la norma della funzione di trasferimento deve essere sommabile nell' intervallo
+considerato. Considerando il punto di vista degli autovalori la condizione può
 esprimersi come: \textit{gli autovalori che sono simultaneamente eccitabili ed osservabili
 devono essere a parte reale negativa.}
 
@@ -990,6 +1016,100 @@ reale strettamente negativa se con molteplicità geometrica maggiore di 1,
 o parte reale non positiva se con molteplicità geometrica pari a 1.}
 \end{itemize}
 
+\section{Dimostazioni formali}
+
+\subsection{Dato un sistema in forma esplicita, dimostra che il sistema è lineare}
+Una funzione di variabili reali $f$ è lineare se, dati due punti qualunque
+$x$ e $y$, e due costanti $a$ e $b$ anch'esse arbitrarie, si ha che $f(ax+by)=af(x)+bf(y)$.
+
+La rappresentazione esplicita di un sistema è 
+\[ x(t) = \Phi(t)x_0 +\int_{0}^{t} H(t-\tau) u(\tau) d \tau
+\]
+La funzione di stato è
+\[ \Psi \left(t_0-t,x_0,\left.u(t)\right|_{(t_0,t]}\right) \]
+S è lineare se $\forall$ coppia $(t,t_0) \in (\mathbb{R}x\mathbb{R})$, $\Psi$ è lineare sul prodotto $XxU$ 
+(lo spazio degli stati per gli ingressi):
+
+\
+\begin{align*}
+    \Psi \left(t_0-t,\alpha x_1+\beta x_2,\alpha\left.u_1(t)\right|_{(t_0,t]}+\beta\left.u_2(t)\right|_{(t_0,t]}\right) =\\
+    = \alpha\Psi \left(t_0-t,x_1,\left.u_1(t)\right|_{(t_0,t]}\right)+\beta\Psi \left(t_0-t,x_2,\left.u_2(t)\right|_{(t_0,t]}\right)
+\end{align*}
+\[
+    \Psi \left(t_0-t,x_1,\left.u_2(t)\right|_{(t_0,t]}\right)  = \underbrace{\Psi\left(t-t_0,x_1,0\right)}_{\text{evoluzione libera}}+
+    \underbrace{\Psi\left(t-t_0,0,\left.u_2(t)\right|_{(t_0,t]}\right)}_{\text{evoluzione forzata}}
+\]
+
+La forma esplicita del mio sistema è 
+\[
+x(t) = \Phi(\alpha x_1+\beta x_2) + \int_{t_0}^{t} H(t-\tau)(\alpha u_1 +\beta u_2)d\tau    
+\]
+che verifica banalmente la linearità.
+
+
+\subsection{\boldmath Dimostrazione che data un'evoluzione da $x(t_0)$ a $x(t)$, vale la stessa da $x(t_1)$ con $<t_0<t_1<t$}
+Per farlo prendo due equazioni:
+\begin{equation}
+    x(t) = \Phi(t-t_0)x(t_0)+\int_{t_0}^{t} H(t-\tau)u(\tau)d\tau
+\end{equation}
+\begin{equation}
+    x(t) = \Phi(t-t_1)x(t_1)+\int_{t_1}^{t} H(t-\tau)u(\tau)d\tau
+\end{equation}
+(Questa roba si trova uguale su edotm ma scrivere mi aiuta a studiare)
+Ora voglio dimostrare che le due si equivalgono
+
+\[ x(t) = \Phi(t-t_1)\underbrace{\left[ \Phi(t_1-t_0)x(t_0)+\int_{t_0}^{t_1} H(t-\tau)u(\tau)d\tau\right]}_{x(t_1)}+\int_{t_1}^{t} H(t-\tau)u(\tau)d\tau \]
+\[x(t) = \Phi(t-t_1)\Phi(t_1-t_0)x(t_0)+\Phi(t-t_1)\int_{t_0}^{t_1} H(t-\tau)u(\tau)d\tau+\int_{t_1}^{t} H(t-\tau)u(\tau)d\tau\]
+\[ \Phi(t-t_0)x(t_0)= \Phi(t-t_1)\Phi(t-t_0)x(t_0)\Longleftrightarrow\Phi(t-t_0)\Phi(t-t_1)\Phi(t-t_0) \]
+\[ \int_{t_0}^{t} H(t-\tau)u(\tau)d\tau = \Phi(t-t_1)\int_{t_0}^{t_1} H(t_1-\tau)u(\tau)d\tau+\int_{t_1}^{t} H(t-\tau)u(\tau)d\tau \] 
+A sinistra applico la linearità dell'integrale:
+\[ \int_{t_0}^{t_1} H(t_1-\tau)u(\tau)d\tau+\int_{t_1}^{t} H(t-\tau)u(\tau)d\tau
+ = \Phi(t-t_1)\int_{t_0}^{t_1} H(t_1-\tau)u(\tau)d\tau+\int_{t_1}^{t} H(t-\tau)u(\tau)d\tau \]
+e quindi alla fine:
+\[ \int_{t_0}^{t_1} H(t-\tau)u(\tau)d\tau = \int_{t_0}^{t_1}\Phi(t-t_1) H(t_1-\tau)u(\tau)d\tau \]
+\[ H(t-\tau) = \Phi(t-t_1) H(t_1-\tau) \]
+Riassumento
+\[\begin{cases} 
+        \Phi(t-t_0) = \Phi(t-t_1)\Phi(t_1-t_0)\\
+        H(t-\tau) = \Phi(t-t_1) H(t_1-\tau)
+\end{cases}
+\]
+Ora andiamo a derivare la prima equazione del sistema in forma esplicita (1) per vedere se otteniamo
+esattamente la forma implicita di partenza:
+\[ \overset{\cdot}{x} = \frac{\partial \Phi(t-t_0)}{\partial t}x(t_0)+\int_{t_0}^{t} \frac{\partial}{\partial t}\left( \Phi(t-t_1) H(t_1-\tau)\right)u(\tau)d\tau \]
+\[ \overset{\cdot}{x} = \frac{\partial \Phi(t-t_1)}{\partial t}\left(\Phi(t_1-t_0)x(t_0)+\int_{t_0}^{t}H(t_1-\tau)u(\tau)d\tau\right)+H(0)u(t) \]
+Ora prendiamo il limite $t_1\to t$:
+\[ \overset{\cdot}{x} = \lim_{t_1\to t}\frac{\partial \Phi(t-t_1)}{\partial t}\left(\Phi(t_1-t_0)x(t_0)+\int_{t_0}^{t_1}H(t_1-\tau)u(\tau)d\tau\right)+H(o)u(t) \]
+\[ \overset{\cdot}{x} = \lim_{t_1\to t}\frac{\partial \Phi(t-t_1)}{\partial t}x(t)+H(0)u(t) \]
+\[ \overset{\cdot}{x} = \frac{\partial \Phi(t\to0)}{\partial t}x(t)+H(0)u(t) \]
+
+Da cui finalmente posso dire che 
+\[ \frac{\partial \Phi(t\to 0)}{\partial t}x(t) =\lim_{t\to 0}\frac{\partial \Phi(t)}{\partial t}x(t) = Ax(t) \]
+\[ H(0)u(t) = Bu(t) \Rightarrow H(0) = B \]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \section{Dimostrazioni di risposte a regime permanente}
@@ -1006,6 +1126,22 @@ vale a dire che è necessaria la \textbf{limitatezza delle evoluzioni interne (S
 e quindi tutti gli autovalori del sistema devono avere parte reale negativa.
 
 
+
+\subsection{Risposta a regime permanente per sistemi a tempo discreto}
+La risposta a regime permanente, ad un assegnato ingresso, è quella funzione del tempo intorno alla quale, indipendentemente dallo stato iniziale,
+tende ad arrestarsi la risposta in uscita al crescere del tempo.
+Per sistemi tempo discreto si definisce con:
+\[Y_r(k)=\sum_{\tau =- \infty}^{k} W(k-\tau)u(\tau) \]
+Si assume anche in questo caso che il sistema sia stabile internamente (modulo minore o uguale a uno degli autovalori con ordine geometrico unitario,
+strettamente inferiore ad uno gli altri), per evitare che vi siano evoluzioni che crescono
+indefinitamente impedendone il funzionamento.
+
+Valgono inoltre le ipotesi che i
+modi osservabili siano asintoticamente stabili (cioè che i corrispondenti autovalori siano a modulo inferiore ad uno), per assicurare l'indipendenza dallo stato iniziale, e che
+il sistema sia esternamente stabile nello stato zero (modulo inferiore ad uno dei
+poli della funzione di trasferimento).
+
+
 \subsection{Risposta a regime permanente ad ingressi sinusoidali per sistemi a tempo continuo}
 La risposta a regime permanente è quell'andamento
 nel tempo al quale tende ad assestarsi la risposta
@@ -1020,12 +1156,14 @@ lo sfasamento invece è $ L(W(j\omega))=\Phi(\omega)=arctan \frac{Im}{Re}$.
 \subsection{\boldmath Dimostrare la formula della risposta a regime permanente all'ingresso $u(k) = sin(\theta k)$ per un sistema a tempo discreto.}
 Si ricorda che per i sistemi tempo discreto
 
-\[Y_r(k)=\sum_{\tau =- \infty}^{k} W(k-\tau)u(\tau)\]e che $u(k)=\frac {e^{j\theta k} - e^{-j\theta k}}{2j} $.
+\[Y_r(k)=\sum_{\tau =- \infty}^{k} W(k-\tau)u(\tau)\]e che
+$u(k)=\frac {e^{j\theta k} - e^{-j\theta k}}{2j} $.
 
 
 Considero inizialmente l'ingresso $u(k)=e^{j \theta k}$ e ottengo:
 \[ 
-    Y_r(k)=\sum_{\tau =- \infty}^{k} W(k-\tau)e^{-j\theta \tau}, \quad \text{ora pongo }\quad k-\tau=\xi
+    Y_r(k)=\sum_{\tau =- \infty}^{k} W(k-\tau)e^{j\theta \tau},
+    \quad \text{ora pongo }\quad k-\tau=\xi
 \]
 Così viene:
 \[ Y_r(k)=\sum_{\xi =0}^{\infty} W(\xi)e^{j\theta (k-\xi)} = e^{j\theta k} \sum_{\xi =0}^{\infty} W(\xi)e^{-j\theta \xi}
@@ -1038,7 +1176,10 @@ e grazie a questi due risultati ottengo la risposta
 nel caso di ingresso sinusoidale:
 \[
     Y_r(k)=\frac{e^{j \theta k}W(e^{j \theta})-e^{-j \theta k}W(e^{j \theta})}{2j}
+    = M(\theta)\sin(\theta t +\phi(\theta))
 \]
+
+
 \subsection{\boldmath Si dimostri che, se esiste, la risposta a regime permanente a $u(t) = \delta _{-1}(t)$(ingresso a gradino) è uguale al guadagno del sistema}
 Considerando l'ingresso $u(t) = \delta_{-1}(t)$ un ingresso costante,
 la risposta a regime sarà del tipo 
@@ -1062,25 +1203,14 @@ Se effettuo il cambio di coordinate
 ottengo:
 $\widetilde{W}=\widetilde{C}e^{At}\widetilde{B}+\widetilde{D}=CT^{-1}Te^{At}T^{-1}TB+D=W(t)$
 
-\subsection{Risposta a regime permanente per sistemi a tempo discreto}
-La risposta a regime permanente, ad un assegnato ingresso, è quella funzione del tempo intorno alla quale, indipendentemente dallo stato iniziale,
-tende ad arrestarsi la risposta in uscita al crescere del tempo.
-Per sistemi tempo discreto si definisce con:
-\[Y_r(k)=\sum_{\tau =- \infty}^{k} W(k-\tau)u(\tau) \]
-Si assume anche in questo caso che il sistema sia stabile internamente (modulo minore o uguale a uno degli autovalori con ordine geometrico unitario,
-strettamente inferiore ad uno gli altri), per evitare che vi siano evoluzioni che crescono
-indefinitamente impedendone il funzionamento.
-
-Valgono inoltre le ipotesi che i
-modi osservabili siano asintoticamente stabili (cioè che i corrispondenti autovalori siano a modulo inferiore ad uno), per assicurare l'indipendenza dallo stato iniziale, e che
-il sistema sia esternamente stabile nello stato zero (modulo inferiore ad uno dei
-poli della funzione di trasferimento).
-
 \subsection{È possibile che un sistema abbia funzione di trasferimento uguale a zero? Se si, sotto
 quali condizioni?}
 Si, è possibile perché essendo 
 \[ W(s)=\mathscr{L}[W(t)] \quad W(t)=Ce^{At}B=\sum_{i=1}^{n}e^{\lambda i}Cu_iv_iB \]
 affinché un modo non compaia nella $W(t)$ deve essere non eccitabile oppure non osservabile.
+
+
+
 
 
 
@@ -1134,6 +1264,15 @@ Che viene
     0\text{ grado}&-k
 \end{align*}
 Che avendo sia $2k$ che $-k$ non può venire mai bene.
+
+\subsection{Trovare $P_2$ }
+
+\incfig{p1ps.jpeg}{0.5}
+
+\[ L[u] = \frac{1}{s} \quad,\quad L[y] = \frac{1}{s-1}\]
+\[ y(s) = u(s)W(s) \quad\to\quad W(s)=\frac{1}{s+1}P_2(s) \]
+\[ \frac{1}{s-1} = \frac{1}{s}\frac{1}{s+1}P_2(s) \]
+\[ \frac{s(s+1)}{s-1} = P_2(s) \to W_{tot}=\frac{s}{s-1} \]
 
 
 
